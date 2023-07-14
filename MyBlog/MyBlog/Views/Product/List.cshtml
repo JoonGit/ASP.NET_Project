@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script>
+        function sendRequest(id) {
+                    var httpRequest = new XMLHttpRequest();
+                    httpRequest.onreadystatechange = function () {
+                        if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+                            if(httpRequest.responseText == "ok") {
+                                //document.getElementById("wish-"+id).innerHTML = "♥";
+                            }
+                        }
+                    };
+                    // GET 방식으로 요청을 보내면서 데이터를 동시에 전달함.
+                    httpRequest.open("GET", "/product/wish/" + id, true);
+                    httpRequest.send();
+                }
+</script>
+
+
+                    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Featured Product</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".oranges">Oranges</li>
+                            <li data-filter=".fresh-meat">Fresh Meat</li>
+                            <li data-filter=".vegetables">Vegetables</li>
+                            <li data-filter=".fastfood">Fastfood</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter" id="MixItUp0645D9">
+                @foreach (var porduct in Model)
+                {
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="@porduct.URI" style="background-image: url(&quot;/@porduct.URI&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart" onclick="sendRequest(@porduct.Id)"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="buy/@porduct.Id"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                            </div>                  
+                        <div class="featured__item__text">
+                            <h6><a href="read/@porduct.Id">@porduct.Name</a></h6>
+                                <a href="/product/edit/@porduct.Id" class="primary-btn">수정하기</a>
+                                <a href="/product/delete/@porduct.Id" class="primary-btn">삭제하기</a>
+                                <a href="/product/buy/@porduct.Id" class="primary-btn">구매하기</a>
+                            <h5>@porduct.Price</h5>
+                            
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+

@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+            @if(TempData["Error"] != null)
+            {
+                <div class="col-md-12 alert alert-danger">
+                    <span><b>Sorry!</b> - @TempData["Error"] </span>
+                </div>
+            }
+
+<form actin="/user/signup" method="post">
+    <input type="text" name="name" placeholder="Id" value="apple5"/>    
+    <input type="password" name="password" placeholder="password" value="Dkagh1234!"/>   
+    <input type="text" name="email" placeholder="email" value="apple5@gmail.com"/>    
+    <button>회원가입</button>
+</form>
+
+
+@*@if(ViewBag.error != null)
+{
+    @foreach (var error in ViewBag.error)
+    {
+        <div>@error</div>
+    }
+}
+*@

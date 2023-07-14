@@ -1,0 +1,12 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form action="/product/register" method="post" enctype="multipart/form-data">
+    <input type="text" name="Name" placeholder="Name"/><br /> 
+    <input type="text" name="Price" placeholder="Price"/><br />
+    <input type="file" name="files" multiple required />
+    <input type="hidden" name="RegisterUserId" value="@ViewBag.userId" />
+    <input type="submit" value="상품 등록" />
+</form>
