@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form action="/product/edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="text" name="Name" placeholder="Name" value="@Model.Name"/><br /> 
+    <input type="text" name="Price" placeholder="Price" value="@Model.Price"/><br />
+    <input type="file" name="files" multiple required />
+    <input type="submit" value="상품 수정" />
+</form>
+
