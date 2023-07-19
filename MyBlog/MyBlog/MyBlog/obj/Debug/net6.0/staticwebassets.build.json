@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sM+z0D9W1IgeTRTfRsMmsE+Qn2i633YjAGVGvkcLr2M=",
+  "Hash": "8YUUu16LPQmc/oHiaULfQaFlMaT+hDEkrY53AnsVDyQ=",
   "Source": "MyBlog",
   "BasePath": "_content/MyBlog",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MyBlog\\wwwroot",
       "Source": "MyBlog",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\MyBlog.styles.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\MyBlog.styles.css",
       "SourceId": "MyBlog",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "MyBlog.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\MyBlog.styles.css"
+      "OriginalItemSpec": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\MyBlog.styles.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyBlog.bundle.scp.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyBlog.bundle.scp.css",
       "SourceId": "MyBlog",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "MyBlog.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyBlog.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyBlog.bundle.scp.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\bootstrap.min.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\bootstrap.min.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\elegant-icons.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\elegant-icons.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/elegant-icons.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\elegant-icons.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\font-awesome.min.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\font-awesome.min.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/font-awesome.min.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\font-awesome.min.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\jquery-ui.min.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\jquery-ui.min.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/jquery-ui.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\jquery-ui.min.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\nice-select.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\nice-select.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/nice-select.css",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\nice-select.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\owl.carousel.min.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\owl.carousel.min.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/owl.carousel.min.css",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\owl.carousel.min.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\slicknav.min.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\slicknav.min.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/slicknav.min.css",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\slicknav.min.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\css\\style.css",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\css\\style.css",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\favicon.ico",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.eot",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.eot",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/ElegantIcons.eot",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\ElegantIcons.eot"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.svg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.svg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/ElegantIcons.svg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\ElegantIcons.svg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.ttf",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.ttf",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/ElegantIcons.ttf",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\ElegantIcons.ttf"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.woff",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\ElegantIcons.woff",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/ElegantIcons.woff",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\ElegantIcons.woff"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\FontAwesome.otf",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\FontAwesome.otf",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/FontAwesome.otf",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\FontAwesome.otf"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.eot",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/fontawesome-webfont.eot",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\fontawesome-webfont.eot"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.svg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/fontawesome-webfont.svg",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\fontawesome-webfont.svg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.ttf",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/fontawesome-webfont.ttf",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\fontawesome-webfont.ttf"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.woff",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/fontawesome-webfont.woff",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\fontawesome-webfont.woff"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\fonts\\fontawesome-webfont.woff2",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "fonts/fontawesome-webfont.woff2",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\fontawesome-webfont.woff2"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\banner\\banner-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\banner\\banner-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/banner/banner-1.jpg",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\img\\banner\\banner-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\banner\\banner-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\banner\\banner-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/banner/banner-2.jpg",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\img\\banner\\banner-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/blog-1.jpg",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\blog-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/blog-2.jpg",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\blog-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/blog-3.jpg",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\blog-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-4.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-4.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/blog-4.jpg",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\blog-4.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-5.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-5.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/blog-5.jpg",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\blog-5.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-6.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\blog-6.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/blog-6.jpg",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\blog-6.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\details\\details-author.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\details\\details-author.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/details/details-author.jpg",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\details\\details-author.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\details\\details-hero.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\details\\details-hero.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/details/details-hero.jpg",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\details\\details-hero.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\details\\details-pic.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\details\\details-pic.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/details/details-pic.jpg",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\details\\details-pic.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\sidebar\\sr-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\sidebar\\sr-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/sidebar/sr-1.jpg",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\sidebar\\sr-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\sidebar\\sr-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\sidebar\\sr-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/sidebar/sr-2.jpg",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\sidebar\\sr-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\sidebar\\sr-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\blog\\sidebar\\sr-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/blog/sidebar/sr-3.jpg",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\img\\blog\\sidebar\\sr-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\breadcrumb.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\breadcrumb.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/breadcrumb.jpg",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\img\\breadcrumb.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\cart\\cart-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\cart\\cart-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/cart/cart-1.jpg",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\img\\cart\\cart-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\cart\\cart-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\cart\\cart-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/cart/cart-2.jpg",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\img\\cart\\cart-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\cart\\cart-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\cart\\cart-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/cart/cart-3.jpg",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\img\\cart\\cart-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/categories/cat-1.jpg",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\img\\categories\\cat-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/categories/cat-2.jpg",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\img\\categories\\cat-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/categories/cat-3.jpg",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\img\\categories\\cat-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-4.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-4.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/categories/cat-4.jpg",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\img\\categories\\cat-4.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-5.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\categories\\cat-5.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/categories/cat-5.jpg",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\img\\categories\\cat-5.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-1.jpg",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-2.jpg",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-3.jpg",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-4.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-4.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-4.jpg",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-4.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-5.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-5.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-5.jpg",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-5.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-6.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-6.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-6.jpg",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-6.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-7.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-7.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-7.jpg",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-7.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-8.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\featured\\feature-8.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/featured/feature-8.jpg",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\img\\featured\\feature-8.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\hero\\banner.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\hero\\banner.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/hero/banner.jpg",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\img\\hero\\banner.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\language.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\language.png",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/language.png",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\img\\language.png"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\latest-product\\lp-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\latest-product\\lp-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/latest-product/lp-1.jpg",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\img\\latest-product\\lp-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\latest-product\\lp-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\latest-product\\lp-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/latest-product/lp-2.jpg",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\img\\latest-product\\lp-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\latest-product\\lp-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\latest-product\\lp-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/latest-product/lp-3.jpg",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\img\\latest-product\\lp-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\logo.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\logo.png",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/logo.png",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logo.png"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\payment-item.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\payment-item.png",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/payment-item.png",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\img\\payment-item.png"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/product-details-1.jpg",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\product-details-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/product-details-2.jpg",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\product-details-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/product-details-3.jpg",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\product-details-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-4.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-4.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/product-details-4.jpg",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\product-details-4.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-5.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\product-details-5.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/product-details-5.jpg",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\product-details-5.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/thumb-1.jpg",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\thumb-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/thumb-2.jpg",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\thumb-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/thumb-3.jpg",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\thumb-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-4.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\details\\thumb-4.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/details/thumb-4.jpg",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\details\\thumb-4.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/discount/pd-1.jpg",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\discount\\pd-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/discount/pd-2.jpg",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\discount\\pd-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/discount/pd-3.jpg",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\discount\\pd-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-4.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-4.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/discount/pd-4.jpg",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\discount\\pd-4.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-5.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-5.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/discount/pd-5.jpg",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\discount\\pd-5.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-6.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\discount\\pd-6.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/discount/pd-6.jpg",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\discount\\pd-6.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-1.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-1.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-1.jpg",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-1.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-10.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-10.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-10.jpg",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-10.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-11.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-11.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-11.jpg",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-11.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-12.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-12.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-12.jpg",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-12.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-2.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-2.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-2.jpg",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-2.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-3.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-3.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-3.jpg",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-3.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-4.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-4.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-4.jpg",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-4.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-5.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-5.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-5.jpg",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-5.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-6.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-6.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-6.jpg",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-6.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-7.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-7.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-7.jpg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-7.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-8.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-8.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-8.jpg",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-8.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-9.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\img\\product\\product-9.jpg",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "img/product/product-9.jpg",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\product-9.jpg"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\bootstrap.min.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\bootstrap.min.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\jquery.nice-select.min.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\jquery.nice-select.min.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/jquery.nice-select.min.js",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.nice-select.min.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\jquery.slicknav.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\jquery.slicknav.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/jquery.slicknav.js",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.slicknav.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\jquery-3.3.1.min.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\jquery-3.3.1.min.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/jquery-3.3.1.min.js",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery-3.3.1.min.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\jquery-ui.min.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\jquery-ui.min.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/jquery-ui.min.js",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery-ui.min.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\main.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\main.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/main.js",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\js\\main.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\mixitup.min.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\mixitup.min.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/mixitup.min.js",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\js\\mixitup.min.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\js\\owl.carousel.min.js",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\js\\owl.carousel.min.js",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "js/owl.carousel.min.js",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\js\\owl.carousel.min.js"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_base.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_base.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_base.scss",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_base.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_blog.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_blog.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_blog.scss",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_blog.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_blog-details.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_blog-details.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_blog-details.scss",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_blog-details.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_blog-sidebar.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_blog-sidebar.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_blog-sidebar.scss",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_blog-sidebar.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_breadcrumb.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_breadcrumb.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_breadcrumb.scss",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_breadcrumb.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_checkout.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_checkout.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_checkout.scss",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_checkout.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_contact.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_contact.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_contact.scss",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_contact.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_footer.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_footer.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_footer.scss",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_footer.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_header.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_header.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_header.scss",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_header.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_hero.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_hero.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_hero.scss",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_hero.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_home-page.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_home-page.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_home-page.scss",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_home-page.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_mixins.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_mixins.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_mixins.scss",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_mixins.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_responsive.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_responsive.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_responsive.scss",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_responsive.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_shop-details.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_shop-details.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_shop-details.scss",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_shop-details.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_shop-grid.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_shop-grid.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_shop-grid.scss",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_shop-grid.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_shoping-cart.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_shoping-cart.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_shoping-cart.scss",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_shoping-cart.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_sidebar.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_sidebar.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_sidebar.scss",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_sidebar.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\_variable.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\_variable.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/_variable.scss",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\_variable.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\sass\\style.scss",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\sass\\style.scss",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "sass/style.scss",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\sass\\style.scss"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\Source\\bootstrap-4.4.1-dist.zip",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Source\\bootstrap-4.4.1-dist.zip",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "Source/bootstrap-4.4.1-dist.zip",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\Source\\bootstrap-4.4.1-dist.zip"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\Source\\font-awesome-4.7.0.zip",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Source\\font-awesome-4.7.0.zip",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "Source/font-awesome-4.7.0.zip",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\Source\\font-awesome-4.7.0.zip"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\Source\\jquery-nice-select-1.1.0.zip",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Source\\jquery-nice-select-1.1.0.zip",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "Source/jquery-nice-select-1.1.0.zip",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\Source\\jquery-nice-select-1.1.0.zip"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\Source\\jquery-ui-1.12.1.zip",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Source\\jquery-ui-1.12.1.zip",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "Source/jquery-ui-1.12.1.zip",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\Source\\jquery-ui-1.12.1.zip"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\Source\\OwlCarousel2-2.3.4.zip",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Source\\OwlCarousel2-2.3.4.zip",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "Source/OwlCarousel2-2.3.4.zip",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\Source\\OwlCarousel2-2.3.4.zip"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\Source\\sass.zip",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Source\\sass.zip",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "Source/sass.zip",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\Source\\sass.zip"
     },
     {
-      "Identity": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\Source\\SlickNav-master.zip",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Source\\SlickNav-master.zip",
       "SourceId": "MyBlog",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\wwwroot\\",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
       "BasePath": "_content/MyBlog",
       "RelativePath": "Source/SlickNav-master.zip",
       "AssetKind": "All",

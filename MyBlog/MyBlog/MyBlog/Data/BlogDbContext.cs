@@ -17,6 +17,8 @@ namespace MyBlog.Data
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<OrderModel> Orders { get; set; }
 
+        public DbSet<OrderItemModel> OrderItems { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -51,7 +53,7 @@ namespace MyBlog.Data
             //    .UsingEntity("like_post_user");
         }
 
-        public DbSet<MyBlog.Models.LoginModel>? LoginModel { get; set; }
+        //public DbSet<MyBlog.Models.LoginModel>? LoginModel { get; set; }
     }
 }
 

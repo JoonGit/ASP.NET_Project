@@ -15,12 +15,18 @@ namespace MyBlog.Controllers
         // GET: HomeController1
         private readonly ShoppingCart _shoppingCart;
         private readonly IOrderService _ordersService;
+        private readonly IProudctesService _proudctesService;
 
-        public OrderController(ShoppingCart shoppingCart, IOrderService orderService)
+        public OrderController(ShoppingCart shoppingCart
+            , IOrderService orderService
+            , IProudctesService proudctesService)
         {
             _shoppingCart = shoppingCart;
             _ordersService = orderService;
+            _proudctesService = proudctesService;
         }
+
+        #region 구매목록
         public async Task<ActionResult> Index()
         {
             // 구매 목록 가져오기
@@ -31,7 +37,9 @@ namespace MyBlog.Controllers
             // view 아직 안만듬
             return View(orders);
         }
+        #endregion
 
+        #region 장바구니 생성 및 가져오기
         public IActionResult ShoppingCart()
         {
             // 장바구니 생성
@@ -46,8 +54,49 @@ namespace MyBlog.Controllers
 
             return View(response);
         }
+        #endregion
 
+        #region 장바구니에 상품 추가
+        // 구매시 상품 id와 count값 전달 받도록 만들기
+        public async Task<IActionResult> AddItemToShoppingCart(int id, int count)
+        {
+            var item = await _proudctesService.GetByIdAsync(id);
 
+            if (item != null)
+            {
+                _shoppingCart.AddItemToCart(item, count);
+            }
+            return RedirectToAction(nameof(ShoppingCart));
+        }
+
+        #endregion
+
+        #region 장바구니에 상품 삭제
+        public async Task<IActionResult> RemoveItemFromShoppingCart(int id, int count)
+        {
+            var item = await _proudctesService.GetByIdAsync(id);
+
+            if (item != null)
+            {
+                _shoppingCart.RemoveItemFromCart(item, count);
+            }
+            return RedirectToAction(nameof(ShoppingCart));
+        }
+        #endregion
+
+        #region 장바구니에 상품 전체 삭제
+        public async Task<IActionResult> CompleteOrder()
+        {
+            var items = _shoppingCart.GetShoppingCartItems();
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userEmailAddress = User.FindFirstValue(ClaimTypes.Email);
+
+            await _ordersService.StoreOrderAsync(items, userId, userEmailAddress);
+            await _shoppingCart.ClearShoppingCartAsync();
+
+            return View("OrderCompleted");
+        }
+        #endregion
 
         #region 장바구니
         //[HttpGet("buy/{id:int}")]

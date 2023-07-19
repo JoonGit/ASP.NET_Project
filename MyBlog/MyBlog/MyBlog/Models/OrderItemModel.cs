@@ -8,7 +8,7 @@ namespace MyBlog.Models
         [Key]
         public int Id { get; set; }
 
-        public int Cound { get; set; }
+        public int Count { get; set; }
         public double Price { get; set; }
 
         public int MovieId { get; set; }

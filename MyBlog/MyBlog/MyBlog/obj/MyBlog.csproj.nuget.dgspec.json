@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\MyBlog.csproj": {}
+    "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\MyBlog.csproj": {}
   },
   "projects": {
-    "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\MyBlog.csproj": {
+    "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\MyBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\MyBlog.csproj",
+        "projectUniqueName": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\MyBlog.csproj",
         "projectName": "MyBlog",
-        "projectPath": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\MyBlog.csproj",
+        "projectPath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\MyBlog.csproj",
         "packagesPath": "C:\\Users\\Joon\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\obj\\",
+        "outputPath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joon\\AppData\\Roaming\\NuGet\\NuGet.Config",

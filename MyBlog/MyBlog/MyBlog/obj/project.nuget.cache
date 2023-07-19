@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IMcOwPYJzzMIXlO3lRzDObcZtUaObDqFgCUs5HtgxNcaYbS9ElOYwHiW04XnVVfZnPMivyE0eElEu7N/Meoxkg==",
+  "dgSpecHash": "h2EYVxEOdEUa1vvHvXifwIm3HqS7L3P4MQ4McgQMiDb81iuf/4kTD/RbLQg5zamnckmtozkVMJbkVKsjAAm6Tw==",
   "success": true,
-  "projectFilePath": "D:\\C#\\My_C\\My_WebProject\\MyBlog\\MyBlog\\MyBlog.csproj",
+  "projectFilePath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\MyBlog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Joon\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Joon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

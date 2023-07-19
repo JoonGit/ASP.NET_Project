@@ -241,6 +241,57 @@ namespace MyBlog.Migrations
                     b.ToTable("BuyLists");
                 });
 
+            modelBuilder.Entity("MyBlog.Models.OrderItemModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("double");
+
+                    b.Property<int>("ProductModelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductModelId");
+
+                    b.ToTable("OrderItems");
+                });
+
+            modelBuilder.Entity("MyBlog.Models.OrderModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("MyBlog.Models.ProductModel", b =>
                 {
                     b.Property<int>("Id")
@@ -267,6 +318,29 @@ namespace MyBlog.Migrations
                     b.HasIndex("RegisterUserId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("MyBlog.Models.ShoppingCartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShoppingCartId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("wish_user_product", b =>
@@ -361,6 +435,36 @@ namespace MyBlog.Migrations
                     b.Navigation("ProductModel");
                 });
 
+            modelBuilder.Entity("MyBlog.Models.OrderItemModel", b =>
+                {
+                    b.HasOne("MyBlog.Models.OrderModel", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MyBlog.Models.ProductModel", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("MyBlog.Models.OrderModel", b =>
+                {
+                    b.HasOne("MyBlog.Models.NewIdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MyBlog.Models.ProductModel", b =>
                 {
                     b.HasOne("MyBlog.Models.NewIdentityUser", "RegisterUser")
@@ -370,6 +474,17 @@ namespace MyBlog.Migrations
                         .IsRequired();
 
                     b.Navigation("RegisterUser");
+                });
+
+            modelBuilder.Entity("MyBlog.Models.ShoppingCartItem", b =>
+                {
+                    b.HasOne("MyBlog.Models.ProductModel", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("wish_user_product", b =>
@@ -385,6 +500,11 @@ namespace MyBlog.Migrations
                         .HasForeignKey("WishUsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MyBlog.Models.OrderModel", b =>
+                {
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("MyBlog.Models.ProductModel", b =>
