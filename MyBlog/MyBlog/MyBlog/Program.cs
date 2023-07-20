@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MyBlog.Data;
+using MyBlog.Data.Cart;
 using MyBlog.Data.Service;
 using MyBlog.Models;
 
@@ -11,7 +12,11 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IProudctesService, ProudctesService>();
-builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IFileService ,FileService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+
+
 
 
 
@@ -25,7 +30,8 @@ builder.Services.AddIdentity<NewIdentityUser, IdentityRole>(
     )
     .AddEntityFrameworkStores<BlogDbContext>()
     .AddDefaultTokenProviders();
-
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
 
 
 
@@ -38,6 +44,7 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

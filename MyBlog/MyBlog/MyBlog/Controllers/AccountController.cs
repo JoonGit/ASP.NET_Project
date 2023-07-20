@@ -10,7 +10,7 @@ using System.Security.Claims;
 
 namespace MyBlog.Controllers
 {
-    [Route("Account")]
+    [Route("account")]
     public class AccountController : Controller
     {
         private readonly IAccountService _usersService;
@@ -50,13 +50,12 @@ namespace MyBlog.Controllers
                 if(role.Equals(UserRoles.User))
                 {
                     await _userManager.AddToRoleAsync(newUser, UserRoles.User);
-                    return Redirect("/user/login");
                 }
                 else if (role.Equals(UserRoles.Seller))
                 {
                     await _userManager.AddToRoleAsync(newUser, UserRoles.Seller);
-                    return Redirect("/user/login");
                 }
+                return Redirect("/account/login");
             }
             TempData["Error"] = "Wrong credentials. Please, try again!";
             ViewBag.role = role;
@@ -72,14 +71,22 @@ namespace MyBlog.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginModel model, string ReturnUrl)
+        public async Task<IActionResult> Login(LoginModel model, string? ReturnUrl)
         {
             if (!ModelState.IsValid) return View(model);
 
             var user = await _signInManager.PasswordSignInAsync(model.id, model.password, false, false);
             if (user.Succeeded)
             {
-                return Redirect(ReturnUrl);
+                if(ReturnUrl != null)
+                {
+                    return Redirect(ReturnUrl);
+                }
+                else
+                {
+                    return Redirect("/");
+                }
+                
             }
             else
             {

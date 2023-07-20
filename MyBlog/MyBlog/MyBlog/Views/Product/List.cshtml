@@ -41,25 +41,30 @@
             <div class="row featured__filter" id="MixItUp0645D9">
                 @foreach (var porduct in Model)
                 {
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                    <div class="featured__item">
-                            <div class="featured__item__pic set-bg" data-setbg="@porduct.URI" style="background-image: url(&quot;/@porduct.URI&quot;);">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart" onclick="sendRequest(@porduct.Id)"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="buy/@porduct.Id"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            </div>                  
-                        <div class="featured__item__text">
-                            <h6><a href="read/@porduct.Id">@porduct.Name</a></h6>
-                                <a href="/product/edit/@porduct.Id" class="primary-btn">수정하기</a>
-                                <a href="/product/delete/@porduct.Id" class="primary-btn">삭제하기</a>
-                                <a href="/product/buy/@porduct.Id" class="primary-btn">구매하기</a>
-                            <h5>@porduct.Price</h5>
-                            
+                    <form action="/order/add/" method="post">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                            <div class="featured__item">
+                                    <div class="featured__item__pic set-bg" data-setbg="@porduct.URI" style="background-image: url(&quot;/@porduct.URI&quot;);">
+                                    <ul class="featured__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart" onclick="sendRequest(@porduct.Id)"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="buy/@porduct.Id"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                    </div>                  
+                                <div class="featured__item__text">
+                                    <h6><a href="read/@porduct.Id">@porduct.Name</a></h6>
+@*                                    판매자에게만 수정 삭제 보이고 구매하기 버튼이 안보이게 하기*@
+@*                                        <a href="/product/edit/@porduct.Id" class="primary-btn">수정하기</a>
+                                        <a href="/product/delete/@porduct.Id" class="primary-btn">삭제하기</a>*@
+                                        @*<a href="/product/buy/@porduct.Id" class="primary-btn">구매하기</a>*@
+                                        <input type="hidden" name="id" value="@porduct.Id">
+                                        <input type="text" name="count"  value="1">
+                                        <input type="submit" value="구매하기">
+                                    <h5>@porduct.Price</h5>                            
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                </form>
                 }
             </div>
         </div>

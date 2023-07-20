@@ -10,7 +10,8 @@ using MyBlog.Models;
 
 namespace MyBlog.Controllers
 {
-    [Authorize(Roles = UserRoles.Admin)]
+    //[Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.Seller)]
     [Route("Product")]
     public class ProductController : Controller
     {

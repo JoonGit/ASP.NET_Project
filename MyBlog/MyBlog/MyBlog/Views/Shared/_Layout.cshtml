@@ -78,7 +78,7 @@
                         @if(User.Identity.IsAuthenticated)
                         {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="logout">로그아웃</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="logout">로그아웃</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="product" asp-action="register">상품등록</a>
@@ -87,19 +87,19 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="product" asp-action="list">전체상품</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="buylist">구매내역</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="buylist">구매내역</a>
                         </li>
                         }
                         else
                         {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="signup" asp-route-role="User">일반 회원가입</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="signup" asp-route-role="User">일반 회원가입</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="signup" asp-route-role="Seller">판매자 회원가입</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="signup" asp-route-role="Seller">판매자 회원가입</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="login">로그인</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="login">로그인</a>
                         </li>
                         }
                             @*<li><a href="./index.html">Home</a></li>

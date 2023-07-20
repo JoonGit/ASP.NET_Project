@@ -10,6 +10,7 @@ using System.Security.Claims;
 
 namespace MyBlog.Controllers
 {
+    [Route("order")]
     public class OrderController : Controller
     {
         // GET: HomeController1
@@ -40,8 +41,10 @@ namespace MyBlog.Controllers
         #endregion
 
         #region 장바구니 생성 및 가져오기
-        public IActionResult ShoppingCart()
+        [HttpGet("ShoppingCart")]
+        public ActionResult ShoppingCart()
         {
+            Console.WriteLine("장바구니");
             // 장바구니 생성
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
@@ -51,12 +54,14 @@ namespace MyBlog.Controllers
                 ShoppingCart = _shoppingCart,
                 ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
-
+            ViewBag.total = response.ShoppingCartTotal;
+            //return "장바구니";
             return View(response);
         }
         #endregion
 
         #region 장바구니에 상품 추가
+        [HttpPost("add")]
         // 구매시 상품 id와 count값 전달 받도록 만들기
         public async Task<IActionResult> AddItemToShoppingCart(int id, int count)
         {
@@ -66,25 +71,44 @@ namespace MyBlog.Controllers
             {
                 _shoppingCart.AddItemToCart(item, count);
             }
-            return RedirectToAction(nameof(ShoppingCart));
+            return Redirect("/order/ShoppingCart");
+            //return RedirectToAction(nameof(OrderController.ShoppingCart));
         }
 
         #endregion
 
-        #region 장바구니에 상품 삭제
-        public async Task<IActionResult> RemoveItemFromShoppingCart(int id, int count)
+        // 상품 수정과 상품 삭제 구분하기
+
+
+        #region 장바구니에 상품 수정
+        [HttpPost("edit")]
+        public async Task<IActionResult> EditItemFromShoppingCart(int id, int count)
         {
             var item = await _proudctesService.GetByIdAsync(id);
 
             if (item != null)
             {
-                _shoppingCart.RemoveItemFromCart(item, count);
+                _shoppingCart.EditItemFromCart(item, count);
             }
-            return RedirectToAction(nameof(ShoppingCart));
+            return Redirect("/order/ShoppingCart");
+        }
+        #endregion
+        #region 장바구니에 상품 삭제
+        [HttpGet("remove")]
+        public async Task<IActionResult> RemoveItemFromShoppingCart(int id)
+        {
+            var item = await _proudctesService.GetByIdAsync(id);
+
+            if (item != null)
+            {
+                _shoppingCart.RemoveItemFromCart(item);
+            }
+            return Redirect("/order/ShoppingCart");
         }
         #endregion
 
         #region 장바구니에 상품 전체 삭제
+        [HttpPost("clear")]
         public async Task<IActionResult> CompleteOrder()
         {
             var items = _shoppingCart.GetShoppingCartItems();

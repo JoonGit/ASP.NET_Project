@@ -1,4 +1,5 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using MyBlog.Models;
 using System;
@@ -29,6 +30,7 @@ namespace MyBlog.Data.Cart
             // 현재 접속한 유저의 DB에 CartId가 없으면 새로 생성
             return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
+        
         public void AddItemToCart(ProductModel product, int count)
         {
             var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Product.Id == product.Id && n.ShoppingCartId == ShoppingCartId);
@@ -50,21 +52,31 @@ namespace MyBlog.Data.Cart
             _context.SaveChanges();
         }
 
-        public void RemoveItemFromCart(ProductModel product, int count)
+        public void RemoveItemFromCart(ProductModel product)
         {
             var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Product.Id == product.Id && n.ShoppingCartId == ShoppingCartId);
 
-            if (shoppingCartItem != null)
-            {
-                if (shoppingCartItem.Count > 1)
-                {
-                    shoppingCartItem.Count = count;
-                }
-                else
-                {
-                    _context.ShoppingCartItems.Remove(shoppingCartItem);
-                }
-            }
+            _context.ShoppingCartItems.Remove(shoppingCartItem);
+            _context.SaveChanges();
+        }
+
+        public void EditItemFromCart(ProductModel product, int count)
+        {
+            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Product.Id == product.Id && n.ShoppingCartId == ShoppingCartId);
+
+            shoppingCartItem.Count = count;
+
+            //if (shoppingCartItem != null)
+            //{
+            //    if (shoppingCartItem.Count > 1)
+            //    {
+            //        shoppingCartItem.Count = count;
+            //    }
+            //    else
+            //    {
+            //        _context.ShoppingCartItems.Remove(shoppingCartItem);
+            //    }
+            //}
             _context.SaveChanges();
         }
 

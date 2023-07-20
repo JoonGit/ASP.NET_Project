@@ -1,0 +1,23 @@
+﻿
+@foreach(var item in Model.ShoppingCart.ShoppingCartItems)
+{
+
+    <form action="/order/edit" method="post">
+        <div>@item.Product.Name</div>
+        <input type="text" name="count" value="@item.Count">
+        <input type="hidden" name="id" value="@item.Product.Id">
+        <input type="submit" value="상품 수정" />  
+    </form>
+    <a href="/order/remove?id=@item.Product.Id">결제하기</a>
+@*        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+            <div class="featured__item">
+                <div class="featured__item__pic set-bg" data-setbg="@item2.URI" style="background-image: url(&quot;/@item2.URI&quot;);">
+                    <ul class="featured__item__pic__hover">
+                        <li><a href="#"><i class="fa fa-heart" onclick="sendRequest(@item2.Id)"></i></a></li>
+                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                        <li><a href=")*@
+
+}
+@*<form action="/order/clear" method="post">
+    <input type="submit" value="결제하기" />    
+</form>*@
