@@ -16,10 +16,6 @@ builder.Services.AddScoped<IFileService ,FileService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
 
-
-
-
-
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MyBlog.Data.BlogDbContext>(
     options => options.UseMySql(connection, ServerVersion.AutoDetect(connection))

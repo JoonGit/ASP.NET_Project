@@ -65,8 +65,9 @@ namespace MyBlog.Controllers
 
         #region 로그인
         [HttpGet("login")]
-        public async Task<IActionResult> Login()
+        public async Task<IActionResult> Login(string ReturnUrl)
         {
+            ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
 
@@ -104,7 +105,6 @@ namespace MyBlog.Controllers
             return RedirectToAction("Index", "Home");
         }
         #endregion
-
 
         #region 권한 없는 사용자가 접근했을 때 보내지는 페이지
         [HttpGet("accessdenied")]

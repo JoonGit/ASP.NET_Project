@@ -1,7 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Signup Page";
 }
             @if(TempData["Error"] != null)
             {
@@ -10,7 +8,8 @@
                 </div>
             }
 
-<form actin="/account/signup" method="post">
+@*꾸미기만 하면 완료*@
+<form asp-controller="Account" asp-action="Signup" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
     <input type="text" name="name" placeholder="Id" value="apple5"/>    
     <input type="password" name="password" placeholder="password" value="Dkagh1234!"/>   
     <input type="text" name="email" placeholder="email" value="apple5@gmail.com"/> 

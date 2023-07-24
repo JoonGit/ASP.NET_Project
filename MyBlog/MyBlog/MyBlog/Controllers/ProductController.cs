@@ -63,7 +63,6 @@ namespace MyBlog.Controllers
 
         #endregion
 
-
         #region 상품목록조회
         [HttpGet("list")]
         [AllowAnonymous]
@@ -133,13 +132,11 @@ namespace MyBlog.Controllers
             return Redirect("/product/list");
         }
         #endregion
-
-       
-
+        
         #region 상품 찜 하기
         // 상품 찜 하기
         [AllowAnonymous]
-        [HttpGet("Wish/{id:int}")]
+        [HttpGet("wish")]
         public async Task<string> Wish(int id)
         {
             var user = HttpContext.User;

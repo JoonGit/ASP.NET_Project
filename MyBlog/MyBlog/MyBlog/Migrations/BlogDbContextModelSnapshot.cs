@@ -225,6 +225,9 @@ namespace MyBlog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
                     b.Property<string>("NewIdentityUserId")
                         .IsRequired()
                         .HasColumnType("varchar(255)");

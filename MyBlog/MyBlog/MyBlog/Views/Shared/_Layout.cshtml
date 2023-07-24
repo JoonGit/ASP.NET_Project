@@ -63,43 +63,49 @@
             <div class="row">
                 <div class="col">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="/img/logo.png" alt=""></a>
+                        <a asp-controller="Home" asp-action="Index"><img src="/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-8">
                     <nav class="header__menu">
                         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @*로그인 된 사용자*@
                         @if(User.Identity.IsAuthenticated)
                         {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="logout">로그아웃</a>
+                            <a class="nav-link text-dark" asp-controller="account" asp-action="logout">로그아웃</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="product" asp-action="register">상품등록</a>
+                            <a class="nav-link text-dark" asp-controller="product" asp-action="list">전체상품</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="product" asp-action="list">전체상품</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="buylist">구매내역</a>
-                        </li>
-                        }
+                            <a class="nav-link text-dark" asp-controller="account" asp-action="buylist">마이페이지</a>
+                                </li>                         
+                                @*판매자*@
+                                @if (User.Identity.Name == "seller")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-controller="product" asp-action="register">상품등록</a>
+                                    </li>
+                                }
+                            }
+                        @*로그인 안된 사용자*@
                         else
                         {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="signup" asp-route-role="User">일반 회원가입</a>
+                            <a class="nav-link text-dark" asp-controller="account" asp-action="signup" asp-route-role="User">일반 회원가입</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="signup" asp-route-role="Seller">판매자 회원가입</a>
+                            <a class="nav-link text-dark" asp-controller="account" asp-action="signup" asp-route-role="Seller">판매자 회원가입</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="account" asp-action="login">로그인</a>
+                            <a class="nav-link text-dark" asp-controller="account" asp-action="login">로그인</a>
                         </li>
                         }
                             @*<li><a href="./index.html">Home</a></li>
@@ -121,6 +127,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            @*장바구니에 담신 숫자에 따라 값 변하기*@
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
@@ -214,7 +221,7 @@
 
     @* <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyBlog</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">MyBlog</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -222,33 +229,33 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         @if(User.Identity.IsAuthenticated)
                         {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="logout">로그아웃</a>
+                            <a class="nav-link text-dark" asp-controller="user" asp-action="logout">로그아웃</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="product" asp-action="register">상품등록</a>
+                            <a class="nav-link text-dark" asp-controller="product" asp-action="register">상품등록</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="product" asp-action="list">전체상품</a>
+                            <a class="nav-link text-dark" asp-controller="product" asp-action="list">전체상품</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="buylist">구매내역</a>
+                            <a class="nav-link text-dark" asp-controller="user" asp-action="buylist">구매내역</a>
                         </li>
                         }
                         else
                         {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="signup">회원가입</a>
+                            <a class="nav-link text-dark" asp-controller="user" asp-action="signup">회원가입</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="user" asp-action="login">로그인</a>
+                            <a class="nav-link text-dark" asp-controller="user" asp-action="login">로그인</a>
                         </li>
                         }
                         

@@ -18,8 +18,8 @@ namespace MyBlog.Controllers
             return View();
         }
 
-        #region 구매내역
-        [HttpGet("buylist")]
+        #region 내 정보
+        [HttpGet("mypage")]
         public async Task<IActionResult> MyPage()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MyBlog.Data;
 using MyBlog.Data.Cart;
 using MyBlog.Data.Service;
 using MyBlog.Data.ViewModels;
@@ -17,25 +18,33 @@ namespace MyBlog.Controllers
         private readonly ShoppingCart _shoppingCart;
         private readonly IOrderService _ordersService;
         private readonly IProudctesService _proudctesService;
+        private readonly UserManager<NewIdentityUser> _userManager;
+        private readonly BlogDbContext _dbContext;
 
         public OrderController(ShoppingCart shoppingCart
             , IOrderService orderService
-            , IProudctesService proudctesService)
+            , IProudctesService proudctesService
+            , UserManager<NewIdentityUser> userManager
+            , BlogDbContext dbContext)
+            
         {
             _shoppingCart = shoppingCart;
             _ordersService = orderService;
             _proudctesService = proudctesService;
+            _userManager = userManager;
+            _dbContext = dbContext;
         }
 
         #region 구매목록
-        public async Task<ActionResult> Index()
+        [HttpGet("index")]
+        public async Task<ActionResult> Index(string returnUrl)
         {
             // 구매 목록 가져오기
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             string userRole = User.FindFirstValue(ClaimTypes.Role);
 
             var orders = await _ordersService.GetOrdersByUserIdAndRoleAsync(userId, userRole);
-            // view 아직 안만듬
+            ViewBag.returnUrl = returnUrl;
             return View(orders);
         }
         #endregion
@@ -77,9 +86,6 @@ namespace MyBlog.Controllers
 
         #endregion
 
-        // 상품 수정과 상품 삭제 구분하기
-
-
         #region 장바구니에 상품 수정
         [HttpPost("edit")]
         public async Task<IActionResult> EditItemFromShoppingCart(int id, int count)
@@ -93,6 +99,7 @@ namespace MyBlog.Controllers
             return Redirect("/order/ShoppingCart");
         }
         #endregion
+
         #region 장바구니에 상품 삭제
         [HttpGet("remove")]
         public async Task<IActionResult> RemoveItemFromShoppingCart(int id)
@@ -108,7 +115,7 @@ namespace MyBlog.Controllers
         #endregion
 
         #region 장바구니에 상품 전체 삭제
-        [HttpPost("clear")]
+        [HttpGet("clear")]
         public async Task<IActionResult> CompleteOrder()
         {
             var items = _shoppingCart.GetShoppingCartItems();
@@ -122,24 +129,32 @@ namespace MyBlog.Controllers
         }
         #endregion
 
-        #region 장바구니
-        //[HttpGet("buy/{id:int}")]
-        //public async Task<IActionResult> buy(int id)
-        //{
-        //    var user = HttpContext.User;
-        //    // 현재 유저의 구매 이력 만들기 
-        //    var curUser = await _userManager.GetUserAsync(user);
-        //    BuyListModel buyList = new BuyListModel()
-        //    {
-        //        // 현재 구매하는 상품의 id
-        //        ProductModelId = id,
-        //        // 구매하는 유저의 id
-        //        NewIdentityUserId = curUser.Id,
-        //    };
-        //    _dbContext.Add(buyList);
-        //    _dbContext.SaveChanges();
-        //    return Redirect("/product/list");
-        //}
+        #region 구매
+        // 임시로 Get
+        [HttpGet("buy")]
+        public async Task<IActionResult> buy()
+        {
+            var user = HttpContext.User;
+            // 현재 유저의 구매 이력 만들기 
+            var curUser = await _userManager.GetUserAsync(user);
+            var items = _shoppingCart.GetShoppingCartItems();
+            foreach (var item in items)
+            {
+                BuyListModel buyList = new BuyListModel()
+                {
+                    // 현재 구매하는 상품의 id
+                    ProductModelId = item.Product.Id,
+                    // 구매하는 유저의 id
+                    NewIdentityUserId = curUser.Id,
+                    Count = item.Count,
+                };
+                _dbContext.BuyLists.Add(buyList);
+            }
+            // 결제후 db 저장
+            _dbContext.SaveChanges();
+            CompleteOrder();
+            return Redirect("/product/list");
+        }
         #endregion
     }
 }
