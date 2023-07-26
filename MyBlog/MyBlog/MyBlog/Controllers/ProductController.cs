@@ -81,7 +81,7 @@ namespace MyBlog.Controllers
         public async Task<IActionResult> Read(int id)
         {
             // 상품의 Id로 해당 물건 정보 가져오기
-            var result = _service.GetByIdAsync(id);
+            var result = await _service.GetByIdAsync(id);
             return View(result);
         }
         #endregion
@@ -159,6 +159,26 @@ namespace MyBlog.Controllers
                 _dbContext.SaveChanges();
                 return "remove";
             }
+        }
+        #endregion
+
+        #region 판매자 상품 목록
+        [HttpGet("myProduct")]
+        public IActionResult MyProduct()
+        {
+            var curUser = _userManager.GetUserId(HttpContext.User);
+            var result = _dbContext.Products
+                .Where(p => p.RegisterUserId == curUser)
+                .Include(p => p.buyListModels).ThenInclude(a => a.NewIdentityUser)
+                .Include(p => p.WishUsers)
+                .ToList();
+            foreach(var product in result)
+            {
+                int a = product.buyListModels.Count();
+            }
+            return View(result);
+            //return View("/Views/Product/MyProduct.cshtml");
+
         }
         #endregion
     }

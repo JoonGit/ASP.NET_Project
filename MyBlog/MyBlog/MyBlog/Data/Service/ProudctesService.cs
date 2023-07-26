@@ -30,7 +30,7 @@ namespace MyBlog.Data.Service
                         // 파일이 저장될 경로
                         string path = "wwwroot/Seller/" + model.RegisterUserId;
                         // DB에 저장되는 파일의 경로
-                        model.URI = "Seller/" + model.RegisterUserId + "/" + file.FileName;
+                        model.URI = "/Seller/" + model.RegisterUserId + "/" + file.FileName;
                         string fileName = Path.GetFileName(Convert.ToString(file.FileName));
 
                         //파일 업로드

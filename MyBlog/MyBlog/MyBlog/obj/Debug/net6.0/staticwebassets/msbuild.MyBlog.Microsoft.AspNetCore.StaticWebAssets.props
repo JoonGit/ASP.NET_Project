@@ -1792,12 +1792,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\sass\_variable.scss))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Seller\277fc007-7e94-4334-9041-5c573ee577f3\img.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Seller\277fc007-7e94-4334-9041-5c573ee577f3\스크린샷(123).png))">
       <SourceType>Package</SourceType>
       <SourceId>MyBlog</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/MyBlog</BasePath>
-      <RelativePath>Seller/277fc007-7e94-4334-9041-5c573ee577f3/img.jpg</RelativePath>
+      <RelativePath>Seller/277fc007-7e94-4334-9041-5c573ee577f3/스크린샷(123).png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1806,7 +1806,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Seller\277fc007-7e94-4334-9041-5c573ee577f3\img.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Seller\277fc007-7e94-4334-9041-5c573ee577f3\스크린샷(123).png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Source\bootstrap-4.4.1-dist.zip))">
       <SourceType>Package</SourceType>

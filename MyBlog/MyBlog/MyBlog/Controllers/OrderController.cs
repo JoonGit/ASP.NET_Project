@@ -143,8 +143,10 @@ namespace MyBlog.Controllers
                 BuyListModel buyList = new BuyListModel()
                 {
                     // 현재 구매하는 상품의 id
+                    ProductModel = item.Product,
                     ProductModelId = item.Product.Id,
                     // 구매하는 유저의 id
+                    NewIdentityUser = curUser,
                     NewIdentityUserId = curUser.Id,
                     Count = item.Count,
                 };

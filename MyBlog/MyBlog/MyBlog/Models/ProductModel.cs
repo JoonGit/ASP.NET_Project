@@ -14,6 +14,8 @@ namespace MyBlog.Models
 
         public string URI { get; set; }
 
+        public string Document { get; set; }
+
         // 등록한 사람 정보
         public string RegisterUserId { get; set; }
         public NewIdentityUser RegisterUser { get; set; }
