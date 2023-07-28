@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MyBlog.Controllers;
 using MyBlog.Data;
 using MyBlog.Data.Cart;
 using MyBlog.Data.Service;
@@ -14,7 +16,17 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IProudctesService, ProudctesService>();
 builder.Services.AddScoped<IFileService ,FileService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+builder.Services.AddScoped(sc => OrderController.GetShoppingCart(sc));
+builder.Services.AddScoped(sc => ShoppingCart.Testfun(sc));
+
+builder.Services.AddAuthentication(
+    CookieAuthenticationDefaults.AuthenticationScheme
+    ).AddCookie(options => {
+        //options.ExpireTimeSpan = TimeSpan.FromMinutes(60)
+        options.SlidingExpiration = true;
+        options.AccessDeniedPath = "/home/accessdenied";
+        options.LoginPath = "/account/login";
+    });
 
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MyBlog.Data.BlogDbContext>(
@@ -46,6 +58,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+
 
 app.MapControllerRoute(
     name: "default",

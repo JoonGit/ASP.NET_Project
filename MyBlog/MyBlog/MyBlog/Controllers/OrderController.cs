@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using MyBlog.Data;
 using MyBlog.Data.Cart;
 using MyBlog.Data.Service;
 using MyBlog.Data.ViewModels;
 using MyBlog.Models;
 using System.Security.Claims;
+using System.Drawing.Printing;
 
 namespace MyBlog.Controllers
 {
@@ -33,6 +37,33 @@ namespace MyBlog.Controllers
             _proudctesService = proudctesService;
             _userManager = userManager;
             _dbContext = dbContext;
+        }
+
+        public static ShoppingCart GetShoppingCart(IServiceProvider services)
+        {
+            Console.WriteLine("GetShoppingCart 실행");
+            // 현재 접속한 유저의 DB를 가져옴
+            var context = services.GetService<BlogDbContext>();
+
+            // 현재 접속한 유저의 Session에 CartId가 없으면 새로 생성
+            //string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
+            string cartId = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Request.Cookies["CartId"] ?? Guid.NewGuid().ToString();
+            // 현재 접속한 유저의 Session에 CartId를 저장
+            var identity = new ClaimsIdentity(
+                    new[]
+                    {
+                        new Claim("ItemCount", Convert.ToString(0)), // 저장하고 싶은 사용자 명
+                        new Claim("CartId", "ItemCount"), // 저장하고 싶은 사용자 명
+                    }, authenticationType: CookieAuthenticationDefaults.AuthenticationScheme);
+
+            services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.SignInAsync(
+                scheme: CookieAuthenticationDefaults.AuthenticationScheme,
+                principal: new ClaimsPrincipal(identity: identity),
+                properties: new AuthenticationProperties()
+                );
+
+            // 현재 접속한 유저의 DB에 CartId가 없으면 새로 생성
+            return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
 
         #region 구매목록
@@ -76,9 +107,14 @@ namespace MyBlog.Controllers
         {
             var item = await _proudctesService.GetByIdAsync(id);
 
+            var resp = new HttpResponseMessage();
+
+
             if (item != null)
             {
                 _shoppingCart.AddItemToCart(item, count);
+
+
             }
             return Redirect("/order/ShoppingCart");
             //return RedirectToAction(nameof(OrderController.ShoppingCart));
