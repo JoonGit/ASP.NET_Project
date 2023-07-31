@@ -164,7 +164,7 @@
                             <a class="nav-link text-dark" asp-controller="account" asp-action="buylist">마이페이지</a>
                                 </li>                         
                                 @*판매자*@
-                                @if (User.Identity.Name == "seller")
+                                @if (User.IsInRole("Seller"))
                                 {
                                     <li class="nav-item">
                                         <a class="nav-link text-dark" asp-controller="product" asp-action="register">상품등록</a>

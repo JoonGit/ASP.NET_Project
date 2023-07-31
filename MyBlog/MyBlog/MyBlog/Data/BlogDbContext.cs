@@ -16,7 +16,6 @@ namespace MyBlog.Data
         public DbSet<BuyListModel> BuyLists { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<OrderModel> Orders { get; set; }
-
         public DbSet<OrderItemModel> OrderItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

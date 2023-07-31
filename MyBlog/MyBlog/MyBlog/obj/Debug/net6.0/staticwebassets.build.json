@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E6gOyagYL6tOePWz3sgz54anKH5LSpOS6fngiK54wHo=",
+  "Hash": "6VxOvW+BKY0fGJoQriKlL4C8JIxycQsQRxMNqtQRhFo=",
   "Source": "MyBlog",
   "BasePath": "_content/MyBlog",
   "Mode": "Default",
@@ -1936,6 +1936,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sass\\style.scss"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Seller\\277fc007-7e94-4334-9041-5c573ee577f3\\img.jpg",
+      "SourceId": "MyBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\",
+      "BasePath": "_content/MyBlog",
+      "RelativePath": "Seller/277fc007-7e94-4334-9041-5c573ee577f3/img.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Seller\\277fc007-7e94-4334-9041-5c573ee577f3\\img.jpg"
     },
     {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MyBlog\\MyBlog\\MyBlog\\wwwroot\\Seller\\277fc007-7e94-4334-9041-5c573ee577f3\\스크린샷(123).png",

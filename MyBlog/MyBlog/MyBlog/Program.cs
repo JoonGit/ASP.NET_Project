@@ -59,7 +59,6 @@ app.UseAuthorization();
 
 AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
 
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

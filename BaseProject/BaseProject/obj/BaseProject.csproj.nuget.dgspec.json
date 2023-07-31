@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "Microsoft.AspNet.Mvc": {
               "target": "Package",
               "version": "[5.2.9, )"

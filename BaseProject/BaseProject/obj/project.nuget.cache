@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aK/61gcciT1EllDgaOpZoxPTbLWE6YmVNG8GyxYJw69I4e5k2rXY91OfjzHcUsx8JRoAiF9Gh+r/kzUtd3sRkw==",
+  "dgSpecHash": "vMeIGUkl/pC2mn7NLyyIhug3mjHTOelnh+M4DW844fr26p3NBTO1AsvDMCQY8onTtYYeOpzR8E9mQo42fkyJUg==",
   "success": true,
   "projectFilePath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\BaseProject\\BaseProject\\BaseProject.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\Joon\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Joon\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Joon\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Joon\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512",
     "C:\\Users\\Joon\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
     "C:\\Users\\Joon\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\Joon\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",

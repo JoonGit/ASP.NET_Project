@@ -1,11 +1,11 @@
 c#
 - EntityBase
 	- ExController 만들기
-- Seed
-- Roles
-- Mysql
-- Mqtt
-- Siglar
+- Seed *
+- Roles *
+- Mysql *
+- Mqtt *
+- Siglar *
 
 python
 - Yolo 활용
