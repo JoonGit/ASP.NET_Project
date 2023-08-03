@@ -3,7 +3,7 @@ using BaseProject.Models;
 
 namespace BaseProject.Data.Service
 {
-    public interface IExService : IEntityBaseRepository<ExModel>
+    public interface IExService : IEntityBaseRepository<ExModel> 
     {
     }
 }

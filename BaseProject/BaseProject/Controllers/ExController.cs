@@ -21,7 +21,7 @@ namespace BaseProject.Controllers
             _exService.UpdateAsync(0, exModel); // Id와 수정할 모델
             _exService.DeleteAsync(0);  // 삭제할 모델
             _exService.GetAllAsync(); // 모든 모델
-            _exService.GetByIdAsync(1); // Id로 모델 검색
+            var result = _exService.GetByIdAsync(1); // Id로 모델 검색
             
             return View();
         }

@@ -1,5 +1,4 @@
-﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
-                 <script>
+﻿                 <script>
                      // 허브 연결
                      const Imgconnection = new signalR.HubConnectionBuilder()
                                 .withUrl("/imghub")

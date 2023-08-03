@@ -19,6 +19,244 @@ namespace BaseProject.Migrations
                 .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("BaseProject.Models.IoTDataModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Data")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IoTModelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IoTModelId");
+
+                    b.ToTable("IoTDataModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.IoTModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IoTModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.LoginLogModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserIdentityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserIdentityId1")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserIdentityId1");
+
+                    b.ToTable("LoginLogModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.MaterialModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductModelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductModelId");
+
+                    b.ToTable("MaterialModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.OrderEditLogModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EditTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderEditLogModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.OrderModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Customer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("EndDate")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RegisterDate")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.OrderProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderModelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductModelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderModelId");
+
+                    b.HasIndex("ProductModelId");
+
+                    b.ToTable("OrderProducts");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.ProductEditLogModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EditTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductModelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductModelId");
+
+                    b.ToTable("ProductEditLogModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.ProductModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductModels");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.UserEditLogModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EditTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserIdentityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserIdentityId1")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserIdentityId1");
+
+                    b.ToTable("UserEditLogModels");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -80,6 +318,10 @@ namespace BaseProject.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
@@ -130,6 +372,10 @@ namespace BaseProject.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -211,6 +457,94 @@ namespace BaseProject.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("BaseProject.Models.UserIdentity", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.HasDiscriminator().HasValue("UserIdentity");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.IoTDataModel", b =>
+                {
+                    b.HasOne("BaseProject.Models.IoTModel", "IoTModel")
+                        .WithMany()
+                        .HasForeignKey("IoTModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IoTModel");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.LoginLogModel", b =>
+                {
+                    b.HasOne("BaseProject.Models.UserIdentity", "UserIdentity")
+                        .WithMany()
+                        .HasForeignKey("UserIdentityId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserIdentity");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.MaterialModel", b =>
+                {
+                    b.HasOne("BaseProject.Models.ProductModel", null)
+                        .WithMany("materialModels")
+                        .HasForeignKey("ProductModelId");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.OrderEditLogModel", b =>
+                {
+                    b.HasOne("BaseProject.Models.OrderModel", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.OrderProduct", b =>
+                {
+                    b.HasOne("BaseProject.Models.OrderModel", "OrderModel")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BaseProject.Models.ProductModel", "ProductModel")
+                        .WithMany()
+                        .HasForeignKey("ProductModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OrderModel");
+
+                    b.Navigation("ProductModel");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.ProductEditLogModel", b =>
+                {
+                    b.HasOne("BaseProject.Models.ProductModel", "ProductModel")
+                        .WithMany()
+                        .HasForeignKey("ProductModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductModel");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.UserEditLogModel", b =>
+                {
+                    b.HasOne("BaseProject.Models.UserIdentity", "UserIdentity")
+                        .WithMany()
+                        .HasForeignKey("UserIdentityId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserIdentity");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -260,6 +594,16 @@ namespace BaseProject.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BaseProject.Models.OrderModel", b =>
+                {
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.ProductModel", b =>
+                {
+                    b.Navigation("materialModels");
                 });
 #pragma warning restore 612, 618
         }
