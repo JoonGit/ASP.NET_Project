@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BaseProject.Data.Static;
+using BaseProject.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BaseProject.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+      
     }
 }

@@ -20,10 +20,8 @@ namespace MyBlog.Models
         public string RegisterUserId { get; set; }
         public NewIdentityUser RegisterUser { get; set; }
 
-
         // 구매 정보
         public List<BuyListModel> buyListModels { get; } = new List<BuyListModel>();
-
         // 찜하기 한 사람 정보
         public List<NewIdentityUser> WishUsers { get; } = new List<NewIdentityUser>();
     }
