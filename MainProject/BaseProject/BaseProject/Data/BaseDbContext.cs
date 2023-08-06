@@ -11,6 +11,7 @@ namespace BaseProject.Data
         {
         }
 
+        public DbSet<UserIdentity> Users { get; set; }
         public DbSet<IoTDataModel> IoTDataModels { get; set; }
         
         public DbSet<IoTModel> IoTModels { get; set; }

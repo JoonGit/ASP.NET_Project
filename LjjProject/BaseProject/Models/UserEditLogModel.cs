@@ -8,7 +8,7 @@ namespace BaseProject.Models
         [Key]
         public int Id { get; set; }
 
-        public int UserIdentityId { get; set; }
+        public string UserIdentityId { get; set; }
         public UserIdentity UserIdentity { get; set;}
 
         public DateTime EditTime { get; set; }

@@ -66,16 +66,13 @@ namespace BaseProject.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("UserIdentityId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserIdentityId1")
+                    b.Property<string>("UserIdentityId")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserIdentityId1");
+                    b.HasIndex("UserIdentityId");
 
                     b.ToTable("LoginLogModels");
                 });
@@ -243,16 +240,13 @@ namespace BaseProject.Migrations
                     b.Property<DateTime>("EditTime")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("UserIdentityId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserIdentityId1")
+                    b.Property<string>("UserIdentityId")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserIdentityId1");
+                    b.HasIndex("UserIdentityId");
 
                     b.ToTable("UserEditLogModels");
                 });
@@ -479,7 +473,7 @@ namespace BaseProject.Migrations
                 {
                     b.HasOne("BaseProject.Models.UserIdentity", "UserIdentity")
                         .WithMany()
-                        .HasForeignKey("UserIdentityId1")
+                        .HasForeignKey("UserIdentityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -538,7 +532,7 @@ namespace BaseProject.Migrations
                 {
                     b.HasOne("BaseProject.Models.UserIdentity", "UserIdentity")
                         .WithMany()
-                        .HasForeignKey("UserIdentityId1")
+                        .HasForeignKey("UserIdentityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

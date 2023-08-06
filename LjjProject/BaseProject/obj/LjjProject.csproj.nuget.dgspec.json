@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj": {}
+    "C:\\Users\\JH\\C\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj": {}
   },
   "projects": {
-    "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj": {
+    "C:\\Users\\JH\\C\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj",
+        "projectUniqueName": "C:\\Users\\JH\\C\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj",
         "projectName": "LjjProject",
-        "projectPath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj",
-        "packagesPath": "C:\\Users\\Joon\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\LjjProject\\BaseProject\\obj\\",
+        "projectPath": "C:\\Users\\JH\\C\\ASP.NET_Project\\LjjProject\\BaseProject\\LjjProject.csproj",
+        "packagesPath": "C:\\Users\\JH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JH\\C\\ASP.NET_Project\\LjjProject\\BaseProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Joon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,6 +82,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

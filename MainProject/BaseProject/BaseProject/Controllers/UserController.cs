@@ -4,6 +4,7 @@ using BaseProject.Data.Static;
 using BaseProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace BaseProject.Controllers
@@ -76,23 +77,51 @@ namespace BaseProject.Controllers
         }
         #endregion
 
-        #region 권한 승인
-        [HttpPost("RollAccept")]
-        public async Task<IActionResult> RollAccept(string id, string roll)
+        #region 유저리스트
+        [HttpGet("userlist")]
+        public async Task<IActionResult> UserList()
         {
-            if (roll.Equals(UserRoles.Member))
+
+            // db에 있는 권한 정보 가져오기
+
+            
+            var userList = await (from userRole in _dbContext.UserRoles
+                              join role in _dbContext.Roles on userRole.RoleId equals role.Id
+                              join user in _dbContext.Users on userRole.UserId equals user.Id
+                              select new
+                              {
+                                  Id = user.Id,
+                                  Role = role.Name,
+                                  UserName = user.UserName,
+                                  ImgUrl = user.ImgUrl
+                              }).ToListAsync();
+
+            return View(userList);
+        }
+
+        #endregion
+        #region 권한 승인
+        [HttpPost("rollaccept")]
+        public async Task<IActionResult> RollAccept(string Id, string Role, string BeforeRole)
+        {
+            var result = await _userManager.RemoveFromRoleAsync(await _userManager.FindByIdAsync(Id), BeforeRole);
+            if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(id), UserRoles.Member);
+                if (Role.Equals(UserRoles.Member))
+                {
+                    await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(Id), UserRoles.Member);
+                }
+                else if (Role.Equals(UserRoles.Manager))
+                {
+                    await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(Id), UserRoles.Manager);
+                }
+                else
+                {
+                    await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(Id), UserRoles.NoRole);
+                }
             }
-            else if (roll.Equals(UserRoles.Manager))
-            {
-                await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(id), UserRoles.Manager);
-            }
-            else
-            {
-                await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(id), UserRoles.NoRole);
-            }
-            return Redirect("/account/login");
+            
+            return Redirect("/user/login");
         }
 
         #endregion
@@ -147,7 +176,7 @@ namespace BaseProject.Controllers
             var user = await _userManager.FindByIdAsync(id);
             user.Status = "False";
             await _userManager.UpdateAsync(user);
-            return Redirect("/account/login");
+            return Redirect("/user/login");
         }
         #endregion
 
