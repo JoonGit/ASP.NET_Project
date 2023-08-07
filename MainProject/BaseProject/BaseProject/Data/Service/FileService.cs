@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using BaseProject.Data.Base;
+using BaseProject.Models;
+using System.IO;
 
 namespace BaseProject.Data.Service
 {
-    public class FileService : IFileService
+    public class FileService
     {
         private async Task FileUpload(string path, string fileName, IFormFile file)
         {
@@ -33,14 +35,45 @@ namespace BaseProject.Data.Service
             }
         }
 
-        Task IFileService.FileUpload(string path, string fileName, IFormFile file)
+        private async Task<string> FileCreat(string model_id, IFormFile file, string pathName)
         {
-            return FileUpload(path, fileName, file);
+            try
+            {
+                // 파일이 저장될 경로
+                string path = "wwwroot/" + pathName + "/ " + model_id;
+                // DB에 저장되는 파일의 경로
+                string url = "/" + pathName + "/" + model_id + "/" + file.FileName;
+                // 여러개의 파일일 경우 하나씩 저장
+                if (file.Length > 0)
+                {
+                    string fileName = Path.GetFileName(Convert.ToString(file.FileName));
+
+                    //파일 업로드
+                    await FileUpload(path, fileName, file);
+                }
+                return url;
+            }
+            catch (Exception ex)
+            {
+                // 파일 업로드 실패 처리
+                Console.WriteLine(ex.Message);
+                return "Fail";
+            }
         }
 
-        Task IFileService.FileDelete(string path)
+        private async Task<string> FileUpdate(string model_id, IFormFile file, string pathName)
         {
-            return FileDelete(path);
+            string path = "wwwroot/" + pathName + "/" + model_id;
+            await FileDelete(path);
+            return await FileCreat(model_id, file, pathName);
+
         }
+
+        //Task IFileService.FileUpload(string path, string fileName, IFormFile file)
+        //{
+        //    return FileUpload(path, fileName, file);
+        //}
+
+
     }
 }

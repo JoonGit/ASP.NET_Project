@@ -6,5 +6,8 @@ namespace BaseProject.Data.Service
     public interface IUserService 
     {
         Task<string> FileUpload(UserIdentity model, IFormFile file);
+        Task<string> FileUpdate(UserIdentity model, IFormFile file);
     }
+
+
 }

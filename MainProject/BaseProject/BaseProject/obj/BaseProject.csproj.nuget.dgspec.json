@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JH\\C\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj": {}
+    "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JH\\C\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj": {
+    "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JH\\C\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj",
+        "projectUniqueName": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj",
         "projectName": "BaseProject",
-        "projectPath": "C:\\Users\\JH\\C\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj",
-        "packagesPath": "C:\\Users\\JH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JH\\C\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\obj\\",
+        "projectPath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\BaseProject.csproj",
+        "packagesPath": "C:\\Users\\Joon\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

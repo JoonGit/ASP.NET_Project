@@ -19,7 +19,7 @@ namespace BaseProject.Migrations
                 .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("BaseProject.Models.InventoryLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Inventory_Log_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,10 +35,10 @@ namespace BaseProject.Migrations
 
                     b.HasIndex("InventoryId");
 
-                    b.ToTable("InventoryLogModels");
+                    b.ToTable("Inventory_Log_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.InventoryModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Inventory_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,16 +53,16 @@ namespace BaseProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InventoryModels");
+                    b.ToTable("Inventory_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.InventoryProductModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Inventory_Product_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("InventoryModelId")
+                    b.Property<int?>("Inventory_ModelId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
@@ -73,14 +73,14 @@ namespace BaseProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("InventoryModelId");
+                    b.HasIndex("Inventory_ModelId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("InventoryProductModel");
+                    b.ToTable("Inventory_Product_Model");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.IoTDataModel", b =>
+            modelBuilder.Entity("BaseProject.Models.IoT_Data_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,10 +99,10 @@ namespace BaseProject.Migrations
 
                     b.HasIndex("IoTModelId");
 
-                    b.ToTable("IoTDataModels");
+                    b.ToTable("IoT_Data_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.IoTModel", b =>
+            modelBuilder.Entity("BaseProject.Models.IoT_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -114,27 +114,33 @@ namespace BaseProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("IoTModels");
+                    b.ToTable("IoT_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.LoginLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Login_Log_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("UserIdentityId")
+                    b.Property<DateTime>("LoginTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserIdentityId")
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserIdentityId");
 
-                    b.ToTable("LoginLogModels");
+                    b.ToTable("Login_Log_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.MaterialModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Metrail_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -160,10 +166,10 @@ namespace BaseProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MaterialModels");
+                    b.ToTable("Material_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.OrderEditLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Order_Edit_Log_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -179,10 +185,10 @@ namespace BaseProject.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderEditLogModels");
+                    b.ToTable("Order_Edit_Log_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.OrderModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Order_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -206,10 +212,10 @@ namespace BaseProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderModels");
+                    b.ToTable("Order_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.OrderProduct", b =>
+            modelBuilder.Entity("BaseProject.Models.Order_Product_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -230,10 +236,10 @@ namespace BaseProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts");
+                    b.ToTable("Order_Products");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.ProductEditLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Product_Edit_LogModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -249,10 +255,10 @@ namespace BaseProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductEditLogModels");
+                    b.ToTable("Product_Edit_Log_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.ProductModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Product_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -265,19 +271,23 @@ namespace BaseProject.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("price")
+                    b.Property<int>("Price")
                         .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductModels");
+                    b.ToTable("Product_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.ProductUseMetrailModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Product_Use_Metrail_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -286,12 +296,25 @@ namespace BaseProject.Migrations
                     b.Property<DateTime>("EditTime")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("MetrailId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("ProductUseMetrailModels");
+                    b.HasIndex("MetrailId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Product_Use_Metrail_Models");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.UserEditLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.User_Edit_Log_Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -308,7 +331,7 @@ namespace BaseProject.Migrations
 
                     b.HasIndex("UserIdentityId");
 
-                    b.ToTable("UserEditLogModels");
+                    b.ToTable("User_Edit_Log_Models");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -511,21 +534,6 @@ namespace BaseProject.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ProductModelProductUseMetrailModel", b =>
-                {
-                    b.Property<int>("ProductModelsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductUseMetrailModelsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductModelsId", "ProductUseMetrailModelsId");
-
-                    b.HasIndex("ProductUseMetrailModelsId");
-
-                    b.ToTable("ProductModelProductUseMetrailModel");
-                });
-
             modelBuilder.Entity("BaseProject.Models.UserIdentity", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
@@ -544,9 +552,9 @@ namespace BaseProject.Migrations
                     b.HasDiscriminator().HasValue("UserIdentity");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.InventoryLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Inventory_Log_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.InventoryModel", "Inventory")
+                    b.HasOne("BaseProject.Models.Inventory_Model", "Inventory")
                         .WithMany("InventoryLogModels")
                         .HasForeignKey("InventoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -555,13 +563,13 @@ namespace BaseProject.Migrations
                     b.Navigation("Inventory");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.InventoryProductModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Inventory_Product_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.InventoryModel", null)
+                    b.HasOne("BaseProject.Models.Inventory_Model", null)
                         .WithMany("InventoryProductModels")
-                        .HasForeignKey("InventoryModelId");
+                        .HasForeignKey("Inventory_ModelId");
 
-                    b.HasOne("BaseProject.Models.ProductModel", "Product")
+                    b.HasOne("BaseProject.Models.Product_Model", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -570,9 +578,9 @@ namespace BaseProject.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.IoTDataModel", b =>
+            modelBuilder.Entity("BaseProject.Models.IoT_Data_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.IoTModel", "IoTModel")
+                    b.HasOne("BaseProject.Models.IoT_Model", "IoTModel")
                         .WithMany()
                         .HasForeignKey("IoTModelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -581,20 +589,18 @@ namespace BaseProject.Migrations
                     b.Navigation("IoTModel");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.LoginLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Login_Log_Model", b =>
                 {
                     b.HasOne("BaseProject.Models.UserIdentity", "UserIdentity")
                         .WithMany()
-                        .HasForeignKey("UserIdentityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserIdentityId");
 
                     b.Navigation("UserIdentity");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.OrderEditLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Order_Edit_Log_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.OrderModel", "Order")
+                    b.HasOne("BaseProject.Models.Order_Model", "Order")
                         .WithMany("OrderEditLogModels")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -603,15 +609,15 @@ namespace BaseProject.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.OrderProduct", b =>
+            modelBuilder.Entity("BaseProject.Models.Order_Product_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.OrderModel", "Order")
+                    b.HasOne("BaseProject.Models.Order_Model", "Order")
                         .WithMany("OrderProducts")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BaseProject.Models.ProductModel", "Product")
+                    b.HasOne("BaseProject.Models.Product_Model", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -622,9 +628,9 @@ namespace BaseProject.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.ProductEditLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Product_Edit_LogModel", b =>
                 {
-                    b.HasOne("BaseProject.Models.ProductModel", "Product")
+                    b.HasOne("BaseProject.Models.Product_Model", "Product")
                         .WithMany("ProductEditLogModels")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -633,7 +639,26 @@ namespace BaseProject.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.UserEditLogModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Product_Use_Metrail_Model", b =>
+                {
+                    b.HasOne("BaseProject.Models.Metrail_Model", "Metrail")
+                        .WithMany()
+                        .HasForeignKey("MetrailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BaseProject.Models.Product_Model", "Product")
+                        .WithMany("ProductUseMetrailModels")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Metrail");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.User_Edit_Log_Model", b =>
                 {
                     b.HasOne("BaseProject.Models.UserIdentity", "UserIdentity")
                         .WithMany()
@@ -695,38 +720,25 @@ namespace BaseProject.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProductModelProductUseMetrailModel", b =>
-                {
-                    b.HasOne("BaseProject.Models.ProductModel", null)
-                        .WithMany()
-                        .HasForeignKey("ProductModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BaseProject.Models.ProductUseMetrailModel", null)
-                        .WithMany()
-                        .HasForeignKey("ProductUseMetrailModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BaseProject.Models.InventoryModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Inventory_Model", b =>
                 {
                     b.Navigation("InventoryLogModels");
 
                     b.Navigation("InventoryProductModels");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.OrderModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Order_Model", b =>
                 {
                     b.Navigation("OrderEditLogModels");
 
                     b.Navigation("OrderProducts");
                 });
 
-            modelBuilder.Entity("BaseProject.Models.ProductModel", b =>
+            modelBuilder.Entity("BaseProject.Models.Product_Model", b =>
                 {
                     b.Navigation("ProductEditLogModels");
+
+                    b.Navigation("ProductUseMetrailModels");
                 });
 #pragma warning restore 612, 618
         }

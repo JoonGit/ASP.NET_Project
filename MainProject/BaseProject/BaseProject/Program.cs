@@ -15,8 +15,9 @@ builder.Services.AddControllersWithViews();
 //builder.Services.AddSignalR(options => options.MaximumReceiveMessageSize = 1024 * 1024 * 1024);
 
 // Service Interfase 추가
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IFileService, FileService>();
+//builder.Services.AddScoped<IUserService, UserService>();
+//builder.Services.AddScoped<IFileService<T>, FileService>();
+//builder.Services.AddScoped<IProductService, ProductService>();
 
 // 의존성 주입
 // builder.Services.AddScoped(sc => OrderController.GetShoppingCart(sc));

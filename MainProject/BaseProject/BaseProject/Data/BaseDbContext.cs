@@ -12,34 +12,36 @@ namespace BaseProject.Data
         }
 
         public DbSet<UserIdentity> Users { get; set; }
-        public DbSet<IoTDataModel> IoTDataModels { get; set; }
-        
-        public DbSet<IoTModel> IoTModels { get; set; }
+        public DbSet<User_Edit_Log_Model> User_Edit_Log_Models { get; set; }
 
-        public DbSet<LoginLogModel> LoginLogModels { get; set; }
+        public DbSet<IoT_Data_Model> IoT_Data_Models { get; set; }        
+        public DbSet<IoT_Model> IoT_Models { get; set; }
 
-        public DbSet<MaterialModel> MaterialModels { get; set; }
+        public DbSet<Login_Log_Model> Login_Log_Models { get; set; }
+        public DbSet<Metrail_Model> Material_Models { get; set; }
 
-        public DbSet<OrderModel> OrderModels { get; set; }
-        public DbSet<OrderProduct> OrderProducts { get; set; }
-        public DbSet<OrderEditLogModel> OrderEditLogModels { get; set; }        
+        public DbSet<Order_Model> Order_Models { get; set; }
+        public DbSet<Order_Product_Model> Order_Products { get; set; }
+        public DbSet<Order_Edit_Log_Model> Order_Edit_Log_Models { get; set; }        
 
-        public DbSet<ProductEditLogModel> ProductEditLogModels { get; set; }
+        public DbSet<Product_Edit_LogModel> Product_Edit_Log_Models { get; set; }
+        public DbSet<Product_Model> Product_Models { get; set; }
+        public DbSet<Product_Use_Metrail_Model> Product_Use_Metrail_Models { get; set; }
 
-        public DbSet<ProductModel> ProductModels { get; set; }
-
-        public DbSet<UserEditLogModel> UserEditLogModels { get; set; }
-        public DbSet<ProductUseMetrailModel> ProductUseMetrailModels { get; set; }
-        public DbSet<InventoryModel> InventoryModels { get; set; }
-        public DbSet<InventoryLogModel> InventoryLogModels { get; set; }
+        public DbSet<Inventory_Model> Inventory_Models { get; set; }
+        public DbSet<Inventory_Edit_Log_Model> Inventory_Edit_Log_Model { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ProductEditLogModel>()
+            modelBuilder.Entity<Product_Edit_LogModel>()
                 .HasOne(p => p.Product)
                 .WithMany(p => p.ProductEditLogModels);
+
+            modelBuilder.Entity<Product_Model>()
+                .Ignore(p => p.MetrailId)
+                .Ignore(p => p.count);
 
             //modelBuilder.Entity<ProductModel>()
             //    .HasMany(p => p.WishUsers)

@@ -1,6 +1,7 @@
 ﻿using BaseProject.Data;
 using BaseProject.Data.Service;
 using BaseProject.Data.Static;
+using BaseProject.Migrations;
 using BaseProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,18 +13,18 @@ namespace BaseProject.Controllers
     [Route("user")]
     public class UserController : Controller
     {
-        private readonly IUserService _usersService;
+        private readonly IFileService _fileService;
         private readonly UserManager<UserIdentity> _userManager;
         private readonly SignInManager<UserIdentity> _signInManager;
         private readonly BaseDbContext _dbContext;
 
         public UserController(
-            IUserService usersService
+            IFileService fileService
             , UserManager<UserIdentity> userManager
             , SignInManager<UserIdentity> signInManager
             , BaseDbContext dbContext)
         {
-            _usersService = usersService;
+            _fileService = fileService;
             _userManager = userManager;
             _signInManager = signInManager;
             _dbContext = dbContext;
@@ -31,14 +32,14 @@ namespace BaseProject.Controllers
 
         #region 회원가입
         [HttpGet("create")]
-        public async Task<IActionResult> Signup(string role)
+        public async Task<IActionResult> CreateUser(string role)
         {
             ViewBag.role = role;
             return View();
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> SignUp(RegisterModel model,  IFormFile file)
+        public async Task<IActionResult> CreateUser(Register_Model model,  IFormFile file)
         {
             // 유효성 검사
             //if (!ModelState.IsValid) return View(model);
@@ -55,7 +56,7 @@ namespace BaseProject.Controllers
             };
 
             // 유저 이미지 업로드
-            newUser.ImgUrl = await _usersService.FileUpload(newUser, file);
+            newUser.ImgUrl = await _fileService.FileCreat(newUser.Id, file, "user");
 
             // 유저 생성
             if (newUser.ImgUrl != "Fail") 
@@ -98,32 +99,70 @@ namespace BaseProject.Controllers
 
             return View(userList);
         }
-
         #endregion
+
         #region 권한 승인
         [HttpPost("rollaccept")]
-        public async Task<IActionResult> RollAccept(string Id, string Role, string BeforeRole)
+        public async Task<IActionResult> RollAccept(RollAccept_Model rollAccept_Model)
         {
-            var result = await _userManager.RemoveFromRoleAsync(await _userManager.FindByIdAsync(Id), BeforeRole);
-            if (result.Succeeded)
+            for (int i = 0; i< rollAccept_Model.UserId.Length; i++)
             {
-                if (Role.Equals(UserRoles.Member))
+                var result = await _userManager.RemoveFromRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), rollAccept_Model.BeforeRole[i]);
+                if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(Id), UserRoles.Member);
-                }
-                else if (Role.Equals(UserRoles.Manager))
-                {
-                    await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(Id), UserRoles.Manager);
-                }
-                else
-                {
-                    await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(Id), UserRoles.NoRole);
+                    if (rollAccept_Model.Role[i].Equals(UserRoles.Member))
+                    {
+                        await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), UserRoles.Member);
+                    }
+                    else if (rollAccept_Model.Role[i].Equals(UserRoles.Manager))
+                    {
+                        await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), UserRoles.Manager);
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), UserRoles.NoRole);
+                    }
                 }
             }
+            
             
             return Redirect("/user/login");
         }
 
+        #endregion
+
+        #region 마이페이지
+        [HttpGet("UpdateUser")]
+        public async Task<IActionResult> UpdateUser()
+        {
+            var user = await _userManager.FindByIdAsync(User.Identity.Name);
+            return View(user);
+        }
+        [HttpPost("UpdateUser")]
+        public async Task<IActionResult> UpdateUser(UserIdentity user, string Password, IFormFile file)
+        {
+            // 유저 정보 수정
+
+            var updateUser = await _userManager.FindByIdAsync(User.Identity.Name);
+            updateUser.UserName = user.UserName;
+
+            // 비밀번호 변경
+            var token = await _userManager.GeneratePasswordResetTokenAsync(updateUser);
+            var result = await _userManager.ResetPasswordAsync(updateUser, token, Password);
+
+            updateUser.Status = user.Status;
+            updateUser.ImgUrl = await _fileService.FileUpdate(updateUser.Id, file, "user");
+
+            _userManager.UpdateAsync(updateUser);
+            User_Edit_Log_Model user_Edit_Log_Model = new User_Edit_Log_Model()
+            {
+                UserIdentityId = updateUser.Id,
+                EditTime = DateTime.Now
+            };
+            _dbContext.User_Edit_Log_Models.Add(user_Edit_Log_Model);            
+            _dbContext.SaveChanges();
+            return View(user);
+        }
         #endregion
 
         #region 로그인
@@ -135,7 +174,7 @@ namespace BaseProject.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginModel model, string? ReturnUrl)
+        public async Task<IActionResult> Login(Login_Model model, string? ReturnUrl)
         {
             if (!ModelState.IsValid) return View(model);
             var loginUser = await _userManager.FindByIdAsync(model.Id);
@@ -143,6 +182,12 @@ namespace BaseProject.Controllers
             var user = await _signInManager.PasswordSignInAsync(loginUser, model.Password, false, false);
             if (user.Succeeded)
             {
+                Login_Log_Model login_Log_Model = new Login_Log_Model()
+                {
+                    UserId = model.Id,
+                    LoginTime = DateTime.Now
+                };
+                _dbContext.SaveChanges();
                 if (ReturnUrl != null)
                 {
                     return Redirect(ReturnUrl);
