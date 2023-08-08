@@ -8,8 +8,8 @@
     </div>
 }
 
-@*꾸미기만 하면 완료*@
-<form asp-controller="User" asp-action="Signup" asp-route-returnurl="@ViewData["ReturnUrl"]" enctype="multipart/form-data" method="post">
+
+<form asp-controller="User" asp-action="CreateUser" asp-route-returnurl="@ViewData["ReturnUrl"]" enctype="multipart/form-data" method="post">
     <input type="text" name="Id" placeholder="Id" value="tester" />
     <input type="password" name="Password" placeholder="Password" value="Dkagh1234!" />
     <input type="text" name="Name" placeholder="Name" value="tester01" />

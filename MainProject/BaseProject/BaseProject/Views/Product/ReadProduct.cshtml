@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@foreach(Product_Model product_model in Model)
+{
+   <form asp-controller="Product" asp-action="UpdateProduct" method="post">
+        <input type="hidden" name="Id"  value="@product_model.Id" />
+        Name <input type="text" name="Name" value="@product_model.Name" /> 
+        Price <input type="text" name="Price" value="@product_model.Price"/> 
+        Status<input type="text" name="Status" value="@product_model.Status"/> 
+        <img src="@product_model.ImgUrl"/>
+        사용되는 자재
+        @foreach(var UseMetrailModels in product_model.ProductUseMetrailModels)
+        {
+            <input type="hidden" name="MetrailId" value="@UseMetrailModels.Metrail.Id"/>
+            <input type="text" name="Status" value="@UseMetrailModels.Metrail.Name"/> 
+            <input type="text" name="count" value="@UseMetrailModels.Quantity"/> 
+        }
+        
+        <input type="submit" value="전송">
+    </form> 
+}

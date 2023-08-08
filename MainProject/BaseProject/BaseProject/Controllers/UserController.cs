@@ -50,7 +50,6 @@ namespace BaseProject.Controllers
             {
                 Id = model.Id,
                 UserName = model.Name,
-                ImgUrl = "/User/" + model.Id + "/" + file.FileName,
                 Status = "True",
                 CreateTime = DateTime.Now
             };
@@ -135,32 +134,44 @@ namespace BaseProject.Controllers
         [HttpGet("UpdateUser")]
         public async Task<IActionResult> UpdateUser()
         {
-            var user = await _userManager.FindByIdAsync(User.Identity.Name);
+            UserIdentity user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user == null)
+            {
+                return Redirect("/user/Login");
+            }
             return View(user);
         }
         [HttpPost("UpdateUser")]
         public async Task<IActionResult> UpdateUser(UserIdentity user, string Password, IFormFile file)
         {
             // 유저 정보 수정
-
-            var updateUser = await _userManager.FindByIdAsync(User.Identity.Name);
+            var updateUser = await _userManager.FindByNameAsync(User.Identity.Name);
             updateUser.UserName = user.UserName;
 
             // 비밀번호 변경
-            var token = await _userManager.GeneratePasswordResetTokenAsync(updateUser);
-            var result = await _userManager.ResetPasswordAsync(updateUser, token, Password);
+            if(Password != null)
+            {
+                var token = await _userManager.GeneratePasswordResetTokenAsync(updateUser);
+                var result = await _userManager.ResetPasswordAsync(updateUser, token, Password);
+            }
 
-            updateUser.Status = user.Status;
-            updateUser.ImgUrl = await _fileService.FileUpdate(updateUser.Id, file, "user");
+            // 이미지 변경
+            if(file != null)
+            {
+                updateUser.ImgUrl = await _fileService.FileUpdate(updateUser.Id, file, "user");
+            }
+            // 유저 업데이트
+            await _userManager.UpdateAsync(updateUser);
 
-            _userManager.UpdateAsync(updateUser);
             User_Edit_Log_Model user_Edit_Log_Model = new User_Edit_Log_Model()
             {
                 UserIdentityId = updateUser.Id,
                 EditTime = DateTime.Now
             };
+
             _dbContext.User_Edit_Log_Models.Add(user_Edit_Log_Model);            
             _dbContext.SaveChanges();
+
             return View(user);
         }
         #endregion

@@ -4,7 +4,7 @@ using System.IO;
 
 namespace BaseProject.Data.Service
 {
-    public class ProductService : EntityBaseRepository<Product_Model>
+    public class ProductService : EntityBaseRepository<Product_Model>, IProductService
     {
         //private readonly IFileService _fileService;
 

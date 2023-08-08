@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BaseProject.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace BaseProject.Models
 {
-    public class Metrail_Model
+    public class Material_Edit_Log_Model : IEntityBase
     {
         //자재명, 가격, 수량, 사진
         [Key]

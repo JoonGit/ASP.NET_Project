@@ -4,7 +4,7 @@ using System.IO;
 
 namespace BaseProject.Data.Service
 {
-    public class FileService
+    public class FileService : IFileService
     {
         private async Task FileUpload(string path, string fileName, IFormFile file)
         {
@@ -40,7 +40,7 @@ namespace BaseProject.Data.Service
             try
             {
                 // 파일이 저장될 경로
-                string path = "wwwroot/" + pathName + "/ " + model_id;
+                string path = "wwwroot/" + pathName + "/" + model_id;
                 // DB에 저장되는 파일의 경로
                 string url = "/" + pathName + "/" + model_id + "/" + file.FileName;
                 // 여러개의 파일일 경우 하나씩 저장
@@ -67,6 +67,21 @@ namespace BaseProject.Data.Service
             await FileDelete(path);
             return await FileCreat(model_id, file, pathName);
 
+        }
+
+        Task IFileService.FileDelete(string path)
+        {
+            return FileDelete(path);
+        }
+
+        Task<string> IFileService.FileCreat(string model_id, IFormFile file, string pathName)
+        {
+            return FileCreat(model_id, file, pathName);
+        }
+
+        Task<string> IFileService.FileUpdate(string model_id, IFormFile file, string pathName)
+        {
+            return FileUpdate(model_id, file, pathName);
         }
 
         //Task IFileService.FileUpload(string path, string fileName, IFormFile file)

@@ -5,6 +5,7 @@ using BaseProject.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +17,10 @@ builder.Services.AddControllersWithViews();
 
 // Service Interfase 추가
 //builder.Services.AddScoped<IUserService, UserService>();
-//builder.Services.AddScoped<IFileService<T>, FileService>();
-//builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IMateralService, MateralService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
 
 // 의존성 주입
 // builder.Services.AddScoped(sc => OrderController.GetShoppingCart(sc));
@@ -46,9 +49,9 @@ builder.Services.AddIdentity<UserIdentity, IdentityRole>(
 //    });
 
 // Cache
-//builder.Services.AddMemoryCache();
+builder.Services.AddMemoryCache();
 // Session
-//builder.Services.AddSession();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -61,9 +64,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 // Session 적용
-// app.UseSession();
+app.UseSession();
 
-app.UseAuthorization();
+app.UseAuthentication();
 app.UseAuthorization();
 
 AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();

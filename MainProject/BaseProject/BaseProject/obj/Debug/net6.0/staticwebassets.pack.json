@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\BaseProject.bundle.scp.css"
     },
     {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Materal\\자재_test\\5조_ERD.png",
+      "PackagePath": "staticwebassets\\Materal\\자재_test\\5조_ERD.png"
+    },
+    {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\권한승인.png",
+      "PackagePath": "staticwebassets\\Product\\Car\\권한승인.png"
+    },
+    {
       "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\로그인.png",
       "PackagePath": "staticwebassets\\Product\\Car\\로그인.png"
     },
@@ -261,8 +269,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\ tester\\회원가입.png",
+      "PackagePath": "staticwebassets\\user\\ tester\\회원가입.png"
+    },
+    {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester2\\회원가입.png",
+      "PackagePath": "staticwebassets\\user\\tester2\\회원가입.png"
+    },
+    {
       "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\img.jpg",
       "PackagePath": "staticwebassets\\user\\tester\\img.jpg"
+    },
+    {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\로그인.png",
+      "PackagePath": "staticwebassets\\user\\tester\\로그인.png"
     },
     {
       "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\스크린샷(4).png",

@@ -33,7 +33,8 @@ namespace BaseProject.Controllers
         [HttpGet("create")]
         public async Task<IActionResult> CreateProduct()
         {
-            return View();
+            var result = await _dbContext.Material_Models.ToListAsync();
+            return View(result);
         }
 
         // 권한을 소비자 등록자 로 나워 등록자만 접근 가능하도록 변경
@@ -41,7 +42,11 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> CreateProduct(Product_Model model,  IFormFile ImgFile)
         {
             // 파일 저장
-            model.ImgUrl = await _fileService.FileCreat(model.Name, ImgFile, "product");
+            if(ImgFile != null)
+            {
+                model.ImgUrl = await _fileService.FileCreat(model.Name, ImgFile, "product");
+            }         
+            model.CreateTime = DateTime.Now;
             await _service.AddAsync(model);
 
             for (int i = 0; i < model.MetrailId.Length; i++)
@@ -49,7 +54,7 @@ namespace BaseProject.Controllers
                 Product_Use_Metrail_Model use_Metrail_Model = new Product_Use_Metrail_Model()
                 {
                     ProductId = model.Id,
-                    //MetrailId = model.MetrailId[i],
+                    MetrailId = model.MetrailId[i],
                     Quantity = model.count[i]
                 };
                 _dbContext.Product_Use_Metrail_Models.Add(use_Metrail_Model);
@@ -68,10 +73,11 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> ReadProduct()
         {
             // 전체 상품 목록 조회
-            // Metrail 넣고 테스트
-            //var result =  _dbContext.ProductModels.Include(p => p.ProductUseMetrailModel).ToList();
-            //return View(result);
-            return View();
+            var result = _dbContext.Product_Models
+                .Include(p => p.ProductUseMetrailModels)
+                .ThenInclude(p => p.Metrail)
+                .ToList();
+            return View(result);
         }
         #endregion
 
@@ -87,23 +93,39 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> UpdateProduct(Product_Model model, IFormFile file)
         {
             // 수정할 상품 정보 불러오기
-            var UpdateModel = _dbContext
-                            .Product_Models
-                            .Where(product => product.Id == model.Id)
-                            .FirstOrDefault();
+            //var UpdateModel = _dbContext
+            //                .Product_Models
+            //                .Where(product => product.Id == model.Id)
+            //                .FirstOrDefault();
+
+            var UpdateModel = await _dbContext.Product_Models
+                .Where(product => product.Id == model.Id)
+                .Include(p => p.ProductUseMetrailModels)
+                .ThenInclude(p => p.Metrail)
+                .FirstAsync();
+
             UpdateModel.Name = model.Name;
             UpdateModel.Price = model.Price;
-            // 기존에 있던 파일의 경로
-            string path = @"wwwroot/" + UpdateModel.ImgUrl;
-            // 기존에 있던 이미지 삭제
-            await _fileService.FileDelete(path);
-            // DB에 저장되어 있는 경로 수정              
-            UpdateModel.ImgUrl = await _service.ImgUpload(UpdateModel, file);
+            UpdateModel.Status = model.Status;
+            int index = UpdateModel.ProductUseMetrailModels.Count();
+            UpdateModel.ProductUseMetrailModels.Clear();
 
-            //Metrail에서도 model.Id의 해당되는 MetrailId를 가진 데이터를 삭제 후 값 추가
+            for (int i = 0; i < index; i++)
+            {
+                Product_Use_Metrail_Model use_Metrail_Model = new Product_Use_Metrail_Model()
+                {
+                    ProductId = model.Id,
+                    MetrailId = model.MetrailId[i],
+                    Quantity = model.count[i]
+                };
+                _dbContext.Product_Use_Metrail_Models.Add(use_Metrail_Model);
+            }
 
-            // 실패시 반환된 경로
-            //return View(UpdateModel);
+            // DB에 저장되어 있는 경로 수정
+            if (file != null)
+            {
+                UpdateModel.ImgUrl = await _fileService.FileUpdate(UpdateModel.Name, file, "product");
+            }
 
             // 수정 시간 저장
             Product_Edit_LogModel log = new Product_Edit_LogModel()

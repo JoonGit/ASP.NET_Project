@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@foreach(Material_Model material_Model in Model)
+{
+   <form asp-controller="materal" asp-action="UpdateMateral" method="post">
+        <input type="hidden" name="Id"  value="@material_Model.Id" />
+        Name <input name="Name" value="@material_Model.Name" /> 
+        Quantity <input name="Quantity" value="@material_Model.Quantity"/> 
+        Price <input name="Price" value="@material_Model.Price"/> 
+        Status<input name="Status" value="@material_Model.Status"/> 
+        <img src="@material_Model.ImgUrl"/>
+        <input type="submit" value="전송">
+    </form> 
+}

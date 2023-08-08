@@ -3,7 +3,7 @@ using BaseProject.Models;
 
 namespace BaseProject.Data.Service
 {
-    public interface IProductService : IEntityBaseRepository<Product_Model>
+    public interface IMateralService : IEntityBaseRepository<Material_Model>
     {
     }
 }

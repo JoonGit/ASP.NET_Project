@@ -7,10 +7,16 @@
     <input type="text" name="Name" placeholder="Name" value="Car" />
     <input type="text" name="Price" placeholder="Price" value="10000" />
     <input type="file" name="ImgFile" />
-    <input type="text" name="MetrailId" placeholder="productId" value="0" />
+    @foreach(var Material in Model)
+    {
+        @Material.Name<input type="hidden" name="MetrailId" value="@Material.Id"/>
+        <input type="text" name="MetrailId" placeholder="productId" value="@Material.Name" />
+        <input type="text" name="count" placeholder="count" value="0" />
+    }
+    @*    
     <input type="text" name="MetrailId" placeholder="productId" value="1" />
     <input type="text" name="count" placeholder="count" value="2" />
-    <input type="text" name="count" placeholder="count" value="3" />
+    <input type="text" name="count" placeholder="count" value="3" />*@
     <input type="hidden" name="status"  value="True" />
 
     <button>상품등록</button>

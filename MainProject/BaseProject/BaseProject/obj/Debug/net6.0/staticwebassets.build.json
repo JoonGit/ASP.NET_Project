@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D2HaaSrAiFlP2iNlL/iWpcvRFfT8llb8u2xUFVYel04=",
+  "Hash": "oAJzpCtNKIbXDfPbHCLW8D/+OAJ4e0E79ROmSjsjfEQ=",
   "Source": "BaseProject",
   "BasePath": "_content/BaseProject",
   "Mode": "Default",
@@ -1105,6 +1105,40 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Materal\\자재_test\\5조_ERD.png",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "Materal/자재_test/5조_ERD.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Materal\\자재_test\\5조_ERD.png"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\권한승인.png",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "Product/Car/권한승인.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Product\\Car\\권한승인.png"
+    },
+    {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\로그인.png",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
@@ -1139,6 +1173,23 @@
       "OriginalItemSpec": "wwwroot\\Product\\Car\\회원가입.png"
     },
     {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\ tester\\회원가입.png",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "user/ tester/회원가입.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\ tester\\회원가입.png"
+    },
+    {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\img.jpg",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
@@ -1156,6 +1207,23 @@
       "OriginalItemSpec": "wwwroot\\user\\tester\\img.jpg"
     },
     {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\로그인.png",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "user/tester/로그인.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\tester\\로그인.png"
+    },
+    {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\스크린샷(4).png",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
@@ -1171,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user\\tester\\스크린샷(4).png"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester2\\회원가입.png",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "user/tester2/회원가입.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\tester2\\회원가입.png"
     }
   ]
 }

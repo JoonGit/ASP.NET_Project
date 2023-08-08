@@ -13,12 +13,13 @@ namespace BaseProject.Data
 
         public DbSet<UserIdentity> Users { get; set; }
         public DbSet<User_Edit_Log_Model> User_Edit_Log_Models { get; set; }
+        public DbSet<Login_Log_Model> Login_Log_Models { get; set; }
 
         public DbSet<IoT_Data_Model> IoT_Data_Models { get; set; }        
         public DbSet<IoT_Model> IoT_Models { get; set; }
-
-        public DbSet<Login_Log_Model> Login_Log_Models { get; set; }
-        public DbSet<Metrail_Model> Material_Models { get; set; }
+        
+        public DbSet<Material_Model> Material_Models { get; set; }
+        public DbSet<Material_Edit_Log_Model> Material_Edit_Log_Models { get; set; }
 
         public DbSet<Order_Model> Order_Models { get; set; }
         public DbSet<Order_Product_Model> Order_Products { get; set; }
