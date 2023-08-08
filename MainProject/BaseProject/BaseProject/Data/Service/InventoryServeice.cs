@@ -3,7 +3,7 @@ using BaseProject.Models;
 
 namespace BaseProject.Data.Service
 {
-    public class InventoryServeice : EntityBaseRepository<Inventory_Model>
+    public class InventoryServeice : EntityBaseRepository<Inventory_Model>, IInventoryService
     {
         //private readonly IFileService _fileService;
 

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Materal\\자재_test\\5조_ERD.png"
     },
     {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car2\\로그인.png",
+      "PackagePath": "staticwebassets\\Product\\Car2\\로그인.png"
+    },
+    {
       "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\권한승인.png",
       "PackagePath": "staticwebassets\\Product\\Car\\권한승인.png"
     },

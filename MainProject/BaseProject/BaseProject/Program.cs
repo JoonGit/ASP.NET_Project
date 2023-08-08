@@ -20,6 +20,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IMateralService, MateralService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IInventoryService, InventoryServeice>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 
 // 의존성 주입

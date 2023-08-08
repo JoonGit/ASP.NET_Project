@@ -44,6 +44,10 @@ namespace BaseProject.Data
                 .Ignore(p => p.MetrailId)
                 .Ignore(p => p.count);
 
+            modelBuilder.Entity<Order_Model>()
+                .Ignore(p => p.ProductId)
+                .Ignore(p => p.Quantity);
+
             //modelBuilder.Entity<ProductModel>()
             //    .HasMany(p => p.WishUsers)
             //    .WithMany(u => u.WishProducts)

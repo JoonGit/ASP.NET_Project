@@ -135,9 +135,11 @@ namespace BaseProject.Controllers
             };
             _dbContext.Product_Edit_Log_Models.Add(log);
             
+            _service.UpdateAsync(model.Id, UpdateModel);
+            
 
             _dbContext.SaveChanges();
-            return Redirect("/product/list");
+            return Redirect("/product/read");
         }
         #endregion
 

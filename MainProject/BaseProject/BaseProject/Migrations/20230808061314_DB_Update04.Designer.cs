@@ -3,6 +3,7 @@ using System;
 using BaseProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaseProject.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230808061314_DB_Update04")]
+    partial class DB_Update04
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,9 +56,12 @@ namespace BaseProject.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProductModelId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductModelId");
 
                     b.ToTable("Inventory_Models");
                 });
@@ -207,11 +213,13 @@ namespace BaseProject.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("EndDate")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<DateTime>("RegisterDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("RegisterDate")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -240,6 +248,8 @@ namespace BaseProject.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Order_Products");
                 });
@@ -570,13 +580,13 @@ namespace BaseProject.Migrations
 
             modelBuilder.Entity("BaseProject.Models.Inventory_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.Product_Model", "Product")
+                    b.HasOne("BaseProject.Models.Product_Model", "ProductModel")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("ProductModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.Navigation("ProductModel");
                 });
 
             modelBuilder.Entity("BaseProject.Models.IoT_Data_Model", b =>
@@ -618,7 +628,15 @@ namespace BaseProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BaseProject.Models.Product_Model", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("BaseProject.Models.Product_Edit_LogModel", b =>

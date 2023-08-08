@@ -11,11 +11,10 @@ namespace BaseProject.Controllers
     [Route("Inventory")]
     public class InventoryController : Controller
     {
-        private readonly IInventoryService _service;        
+        private readonly IInventoryService _service;
         private readonly UserManager<UserIdentity> _userManager;
         private readonly BaseDbContext _dbContext;
         private readonly IFileService _fileService;
-
 
         public InventoryController(
             IInventoryService service
@@ -32,19 +31,32 @@ namespace BaseProject.Controllers
 
         #region 상품등록
         [HttpGet("create")]
-        public async Task<IActionResult> CreateProduct()
+        public async Task<IActionResult> CreateInventory()
         {
-            return View();
+            var result = await _dbContext
+                .Product_Models
+                .ToListAsync();
+            return View(result);
         }
 
         // 권한을 소비자 등록자 로 나워 등록자만 접근 가능하도록 변경
         [HttpPost("create")]
-        public async Task<IActionResult> CreateProduct(Inventory_Model model)
+        public async Task<IActionResult> CreateInventory(Inventoy_Get_Info_Model model)
         {
             // 파일 저장
-            await _service.AddAsync(model);
-            // 파일 업로드후 모델 저장
-
+            for (int i = 0; i < model.ProductId.Length; i++)
+            {
+                if (model.Count[i] != 0)
+                {
+                    Inventory_Model inventory_model = new Inventory_Model()
+                    {
+                        ProductId = model.ProductId[i],
+                        Count = model.Count[i],
+                        //CreateTime = model.CreateTime[i],
+                    };
+                    _dbContext.Inventory_Models.Add(inventory_model);
+                }                
+            }
             await _dbContext.SaveChangesAsync();
             return Redirect("/");
         }
@@ -53,46 +65,55 @@ namespace BaseProject.Controllers
         #region 상품목록조회
         [HttpGet("Read")]
         [AllowAnonymous]
-        public async Task<IActionResult> ReadProduct()
+        public async Task<IActionResult> ReadInventory()
         {
             // 전체 상품 목록 조회
-            // Metrail 넣고 테스트
-            var result =  _dbContext.Inventory_Models.Include(i => i.ProductId).ToList();
-            //return View(result);
-            return View();
+            var result = _dbContext.Inventory_Models
+                .Include(p => p.Product)
+                .ToList();
+            return View(result);
         }
         #endregion
 
         #region 상품수정
         [HttpGet("update")]
-        public IActionResult UpdateProduct(int id)
+        public IActionResult UpdateInventory(int id)
         {
             // 수정할 상품 정보 불러오기
             var result = _service.GetByIdAsync(id);
             return View(result.Result);
         }
-        // 여러개 동시에 수정할 수 있도록 바꾸기
         [HttpPost("update")]
-        public async Task<IActionResult> UpdateProduct(Inventory_Model model, int count, string startTime, string endTime)
+        public async Task<IActionResult> UpdateInventory(Inventory_Model model, IFormFile file)
         {
-            // 수정할 정보 불러오기
-            // 날짜 기준으로 불러오기
-            var UpdateModel = _dbContext
-                            .Inventory_Models                            
-                            .FirstOrDefault();
+            // 수정할 상품 정보 불러오기
+            //var UpdateModel = _dbContext
+            //                .Inventory_Models
+            //                .Where(product => product.Id == model.Id)
+            //                .FirstOrDefault();
+
+            var UpdateModel = await _dbContext.Inventory_Models
+                .Where(i => i.Id == model.Id)
+                .FirstAsync();
+
+            UpdateModel.Count = model.Count;
+            _service.UpdateAsync(model.Id, UpdateModel);
+
 
             // 수정 시간 저장
-            Inventory_Edit_Log_Model log = new Inventory_Edit_Log_Model()
+            Product_Edit_LogModel log = new Product_Edit_LogModel()
             {
+                ProductId = UpdateModel.Id,
                 EditTime = DateTime.Now,
             };
-            _dbContext.Inventory_Edit_Log_Model.Add(log);
+            _dbContext.Product_Edit_Log_Models.Add(log);
 
 
             _dbContext.SaveChanges();
-            return Redirect("/product/list");
+            return Redirect("/Inventory/Read");
         }
         #endregion
+
     }
 }
 
