@@ -38,7 +38,6 @@ namespace BaseProject.Controllers
                 .ToListAsync();
             return View(result);
         }
-
         // 권한을 소비자 등록자 로 나워 등록자만 접근 가능하도록 변경
         [HttpPost("create")]
         public async Task<IActionResult> CreateInventory(Inventoy_Get_Info_Model model)
@@ -52,7 +51,7 @@ namespace BaseProject.Controllers
                     {
                         ProductId = model.ProductId[i],
                         Count = model.Count[i],
-                        //CreateTime = model.CreateTime[i],
+                        CreateTime = model.CreateTime,
                     };
                     _dbContext.Inventory_Models.Add(inventory_model);
                 }                
@@ -86,34 +85,25 @@ namespace BaseProject.Controllers
         [HttpPost("update")]
         public async Task<IActionResult> UpdateInventory(Inventory_Model model, IFormFile file)
         {
-            // 수정할 상품 정보 불러오기
-            //var UpdateModel = _dbContext
-            //                .Inventory_Models
-            //                .Where(product => product.Id == model.Id)
-            //                .FirstOrDefault();
-
+            // 수정할 정보 불러오기
             var UpdateModel = await _dbContext.Inventory_Models
                 .Where(i => i.Id == model.Id)
                 .FirstAsync();
 
             UpdateModel.Count = model.Count;
-            _service.UpdateAsync(model.Id, UpdateModel);
-
+            UpdateModel.CreateTime = model.CreateTime;
 
             // 수정 시간 저장
-            Product_Edit_LogModel log = new Product_Edit_LogModel()
+            Inventory_Edit_Log_Model log = new Inventory_Edit_Log_Model()
             {
-                ProductId = UpdateModel.Id,
+                InventoryId = UpdateModel.Id,
                 EditTime = DateTime.Now,
             };
-            _dbContext.Product_Edit_Log_Models.Add(log);
-
-
+            _dbContext.Inventory_Edit_Log_Model.Add(log);
             _dbContext.SaveChanges();
             return Redirect("/Inventory/Read");
         }
         #endregion
-
     }
 }
 

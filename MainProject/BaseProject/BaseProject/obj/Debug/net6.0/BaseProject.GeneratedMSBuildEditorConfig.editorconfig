@@ -52,8 +52,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3JlYXRlT3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Study/c\#/asp.net/MyBlog/ASP.NET_Project/MainProject/BaseProject/BaseProject/Views/Order/DetailOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlsT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/c\#/asp.net/MyBlog/ASP.NET_Project/MainProject/BaseProject/BaseProject/Views/Order/ReadOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUmVhZE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Study/c\#/asp.net/MyBlog/ASP.NET_Project/MainProject/BaseProject/BaseProject/Views/Product/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/c\#/asp.net/MyBlog/ASP.NET_Project/MainProject/BaseProject/BaseProject/Views/Product/DetailProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Study/c\#/asp.net/MyBlog/ASP.NET_Project/MainProject/BaseProject/BaseProject/Views/Product/ReadProduct.cshtml]

@@ -37,7 +37,6 @@ namespace BaseProject.Controllers
             return View(result);
         }
 
-        // 권한을 소비자 등록자 로 나워 등록자만 접근 가능하도록 변경
         [HttpPost("create")]
         public async Task<IActionResult> CreateProduct(Product_Model model,  IFormFile ImgFile)
         {
@@ -92,12 +91,7 @@ namespace BaseProject.Controllers
         [HttpPost("update")]
         public async Task<IActionResult> UpdateProduct(Product_Model model, IFormFile file)
         {
-            // 수정할 상품 정보 불러오기
-            //var UpdateModel = _dbContext
-            //                .Product_Models
-            //                .Where(product => product.Id == model.Id)
-            //                .FirstOrDefault();
-
+            // 수정 할 모델 불러오기            
             var UpdateModel = await _dbContext.Product_Models
                 .Where(product => product.Id == model.Id)
                 .Include(p => p.ProductUseMetrailModels)
@@ -107,26 +101,29 @@ namespace BaseProject.Controllers
             UpdateModel.Name = model.Name;
             UpdateModel.Price = model.Price;
             UpdateModel.Status = model.Status;
-            int index = UpdateModel.ProductUseMetrailModels.Count();
-            UpdateModel.ProductUseMetrailModels.Clear();
+            int index = 0;
+            //UpdateModel.ProductUseMetrailModels.Clear();
 
-            for (int i = 0; i < index; i++)
+            foreach (var metrail in UpdateModel.ProductUseMetrailModels)
             {
-                Product_Use_Metrail_Model use_Metrail_Model = new Product_Use_Metrail_Model()
+                if(metrail.Quantity == model.count[index])
                 {
-                    ProductId = model.Id,
-                    MetrailId = model.MetrailId[i],
-                    Quantity = model.count[i]
-                };
-                _dbContext.Product_Use_Metrail_Models.Add(use_Metrail_Model);
+                    index++;
+                    continue;
+                    
+                }
+                else
+                {
+                    metrail.Quantity = model.count[index];
+                    index++;
+                }
+                
             }
-
             // DB에 저장되어 있는 경로 수정
             if (file != null)
             {
                 UpdateModel.ImgUrl = await _fileService.FileUpdate(UpdateModel.Name, file, "product");
             }
-
             // 수정 시간 저장
             Product_Edit_LogModel log = new Product_Edit_LogModel()
             {
@@ -134,15 +131,21 @@ namespace BaseProject.Controllers
                 EditTime = DateTime.Now,
             };
             _dbContext.Product_Edit_Log_Models.Add(log);
-            
-            _service.UpdateAsync(model.Id, UpdateModel);
-            
-
             _dbContext.SaveChanges();
             return Redirect("/product/read");
         }
         #endregion
-
+        [HttpGet("detail")]
+        public async Task<IActionResult> DetailProduct(int id)
+        {
+            // 상품 상세 정보 불러오기
+            var result = await _dbContext.Product_Models
+                .Where(product => product.Id == id)
+                .Include(p => p.ProductUseMetrailModels)
+                .ThenInclude(p => p.Metrail)
+                .FirstAsync();
+            return View(result);
+        }
         #region 상품삭제
         // 상품 삭제
         [HttpGet("delete")]
@@ -153,9 +156,17 @@ namespace BaseProject.Controllers
                            .Product_Models
                            .Where(product => product.Id == id)
                            .FirstOrDefault();
-            Model.Status = "False";
-            var result = _service.UpdateAsync(id, Model);
-            return Redirect("/product/list");
+            if(Model.Status == "True")
+            {
+                Model.Status = "False";
+            }               
+            else if(Model.Status == "False")
+            {
+                Model.Status = "True";
+            }
+            
+            await _service.UpdateAsync(id, Model);
+            return Redirect("/product/read");
         }
         #endregion
     }

@@ -56,9 +56,7 @@ namespace BaseProject.Controllers
             public async Task<IActionResult> ReadMateral()
             {
             // 전체 상품 목록 조회
-            // Metrail 넣고 테스트
             var result = _dbContext.Material_Models.ToList();
-            //return View(result);
             return View(result);
             }
             #endregion
@@ -90,24 +88,16 @@ namespace BaseProject.Controllers
             {
                 UpdateModel.ImgUrl = await _fileService.FileUpdate(UpdateModel.Name, file, "product");
             }
-                
 
-                //Metrail에서도 model.Id의 해당되는 MetrailId를 가진 데이터를 삭제 후 값 추가
-
-                // 실패시 반환된 경로
-                //return View(UpdateModel);
-
-                //// 수정 시간 저장
-                //Material_Edit_Log_Model log = new Material_Edit_Log_Model()
-                //{
-                //    ProductId = UpdateModel.Id,
-                //    EditTime = DateTime.Now,
-                //};
-                //_dbContext.Product_Edit_Log_Models.Add(log);
-
-
-                _dbContext.SaveChanges();
-                return Redirect("/product/list");
+            // 수정 시간 저장
+            Material_Edit_Log_Model log = new Material_Edit_Log_Model()
+            {
+                MaterialId = UpdateModel.Id,
+                EditTime = DateTime.Now,
+            };
+            _dbContext.Material_Edit_Log_Models.Add(log);
+            _dbContext.SaveChanges();
+                return Redirect("/Materal/read");
             }
             #endregion
 
@@ -121,9 +111,16 @@ namespace BaseProject.Controllers
                                .Material_Models
                                .Where(m => m.Id == id)
                                .FirstOrDefault();
+            if (Model.Status == "True")
+            {
                 Model.Status = "False";
-                var result = _service.UpdateAsync(id, Model);
-                return Redirect("/product/list");
+            }
+            else if (Model.Status == "False")
+            {
+                Model.Status = "True";
+            }
+            await _service.UpdateAsync(id, Model);
+                return Redirect("/Materal/read");
             }
             #endregion
         }

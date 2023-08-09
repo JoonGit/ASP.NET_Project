@@ -10,7 +10,9 @@
     <input type="hidden" name="Id"  value="@inventory.Id" />
     <input type="text" name="Name"  value="@inventory.Product.Name" />
     <input type="text" name="Count"  value="@inventory.Count" />
+    <input type="text" name="Time" value="@inventory.CreateTime">
     <input type="date" name="CreateTime" value="@inventory.CreateTime">
-    <button>자재수정</button>
+    <img src="@inventory.Product.ImgUrl">
 </form>
 }
+<a href="/Inventory/create">재고등록</a>

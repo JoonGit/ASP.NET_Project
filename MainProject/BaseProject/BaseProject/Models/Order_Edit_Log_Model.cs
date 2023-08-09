@@ -10,6 +10,7 @@ namespace BaseProject.Models
 
         public int OrderId { get; set; }
         public Order_Model Order { get; set; }
+
         public DateTime EditTime { get; set; }
     }
 }

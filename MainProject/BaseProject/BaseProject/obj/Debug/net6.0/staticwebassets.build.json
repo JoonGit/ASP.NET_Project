@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XHULcQGtDNCHDW2zxC9rbt9xv5G5760Z3S1hmqrgJ2c=",
+  "Hash": "nXon5q/IvqPW35mz0K1uZtSEQLp7zBAEljx8atn3IRs=",
   "Source": "BaseProject",
   "BasePath": "_content/BaseProject",
   "Mode": "Default",
@@ -1205,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user\\ tester\\회원가입.png"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\DB_02.png",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "user/tester/DB_02.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\tester\\DB_02.png"
     },
     {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\img.jpg",

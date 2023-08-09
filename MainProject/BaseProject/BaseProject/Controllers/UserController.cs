@@ -3,6 +3,7 @@ using BaseProject.Data.Service;
 using BaseProject.Data.Static;
 using BaseProject.Migrations;
 using BaseProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -41,10 +42,6 @@ namespace BaseProject.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> CreateUser(Register_Model model,  IFormFile file)
         {
-            // 유효성 검사
-            //if (!ModelState.IsValid) return View(model);
-            await Console.Out.WriteLineAsync("signup");
-
             // 유저 정보 입력
             var newUser = new UserIdentity
             {
@@ -76,15 +73,63 @@ namespace BaseProject.Controllers
             }
         }
         #endregion
+        #region 로그인
+        [HttpGet("login")]
+        public async Task<IActionResult> Login(string ReturnUrl)
+        {
+            ViewData["ReturnUrl"] = ReturnUrl;
+            return View();
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(Login_Model model, string? ReturnUrl)
+        {
+            // 유저 정보 입력
+            var loginUser = await _userManager.FindByIdAsync(model.Id);
+            // 유저 로그인
+            var user = await _signInManager.PasswordSignInAsync(loginUser, model.Password, false, false);
+            if (user.Succeeded)
+            {
+                // 로그인 로그 저장
+                Login_Log_Model login_Log_Model = new Login_Log_Model()
+                {
+                    UserId = model.Id,
+                    LoginTime = DateTime.Now
+                };
+                _dbContext.SaveChanges();
+                if (ReturnUrl != null)
+                {
+                    return Redirect(ReturnUrl);
+                }
+                else
+                {
+                    return Redirect("/");
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Wrong credentials. Please, try again!";
+                return View(model);
+            }
+        }
+        #endregion
+
+        #region 로그아웃
+        [HttpGet("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+        #endregion
+
 
         #region 유저리스트
+        //[Authorize(Roles = UserRoles.Admin)]
         [HttpGet("userlist")]
         public async Task<IActionResult> UserList()
         {
-
-            // db에 있는 권한 정보 가져오기
-
-            
+            // 유저의 해당 유저의 권한 리스트
             var userList = await (from userRole in _dbContext.UserRoles
                               join role in _dbContext.Roles on userRole.RoleId equals role.Id
                               join user in _dbContext.Users on userRole.UserId equals user.Id
@@ -101,12 +146,17 @@ namespace BaseProject.Controllers
         #endregion
 
         #region 권한 승인
+        //[Authorize(Roles = UserRoles.Admin)]
         [HttpPost("rollaccept")]
         public async Task<IActionResult> RollAccept(RollAccept_Model rollAccept_Model)
         {
-            for (int i = 0; i< rollAccept_Model.UserId.Length; i++)
+
+            for (int i = 0; i < rollAccept_Model.UserId.Length; i++)
             {
+                // 권한 변경
+                // 권한 변경 전 권한 삭제
                 var result = await _userManager.RemoveFromRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), rollAccept_Model.BeforeRole[i]);
+                // 권한 삭제 후 권한 추가
                 if (result.Succeeded)
                 {
                     if (rollAccept_Model.Role[i].Equals(UserRoles.Member))
@@ -123,17 +173,16 @@ namespace BaseProject.Controllers
                     }
                 }
             }
-            
-            
+            // 로그인 페이지 이동
             return Redirect("/user/login");
         }
-
         #endregion
 
         #region 마이페이지
         [HttpGet("UpdateUser")]
         public async Task<IActionResult> UpdateUser()
         {
+            // 유저 정보 가져오기
             UserIdentity user = await _userManager.FindByNameAsync(User.Identity.Name);
             if (user == null)
             {
@@ -176,54 +225,7 @@ namespace BaseProject.Controllers
         }
         #endregion
 
-        #region 로그인
-        [HttpGet("login")]
-        public async Task<IActionResult> Login(string ReturnUrl)
-        {
-            ViewData["ReturnUrl"] = ReturnUrl;
-            return View();
-        }
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(Login_Model model, string? ReturnUrl)
-        {
-            if (!ModelState.IsValid) return View(model);
-            var loginUser = await _userManager.FindByIdAsync(model.Id);
-
-            var user = await _signInManager.PasswordSignInAsync(loginUser, model.Password, false, false);
-            if (user.Succeeded)
-            {
-                Login_Log_Model login_Log_Model = new Login_Log_Model()
-                {
-                    UserId = model.Id,
-                    LoginTime = DateTime.Now
-                };
-                _dbContext.SaveChanges();
-                if (ReturnUrl != null)
-                {
-                    return Redirect(ReturnUrl);
-                }
-                else
-                {
-                    return Redirect("/");
-                }
-            }
-            else
-            {
-                TempData["Error"] = "Wrong credentials. Please, try again!";
-                return View(model);
-            }
-        }
-        #endregion
-
-        #region 로그아웃
-        [HttpGet("logout")]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
-        #endregion
+        
 
         #region 회원탈퇴
         [HttpPost("delete")]

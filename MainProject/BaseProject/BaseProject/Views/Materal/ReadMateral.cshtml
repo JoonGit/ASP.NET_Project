@@ -11,8 +11,18 @@
         Name <input name="Name" value="@material_Model.Name" /> 
         Quantity <input name="Quantity" value="@material_Model.Quantity"/> 
         Price <input name="Price" value="@material_Model.Price"/> 
-        Status<input name="Status" value="@material_Model.Status"/> 
+        Status <div> @material_Model.Status</div>
+            @if(material_Model.Status == "True")
+            {
+                <a href="/material/delete?id=@material_Model.Id">상품비활성화</a>
+            }
+            else if(material_Model.Status == "False")
+            {
+                <a href="/material/delete?id=@material_Model.Id">상품활성화</a>
+            }
         <img src="@material_Model.ImgUrl"/>
         <input type="submit" value="전송">
+        <a href="/materal/delete?id=@material_Model.Id">재고비활성화</a>
     </form> 
 }
+<a href="/Materal/create">자재등록</a>

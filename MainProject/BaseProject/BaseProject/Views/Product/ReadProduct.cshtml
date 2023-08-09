@@ -5,20 +5,24 @@
 }
 @foreach(Product_Model product_model in Model)
 {
-   <form asp-controller="Product" asp-action="UpdateProduct" method="post">
-        <input type="hidden" name="Id"  value="@product_model.Id" />
-        Name <input type="text" name="Name" value="@product_model.Name" /> 
-        Price <input type="text" name="Price" value="@product_model.Price"/> 
-        Status<input type="text" name="Status" value="@product_model.Status"/> 
-        <img src="@product_model.ImgUrl"/>
-        사용되는 자재
-        @foreach(var UseMetrailModels in product_model.ProductUseMetrailModels)
-        {
-            <input type="hidden" name="MetrailId" value="@UseMetrailModels.Metrail.Id"/>
-            <input type="text" name="Status" value="@UseMetrailModels.Metrail.Name"/> 
-            <input type="text" name="count" value="@UseMetrailModels.Quantity"/> 
-        }
-        
-        <input type="submit" value="전송">
-    </form> 
+        <a href="/Product/detail?id=@product_model.Id">@product_model.Id</a>
+    <div>@product_model.Name</div>
+    <div>@product_model.Price"</div>
+    <div>@product_model.Status</div>
+    if(product_model.Status == "True")
+    {
+        <a href="/Product/delete?id=@product_model.Id">상품비활성화</a>
+    }
+    else if(product_model.Status == "False")
+    {
+        <a href="/Product/delete?id=@product_model.Id">상품활성화</a>
+    }
+    <div>@product_model.Status</div>
+    @foreach(var UseMetrailModels in product_model.ProductUseMetrailModels)
+    {
+        <div>@UseMetrailModels.Metrail.Name</div>
+        <div>@UseMetrailModels.Quantity</div>
+    }
+    
 }
+<a href="/Product/create">상품등록</a>

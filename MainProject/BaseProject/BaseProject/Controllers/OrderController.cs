@@ -68,9 +68,7 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> ReadOrder()
         {
             // 전체 주문 목록 조회
-            var result = _dbContext.Product_Models
-                .Include(p => p.ProductUseMetrailModels)
-                .ThenInclude(p => p.Metrail)
+            var result = _dbContext.Order_Models
                 .ToList();
             return View(result);
         }
@@ -125,9 +123,35 @@ namespace BaseProject.Controllers
             _service.UpdateAsync(model.Id, UpdateModel);
 
             _dbContext.SaveChanges();
-            return Redirect("/product/read");
+            return Redirect("/Order/read");
         }
         #endregion
+
+        [HttpGet("detail")]
+        public async Task<IActionResult> DetailOrder(int id)
+        {
+            // 수정할 상품 정보 불러오기
+            try
+            {
+                var result = await _dbContext.Order_Models
+                            .Where(o => o.Id == id)
+                            .Include(p => p.OrderProducts)
+                            .ThenInclude(p => p.Product)
+                            .FirstAsync();
+                var result2 = await _dbContext.Order_Models
+            .Where(o => o.Id == id)
+            .Include(p => p.OrderProducts)
+
+            .FirstAsync();
+                return View(result2);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return Redirect("/Order/read");
+
+        }
 
         #region 상품삭제
         // 상품 삭제
@@ -138,8 +162,15 @@ namespace BaseProject.Controllers
             var Model = _dbContext
                            .Order_Models
                            .FirstOrDefault();
-            Model.Status = "False";
-            var result = _service.UpdateAsync(id, Model);
+            if (Model.Status == "True")
+            {
+                Model.Status = "False";
+            }
+            else if (Model.Status == "False")
+            {
+                Model.Status = "True";
+            }
+            await _service.UpdateAsync(id, Model);
             return Redirect("/product/list");
         }
         #endregion

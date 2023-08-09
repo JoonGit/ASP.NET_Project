@@ -1,0 +1,10 @@
+﻿<form asp-controller="Product" asp-action="UpdateProduct" method="post">
+    <input type="text" name="Name"  value="@Model.Name" />
+    <input type="text" name="Price"  value="@Model.Price" />
+    @foreach(Product_Use_Metrail_Model Metrail in Model.ProductUseMetrailModels)
+    {
+        <input type="text" name="Name"  value="@Metrail.Metrail.Name" />
+        <input type="text" name="Count"  value="@Metrail.Metrail.Quantity" />
+    }
+    <input type="submit" value="전송" />
+</form> 

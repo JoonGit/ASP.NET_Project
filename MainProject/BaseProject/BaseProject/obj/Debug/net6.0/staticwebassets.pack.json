@@ -281,6 +281,10 @@
       "PackagePath": "staticwebassets\\user\\tester2\\회원가입.png"
     },
     {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\DB_02.png",
+      "PackagePath": "staticwebassets\\user\\tester\\DB_02.png"
+    },
+    {
       "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\img.jpg",
       "PackagePath": "staticwebassets\\user\\tester\\img.jpg"
     },

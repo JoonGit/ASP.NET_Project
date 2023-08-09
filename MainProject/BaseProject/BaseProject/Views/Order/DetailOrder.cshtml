@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-controller="order" asp-action="update" method="post">
+    <input type="text" name="Name"  value="@Model.Customer" />
+    <input type="date" name="RegisterDate"  value="@Model.RegisterDate" />
+    <input type="date" name="EndDate" value="@Model.EndDate">
+    @foreach(Order_Product_Model product in Model.OrderProducts)
+    {
+        <input type="text" name="Name"  value="@product.Product.Name" />
+        <input type="text" name="Count"  value="@product.Quantity" />
+    }
+    <button>주문수정</button>
+</form>
