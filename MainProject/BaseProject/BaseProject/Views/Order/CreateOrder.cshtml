@@ -8,17 +8,21 @@
   document.getElementById('EndDate').value = new Date().toISOString().substring(0, 10);
 </script>
 <form asp-controller="Order" asp-action="create" method="post">
-    <input type="text" name="Customer" placeholder="주문자"/>
-    <input type="hidden" name="Status"  value="true" />
-    <input type="datetime-local" id="RegisterDate" name="RegisterDate">
-    <input type="datetime-local" id="EndDate" name="EndDate">
+    <div>주문자 : <input type="text" name="Customer" placeholder="주문자"/></div>
+    <div>주문등록 시간 : <input type="date" id="RegisterDate" name="RegisterDate"></div>
+    <div>주문마감 시간 : <input type="date" id="EndDate" name="EndDate"></div>   
+    <p></p>
+    <div>주문할 상품 목록</div>
+    <p></p>
     @foreach(Product_Model product in Model)
     {
         <input type="hidden" name="ProductId"  value="@product.Id" />
-        <input type="text" name="Name" value="@product.Name" />
-        <input type="text" name="Quantity" value="0" />
+        <div>상품이름 : @product.Name </div>
+        <div>가격 : @product.Price</div>
+        <div>주문할 양 :<input type="text" name="Quantity" value="0" /></div>       
         <img src="@product.ImgUrl"/>
-    })
+        <p></p>
+    }
     <button>상품등록</button>
 </form>
 

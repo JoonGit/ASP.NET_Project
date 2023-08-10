@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using BaseProject.Data.Enums;
 
 namespace BaseProject.Controllers
 {
@@ -42,6 +43,7 @@ namespace BaseProject.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> CreateOrder(Order_Model model)
         {
+            model.Status = StatusCategory.Activation;
             await _service.AddAsync(model);
 
             for (int i = 0; i < model.ProductId.Length; i++)
@@ -162,13 +164,13 @@ namespace BaseProject.Controllers
             var Model = _dbContext
                            .Order_Models
                            .FirstOrDefault();
-            if (Model.Status == "True")
+            if (Model.Status == StatusCategory.Activation)
             {
-                Model.Status = "False";
+                Model.Status = StatusCategory.Deactivation;
             }
-            else if (Model.Status == "False")
+            else if (Model.Status == StatusCategory.Deactivation)
             {
-                Model.Status = "True";
+                Model.Status = StatusCategory.Activation;
             }
             await _service.UpdateAsync(id, Model);
             return Redirect("/product/list");

@@ -1205,3 +1205,7 @@ D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\o
 D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\obj\Debug\net6.0\BaseProject.pdb
 D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\obj\Debug\net6.0\BaseProject.genruntimeconfig.cache
 D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\obj\Debug\net6.0\ref\BaseProject.dll
+D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\System.Web.Http.dll
+D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

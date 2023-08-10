@@ -4,10 +4,9 @@
 @{
 }
 <form asp-controller="Materal" asp-action="CreateMateral" enctype="multipart/form-data" method="post">
-    <input type="text" name="Name" placeholder="Name" value="자재_test" />
-    <input type="text" name="Quantity" placeholder="Quantity" value="100" />
-    <input type="text" name="Price" placeholder="Price" value="10000" />
-    <input type="file" name="ImgFile" />   
-    <input type="file" name="file" />
+    <div>자재이름 : <input type="text" name="Name" placeholder="Name" value="자재_이름" /></div>
+    <div>갯수 : <input type="text" name="Quantity" placeholder="Quantity" value="100" /></div>
+    <div>가격 : <input type="text" name="Price" placeholder="Price" value="10000" /></div>
+    <div><input type="file" name="ImgFile" /></div>   
     <button>자재등록</button>
 </form>

@@ -73,7 +73,17 @@ namespace BaseProject.Controllers
             return View(result);
         }
         #endregion
-
+        [HttpGet("detail")]
+        public IActionResult DetailInventory(int id)
+        {
+            // 상품 상세 정보 조회
+            var result = _dbContext.Inventory_Models
+                .Include(p => p.Product)
+                .Where(p => p.Id == id)
+                .First();
+            return View(result);
+        }
+        
         #region 상품수정
         [HttpGet("update")]
         public IActionResult UpdateInventory(int id)

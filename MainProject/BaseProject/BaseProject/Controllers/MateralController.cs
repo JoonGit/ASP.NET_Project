@@ -4,6 +4,7 @@ using BaseProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using BaseProject.Data.Enums;
 
 namespace BaseProject.Controllers
 {
@@ -42,7 +43,8 @@ namespace BaseProject.Controllers
             {
                 // 파일 저장
                 model.ImgUrl = await _fileService.FileCreat(model.Name, ImgFile, "Materal");
-                model.Status = "true";
+                model.Status = model.Status;
+                model.CreateTime = DateTime.Now;
                 await _service.AddAsync(model);
 
                 await _dbContext.SaveChangesAsync();
@@ -111,14 +113,15 @@ namespace BaseProject.Controllers
                                .Material_Models
                                .Where(m => m.Id == id)
                                .FirstOrDefault();
-            if (Model.Status == "True")
+            if (Model.Status == StatusCategory.Activation)
             {
-                Model.Status = "False";
+                Model.Status = StatusCategory.Deactivation;
             }
-            else if (Model.Status == "False")
+            else if (Model.Status == StatusCategory.Deactivation)
             {
-                Model.Status = "True";
+                Model.Status = StatusCategory.Activation;
             }
+
             await _service.UpdateAsync(id, Model);
                 return Redirect("/Materal/read");
             }

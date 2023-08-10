@@ -5,24 +5,28 @@
       "PackagePath": "staticwebassets\\BaseProject.bundle.scp.css"
     },
     {
-      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Materal\\자재_test\\5조_ERD.png",
-      "PackagePath": "staticwebassets\\Materal\\자재_test\\5조_ERD.png"
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\1\\플라스틱.jpg",
+      "PackagePath": "staticwebassets\\Material\\1\\플라스틱.jpg"
     },
     {
-      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car2\\로그인.png",
-      "PackagePath": "staticwebassets\\Product\\Car2\\로그인.png"
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\2\\가죽.jpg",
+      "PackagePath": "staticwebassets\\Material\\2\\가죽.jpg"
     },
     {
-      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\권한승인.png",
-      "PackagePath": "staticwebassets\\Product\\Car\\권한승인.png"
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\3\\고무.jpg",
+      "PackagePath": "staticwebassets\\Material\\3\\고무.jpg"
     },
     {
-      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\로그인.png",
-      "PackagePath": "staticwebassets\\Product\\Car\\로그인.png"
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\1\\Car.jpg",
+      "PackagePath": "staticwebassets\\Product\\1\\Car.jpg"
     },
     {
-      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\회원가입.png",
-      "PackagePath": "staticwebassets\\Product\\Car\\회원가입.png"
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\2\\Boomerang.png",
+      "PackagePath": "staticwebassets\\Product\\2\\Boomerang.png"
+    },
+    {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\3\\NinjaStart.png",
+      "PackagePath": "staticwebassets\\Product\\3\\NinjaStart.png"
     },
     {
       "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\css\\site.css",

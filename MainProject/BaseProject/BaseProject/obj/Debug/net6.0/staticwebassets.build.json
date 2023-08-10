@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nXon5q/IvqPW35mz0K1uZtSEQLp7zBAEljx8atn3IRs=",
+  "Hash": "u7+UhR0vZUC98UQo/8Yltr+hzX92c9XZs5524m3kqP0=",
   "Source": "BaseProject",
   "BasePath": "_content/BaseProject",
   "Mode": "Default",
@@ -1105,12 +1105,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Materal\\자재_test\\5조_ERD.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\1\\플라스틱.jpg",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
       "BasePath": "_content/BaseProject",
-      "RelativePath": "Materal/자재_test/5조_ERD.png",
+      "RelativePath": "Material/1/플라스틱.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1119,15 +1119,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Materal\\자재_test\\5조_ERD.png"
+      "OriginalItemSpec": "wwwroot\\Material\\1\\플라스틱.jpg"
     },
     {
-      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\권한승인.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\2\\가죽.jpg",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
       "BasePath": "_content/BaseProject",
-      "RelativePath": "Product/Car/권한승인.png",
+      "RelativePath": "Material/2/가죽.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1136,15 +1136,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Product\\Car\\권한승인.png"
+      "OriginalItemSpec": "wwwroot\\Material\\2\\가죽.jpg"
     },
     {
-      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\로그인.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\3\\고무.jpg",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
       "BasePath": "_content/BaseProject",
-      "RelativePath": "Product/Car/로그인.png",
+      "RelativePath": "Material/3/고무.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1153,15 +1153,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Product\\Car\\로그인.png"
+      "OriginalItemSpec": "wwwroot\\Material\\3\\고무.jpg"
     },
     {
-      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car\\회원가입.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\1\\Car.jpg",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
       "BasePath": "_content/BaseProject",
-      "RelativePath": "Product/Car/회원가입.png",
+      "RelativePath": "Product/1/Car.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1170,15 +1170,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Product\\Car\\회원가입.png"
+      "OriginalItemSpec": "wwwroot\\Product\\1\\Car.jpg"
     },
     {
-      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\Car2\\로그인.png",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\2\\Boomerang.png",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
       "BasePath": "_content/BaseProject",
-      "RelativePath": "Product/Car2/로그인.png",
+      "RelativePath": "Product/2/Boomerang.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1187,7 +1187,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Product\\Car2\\로그인.png"
+      "OriginalItemSpec": "wwwroot\\Product\\2\\Boomerang.png"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\3\\NinjaStart.png",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "Product/3/NinjaStart.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Product\\3\\NinjaStart.png"
     },
     {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\ tester\\회원가입.png",

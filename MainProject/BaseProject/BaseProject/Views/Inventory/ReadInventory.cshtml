@@ -5,14 +5,14 @@
 }
 
 @foreach(Inventory_Model inventory in Model)
-{
-<form asp-controller="Inventory" asp-action="update" method="post">
-    <input type="hidden" name="Id"  value="@inventory.Id" />
-    <input type="text" name="Name"  value="@inventory.Product.Name" />
-    <input type="text" name="Count"  value="@inventory.Count" />
-    <input type="text" name="Time" value="@inventory.CreateTime">
-    <input type="date" name="CreateTime" value="@inventory.CreateTime">
-    <img src="@inventory.Product.ImgUrl">
-</form>
+{    
+    <div>재고 이름 : @inventory.Product.Name</div>
+    <div>생산 갯수 : @inventory.Count</div>
+    <div>생산 날짜 : @inventory.CreateTime</div>
+    <div><img src="@inventory.Product.ImgUrl"></div>
+    <div><input type="hidden" name="Id"  value="@inventory.Id" /></div>  
+    <div><a href="/Inventory/detail?id=@inventory.Id">@inventory.Product.Name 수정</a></div>
+    
+    <p></p>
 }
 <a href="/Inventory/create">재고등록</a>

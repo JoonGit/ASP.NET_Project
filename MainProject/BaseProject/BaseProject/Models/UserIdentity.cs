@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using BaseProject.Data.Enums;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace BaseProject.Models
@@ -6,7 +7,7 @@ namespace BaseProject.Models
     public class UserIdentity : IdentityUser
     {
         public string ImgUrl { get; set; }
-        public string Status { get; set; }
+        public StatusCategory Status { get; set; }
         public DateTime CreateTime { get; set; }
     }
 }

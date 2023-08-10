@@ -126,25 +126,15 @@ namespace BaseProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("ImgUrl")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("EditTime")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("Price")
+                    b.Property<int>("MaterialId")
                         .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MaterialId");
 
                     b.ToTable("Material_Edit_Log_Models");
                 });
@@ -155,6 +145,9 @@ namespace BaseProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("ImgUrl")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -169,9 +162,8 @@ namespace BaseProject.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -213,9 +205,8 @@ namespace BaseProject.Migrations
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -240,6 +231,8 @@ namespace BaseProject.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Order_Products");
                 });
@@ -283,9 +276,8 @@ namespace BaseProject.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -550,9 +542,8 @@ namespace BaseProject.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("UserIdentity");
                 });
@@ -599,6 +590,17 @@ namespace BaseProject.Migrations
                     b.Navigation("UserIdentity");
                 });
 
+            modelBuilder.Entity("BaseProject.Models.Material_Edit_Log_Model", b =>
+                {
+                    b.HasOne("BaseProject.Models.Material_Model", "Material")
+                        .WithMany()
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Material");
+                });
+
             modelBuilder.Entity("BaseProject.Models.Order_Edit_Log_Model", b =>
                 {
                     b.HasOne("BaseProject.Models.Order_Model", "Order")
@@ -618,7 +620,15 @@ namespace BaseProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BaseProject.Models.Product_Model", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("BaseProject.Models.Product_Edit_LogModel", b =>

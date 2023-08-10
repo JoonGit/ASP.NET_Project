@@ -4,15 +4,16 @@
 @{
 }
 <form asp-controller="Product" asp-action="create" asp-route-returnurl="@ViewData["ReturnUrl"]" enctype="multipart/form-data" method="post">
-    <input type="text" name="Name" placeholder="Name" value="Car" />
-    <input type="text" name="Price" placeholder="Price" value="10000" />
-    <input type="file" name="ImgFile" />
+    <div>상품이름 : <input type="text" name="Name" placeholder="Name" value="Car" /></div>
+    <div>가격 : <input type="text" name="Price" placeholder="Price" value="10000" /></div>
+    <div>사진 : <input type="file" name="ImgFile" /></div>
+    <p></p>
+    <div>사용되는 자재</div>
     @foreach(var Material in Model)
     {
         @Material.Name<input type="hidden" name="MetrailId" value="@Material.Id"/>
-        <input type="text" name="MetrailId" placeholder="productId" value="@Material.Name" />
-        <input type="text" name="count" placeholder="count" value="0" />
-    }    
+        <div>자재이름 : @Material.Name</div>
+        <div>소모되는 양 : <input type="text" name="count" placeholder="count" value="0" /></div>    }    
     <input type="hidden" name="status"  value="True" />
 
     <button>상품등록</button>

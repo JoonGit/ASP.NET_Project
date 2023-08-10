@@ -5,10 +5,12 @@
 }
 @foreach(Order_Model order in Model)
 {
-    <a href="/order/detail?id=@order.Id">@order.Id</a>
-    <div>@order.Customer</div>
-    <div>@order.RegisterDate"</div>
-    <div>@order.EndDate</div>
-    <div></div>
+    
+    <div>주문자 : @order.Customer</div>
+    <div>진행상황 : @order.Status</div>
+    <div>주문등록 시간 : @order.RegisterDate</div>
+    <div>주문마감 시간 : @order.EndDate</div>    
+    <a href="/order/detail?id=@order.Id">@order.Customer 주문수정</a>
+    <p></p>
 }
 <a href="/order/create">주문등록</a>

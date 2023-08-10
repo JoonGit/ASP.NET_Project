@@ -10,11 +10,12 @@
     @foreach(Product_Model product in Model)
     {
         <input type="hidden" name="ProductId"  value="@product.Id" />
-        <input type="text" name="Name"  value="@product.Name" />
-        <input type="text" name="Count"  value="0" />
-        <input type="date" id="currentDate" name="CreateTime">
-        <img src="@product.ImgUrl"/>        
-    })
+        <div>상품이름 : @product.Name </div>
+        <div>생산갯수 : <input type="text" name="Count"  value="0" /> </div>
+        <div>생산날짜 : <input type="date" id="currentDate" name="CreateTime"> </div>   
+        <p></p>
+    }
+    <p></p>
     <button>상품등록</button>
 </form>
 

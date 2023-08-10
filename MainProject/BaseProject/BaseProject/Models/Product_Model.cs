@@ -1,4 +1,5 @@
 ﻿using BaseProject.Data.Base;
+using BaseProject.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace BaseProject.Models
@@ -11,7 +12,7 @@ namespace BaseProject.Models
         public string Name { get; set; }
         public int Price { get; set; }        
         public string ImgUrl { get; set; }
-        public string Status { get; set; }        
+        public StatusCategory Status { get; set; }        
         public DateTime CreateTime { get; set; }
 
         public int[] MetrailId { get; set; }

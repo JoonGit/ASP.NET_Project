@@ -1,4 +1,5 @@
 ﻿using BaseProject.Data;
+using BaseProject.Data.Enums;
 using BaseProject.Data.Service;
 using BaseProject.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -156,13 +157,13 @@ namespace BaseProject.Controllers
                            .Product_Models
                            .Where(product => product.Id == id)
                            .FirstOrDefault();
-            if(Model.Status == "True")
+            if(Model.Status == StatusCategory.Activation)
             {
-                Model.Status = "False";
+                Model.Status = StatusCategory.Deactivation;
             }               
-            else if(Model.Status == "False")
+            else if(Model.Status == StatusCategory.Deactivation)
             {
-                Model.Status = "True";
+                Model.Status = StatusCategory.Activation;
             }
             
             await _service.UpdateAsync(id, Model);

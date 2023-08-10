@@ -1,4 +1,5 @@
 ﻿using BaseProject.Data;
+using BaseProject.Data.Enums;
 using BaseProject.Data.Service;
 using BaseProject.Data.Static;
 using BaseProject.Migrations;
@@ -47,7 +48,7 @@ namespace BaseProject.Controllers
             {
                 Id = model.Id,
                 UserName = model.Name,
-                Status = "True",
+                Status = StatusCategory.Deactivation,
                 CreateTime = DateTime.Now
             };
 
@@ -232,7 +233,7 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> Delete(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
-            user.Status = "False";
+            user.Status = StatusCategory.Activation;
             await _userManager.UpdateAsync(user);
             return Redirect("/user/login");
         }
