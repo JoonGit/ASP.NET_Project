@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using BaseProject.Data.Enums;
 using BaseProject.Data.Static;
+using Microsoft.EntityFrameworkCore;
 
 namespace BaseProject.Controllers
 {
@@ -30,6 +31,33 @@ namespace BaseProject.Controllers
                 _userManager = userManager;
                 _dbContext = dbContext;
                 _fileService = fileService;
+            }
+
+        // 재고 등록
+            [HttpGet("stored")]
+            public async Task<IActionResult> StoredMateral()
+            {
+                var result = await _dbContext.Material_Models.ToListAsync();
+                return View(result);
+            }
+        // stored procedure
+            [HttpPost("stored")]
+            public async Task<IActionResult> StoredMateral(Materal_Stored_Model model)
+            {
+            for (int i = 0; i < model.MetrailId.Length; i++)
+            {
+                var result = await _dbContext.Material_Models.Where(m => m.Id == model.MetrailId[i]).FirstAsync();
+                result.Quantity += model.Quantity[i];
+                Materal_Stored_Log_Model materal_Stored_Log_Model = new Materal_Stored_Log_Model()
+                {
+                    MetrailId = model.MetrailId[i],
+                    Quantity = model.Quantity[i],
+                    StoredTime = DateTime.Now
+                };
+                _dbContext.Materal_Stored_Log_Models.Add(materal_Stored_Log_Model);                
+            }
+            _dbContext.SaveChanges();
+            return Redirect("/Materal/read");
             }
 
             #region 상품등록
@@ -94,7 +122,7 @@ namespace BaseProject.Controllers
             // 수정 시간 저장
             Material_Edit_Log_Model log = new Material_Edit_Log_Model()
             {
-                MaterialId = UpdateModel.Id,
+                MetrailId = UpdateModel.Id,
                 EditTime = DateTime.Now,
             };
             _dbContext.Material_Edit_Log_Models.Add(log);

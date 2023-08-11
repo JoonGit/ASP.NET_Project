@@ -1,0 +1,12 @@
+﻿
+<form asp-controller="materal" asp-action="StoredMateral"  method="post">
+@foreach(Material_Model material_Model in Model)
+{         
+        <input type="hidden" name="MetrailId"  value="@material_Model.Id" />
+        <div>자재이름 : @material_Model.Name</div>
+        <div>갯수 : <input name="Quantity" value="@material_Model.Quantity"/> </div>
+        <div><img src="@material_Model.ImgUrl"/>  </div>   
+        <p></p>
+}
+<input type="submit" value="자재입고">
+</form>  

@@ -305,6 +305,10 @@
       "PackagePath": "staticwebassets\\user\\tester\\img.jpg"
     },
     {
+      "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\고무.jpg",
+      "PackagePath": "staticwebassets\\user\\tester\\고무.jpg"
+    },
+    {
       "Id": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\로그인.png",
       "PackagePath": "staticwebassets\\user\\tester\\로그인.png"
     },

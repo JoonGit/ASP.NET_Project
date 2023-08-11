@@ -3,6 +3,12 @@
     <a href="/Inventory/create">재고등록</a>
 }
 
+<form action="/Inventory/Read" method="post">
+<select name="Name" class="form-control" asp-items="@ViewBag.productsName" > </select>
+<button>검색</button>
+</form>
+
+
 @foreach(Inventory_Model inventory in Model)
 {    
     <div>재고 이름 : @inventory.Product.Name</div>

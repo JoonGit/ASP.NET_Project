@@ -19,6 +19,7 @@ namespace BaseProject.Data
         public DbSet<IoT_Model> IoT_Models { get; set; }
         
         public DbSet<Material_Model> Material_Models { get; set; }
+        public DbSet<Materal_Stored_Log_Model> Materal_Stored_Log_Models { get; set; }
         public DbSet<Material_Edit_Log_Model> Material_Edit_Log_Models { get; set; }
 
         public DbSet<Order_Model> Order_Models { get; set; }

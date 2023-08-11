@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using BaseProject.Data.Static;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BaseProject.Controllers
 {
@@ -49,6 +50,8 @@ namespace BaseProject.Controllers
             {
                 if (model.Count[i] != 0)
                 {
+                    var product = await _dbContext.Product_Models.FindAsync(model.ProductId[i]);
+                    product.Quantity += model.Count[i];
                     Inventory_Model inventory_model = new Inventory_Model()
                     {
                         ProductId = model.ProductId[i],
@@ -68,13 +71,34 @@ namespace BaseProject.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> ReadInventory()
         {
-            // 전체 상품 목록 조회
-            var result = _dbContext.Inventory_Models
-                .Include(p => p.Product)
-                .ToList();
+            var result = await _dbContext.Inventory_Models
+                    .Include(p => p.Product)
+                    .ToListAsync();      
+            ViewBag.ProductsName = await Filter();
             return View(result);
         }
+        [HttpPost("Read")]
+        public async Task<IActionResult> ReadInventory(string name)
+        {
+            var result = await _dbContext.Inventory_Models
+                        .Include(p => p.Product)
+                        .Where(p => p.Product.Name == name)
+                        .ToListAsync();
+            ViewBag.ProductsName = await Filter();
+            return View(result);
+        }
+
+        public async Task<List<SelectListItem>> Filter()
+        {
+           return await _dbContext.Product_Models.Select(p => new SelectListItem()
+                {
+                    Value = p.Name,
+                    Text = p.Name
+                })
+                .ToListAsync();
+        }
         #endregion
+        
         [HttpGet("detail")]
         public IActionResult DetailInventory(int id)
         {

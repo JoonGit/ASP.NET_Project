@@ -3,6 +3,7 @@ using System;
 using BaseProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaseProject.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230811090613_stored_02")]
+    partial class stored_02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,7 +129,10 @@ namespace BaseProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("MetrailId")
+                    b.Property<int>("MateralId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaterialId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -137,7 +143,7 @@ namespace BaseProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MetrailId");
+                    b.HasIndex("MaterialId");
 
                     b.ToTable("Materal_Stored_Log_Models");
                 });
@@ -151,12 +157,15 @@ namespace BaseProject.Migrations
                     b.Property<DateTime>("EditTime")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("MetrailId")
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Material_ModelId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MetrailId");
+                    b.HasIndex("Material_ModelId");
 
                     b.ToTable("Material_Edit_Log_Models");
                 });
@@ -617,24 +626,24 @@ namespace BaseProject.Migrations
 
             modelBuilder.Entity("BaseProject.Models.Materal_Stored_Log_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.Material_Model", "Metrail")
+                    b.HasOne("BaseProject.Models.Material_Model", "Material")
                         .WithMany()
-                        .HasForeignKey("MetrailId")
+                        .HasForeignKey("MaterialId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Metrail");
+                    b.Navigation("Material");
                 });
 
             modelBuilder.Entity("BaseProject.Models.Material_Edit_Log_Model", b =>
                 {
-                    b.HasOne("BaseProject.Models.Material_Model", "Metrail")
+                    b.HasOne("BaseProject.Models.Material_Model", "Material_Model")
                         .WithMany()
-                        .HasForeignKey("MetrailId")
+                        .HasForeignKey("Material_ModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Metrail");
+                    b.Navigation("Material_Model");
                 });
 
             modelBuilder.Entity("BaseProject.Models.Order_Edit_Log_Model", b =>

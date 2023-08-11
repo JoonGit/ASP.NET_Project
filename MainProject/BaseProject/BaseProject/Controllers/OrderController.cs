@@ -10,7 +10,7 @@ using BaseProject.Data.Static;
 
 namespace BaseProject.Controllers
 {
-    [Authorize(Roles = UserRoles.OrderManager)]
+    //[Authorize(Roles = UserRoles.OrderManager)]
 
     [Route("Order")]
     public class OrderController : Controller
@@ -51,6 +51,7 @@ namespace BaseProject.Controllers
 
             for (int i = 0; i < model.ProductId.Length; i++)
             {
+                
                 Order_Product_Model order_Product_Model = new Order_Product_Model()
                 {
                     OrderId = model.Id,
@@ -116,6 +117,23 @@ namespace BaseProject.Controllers
                     Quantity = model.Quantity[i]
                 };
                 _dbContext.Order_Products.Add(use_Metrail_Model);
+            }
+            if(model.Status == Order_StatusCategory.작업완료)
+            {
+                for (int i = 0; i < model.ProductId.Length; i++)
+                {
+                    var product = await _dbContext.Product_Models
+                        .Where(p => p.Id == model.ProductId[i])
+                        .Include(p => p.ProductUseMetrailModels).FirstAsync();
+                    product.Quantity -= model.Quantity[i];
+                    foreach (var item in product.ProductUseMetrailModels)
+                    {
+                        var metrail = await _dbContext.Material_Models
+                            .Where(m => m.Id == item.MetrailId).FirstAsync();
+                        metrail.Quantity -= item.Quantity * model.Quantity[i];
+                    }
+                }
+                    
             }
 
             // 수정 시간 저장

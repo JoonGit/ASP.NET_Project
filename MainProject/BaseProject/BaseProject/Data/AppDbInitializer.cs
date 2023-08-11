@@ -58,6 +58,7 @@ namespace BaseProject.Data
                         Price = 1000,
                         Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Product" + "/" + 1 + "/" + "Car.jpg",
+                        Quantity = 10,
                         CreateTime = DateTime.Now
                     },
                     new Product_Model
@@ -66,6 +67,7 @@ namespace BaseProject.Data
                         Price = 10000,
                         Status = Data.Enums.Defult_StatusCategory.불가능,
                         ImgUrl = "/" + "Product" + "/" + 2 + "/" + "Boomerang.png",
+                        Quantity = 100,
                         CreateTime = DateTime.Now
                     },
                     new Product_Model
@@ -74,6 +76,7 @@ namespace BaseProject.Data
                         Price = 20000,
                         Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Product" + "/" + 3 + "/" + "NinjaStart.png",
+                        Quantity = 1000,
                         CreateTime = DateTime.Now
                     },
                 });

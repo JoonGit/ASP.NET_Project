@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jdLjYLwCh+2SeltuwNwYQ8Jq8/pMuZAf65E9LNVIDU0=",
+  "Hash": "XqAWPhKcAN9yFROGygRY8Xv2yJvFTck/Y7ip35anyCo=",
   "Source": "BaseProject",
   "BasePath": "_content/BaseProject",
   "Mode": "Default",
@@ -1307,6 +1307,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user\\tester\\img.jpg"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\고무.jpg",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "user/tester/고무.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\tester\\고무.jpg"
     },
     {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\tester\\로그인.png",

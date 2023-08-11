@@ -98,6 +98,7 @@ namespace BaseProject.Controllers
                     UserId = model.Id,
                     LoginTime = DateTime.Now
                 };
+                _dbContext.Login_Log_Models.Add(login_Log_Model);
                 _dbContext.SaveChanges();
                 if (ReturnUrl != null)
                 {
