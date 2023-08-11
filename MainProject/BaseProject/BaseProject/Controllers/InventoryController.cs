@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using BaseProject.Data.Static;
 
 namespace BaseProject.Controllers
 {
+    //[Authorize(Roles = UserRoles.InventoryManager)]
     [Route("Inventory")]
     public class InventoryController : Controller
     {
@@ -57,7 +59,7 @@ namespace BaseProject.Controllers
                 }                
             }
             await _dbContext.SaveChangesAsync();
-            return Redirect("/");
+            return Redirect("/Inventory/Read");
         }
         #endregion
 

@@ -2,6 +2,7 @@
 using BaseProject.Data.Service;
 using BaseProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace BaseProject.Controllers
 {
@@ -31,14 +32,12 @@ namespace BaseProject.Controllers
         [HttpGet("test")]
         public string TestFun(int id)
         {
-            Console.WriteLine(id);
-            var teststring = _dbContext.Product_Models.Find(id);
-            string result = "";
-            result += teststring.Name + "/";
-            result += teststring.Price.ToString() + "/";
-
-
-            return result;
+            JArray jArray = new JArray();
+            JObject jObject = new JObject();
+            jObject.Add("name", "test");
+            jObject.Add("price", 1000);
+            jArray.Add(jObject);
+            return jArray.ToString();
         }
     }
 }

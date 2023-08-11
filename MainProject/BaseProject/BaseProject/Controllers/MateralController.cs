@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using BaseProject.Data.Enums;
+using BaseProject.Data.Static;
 
 namespace BaseProject.Controllers
 {
+    //[Authorize(Roles = UserRoles.MateralManager)]
     [Route("materal")]
     public class MateralController : Controller
     {
@@ -42,13 +44,13 @@ namespace BaseProject.Controllers
             public async Task<IActionResult> CreateMateral(Material_Model model, IFormFile ImgFile)
             {
                 // 파일 저장
-                model.ImgUrl = await _fileService.FileCreat(model.Name, ImgFile, "Materal");
+                model.ImgUrl = await _fileService.FileCreat(Convert.ToString(model.Id), ImgFile, "Materal");
                 model.Status = model.Status;
                 model.CreateTime = DateTime.Now;
                 await _service.AddAsync(model);
 
                 await _dbContext.SaveChangesAsync();
-                return Redirect("/");
+                return Redirect("/Materal/read");
             }
             #endregion
 
@@ -72,7 +74,7 @@ namespace BaseProject.Controllers
                 return View(result.Result);
             }
             [HttpPost("update")]
-            public async Task<IActionResult> UpdateMateral(Material_Model model, IFormFile file)
+            public async Task<IActionResult> UpdateMateral(Material_Model model, IFormFile ImgFile)
             {
                 // 수정할 상품 정보 불러오기
                 var UpdateModel = _dbContext
@@ -83,12 +85,10 @@ namespace BaseProject.Controllers
                 UpdateModel.Quantity = model.Quantity;
                 UpdateModel.Price = model.Price;
                 UpdateModel.Status = model.Status;
-                // 기존에 있던 파일의 경로
-                string path = @"wwwroot/" + UpdateModel.ImgUrl;
          
-            if(file != null)
+            if(ImgFile != null)
             {
-                UpdateModel.ImgUrl = await _fileService.FileUpdate(UpdateModel.Name, file, "product");
+                UpdateModel.ImgUrl = await _fileService.FileUpdate(Convert.ToString(UpdateModel.Id), ImgFile, "Material");
             }
 
             // 수정 시간 저장
@@ -106,21 +106,14 @@ namespace BaseProject.Controllers
             #region 상품삭제
             // 상품 삭제
             [HttpGet("delete")]
-            public async Task<IActionResult> DeleteMateral(int id)
+            public async Task<IActionResult> DeleteMateral(int id, Defult_StatusCategory Status)
             {
                 // 삭제할 정보 가져오기
                 var Model = _dbContext
                                .Material_Models
                                .Where(m => m.Id == id)
                                .FirstOrDefault();
-            if (Model.Status == StatusCategory.Activation)
-            {
-                Model.Status = StatusCategory.Deactivation;
-            }
-            else if (Model.Status == StatusCategory.Deactivation)
-            {
-                Model.Status = StatusCategory.Activation;
-            }
+            Model.Status = Status;
 
             await _service.UpdateAsync(id, Model);
                 return Redirect("/Materal/read");

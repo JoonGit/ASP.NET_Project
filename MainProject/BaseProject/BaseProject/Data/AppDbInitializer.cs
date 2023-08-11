@@ -23,16 +23,16 @@ namespace BaseProject.Data
                         Name = "플라스틱",
                         Quantity = 30,
                         Price = 1000,
-                        Status = Data.Enums.StatusCategory.Activation,
+                        Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Material" + "/" + 1 + "/" + "플라스틱.jpg",
                         CreateTime = DateTime.Now
                     },
                     new Material_Model
                     {
                         Name = "가죽",
-                        Quantity = 5000,
+                        Quantity = 0,
                         Price = 2000,
-                        Status = Data.Enums.StatusCategory.Activation,
+                        Status = Data.Enums.Defult_StatusCategory.불가능,
                         ImgUrl = "/" + "Material" + "/" + 2 + "/" + "가죽.jpg",
                    CreateTime = DateTime.Now
                     },
@@ -41,7 +41,7 @@ namespace BaseProject.Data
                         Name = "고무",
                         Quantity = 900,
                         Price = 10,
-                        Status = Data.Enums.StatusCategory.Activation,
+                        Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Material" + "/" + 3 + "/" + "고무.jpg",
                         CreateTime = DateTime.Now
                     },
@@ -56,7 +56,7 @@ namespace BaseProject.Data
                     {
                         Name = "Car",
                         Price = 1000,
-                        Status = Data.Enums.StatusCategory.Activation,
+                        Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Product" + "/" + 1 + "/" + "Car.jpg",
                         CreateTime = DateTime.Now
                     },
@@ -64,7 +64,7 @@ namespace BaseProject.Data
                     {
                         Name = "Boomerang",
                         Price = 10000,
-                        Status = Data.Enums.StatusCategory.Activation,
+                        Status = Data.Enums.Defult_StatusCategory.불가능,
                         ImgUrl = "/" + "Product" + "/" + 2 + "/" + "Boomerang.png",
                         CreateTime = DateTime.Now
                     },
@@ -72,7 +72,7 @@ namespace BaseProject.Data
                     {
                         Name = "NinjaStart",
                         Price = 20000,
-                        Status = Data.Enums.StatusCategory.Activation,
+                        Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Product" + "/" + 3 + "/" + "NinjaStart.png",
                         CreateTime = DateTime.Now
                     },
@@ -187,22 +187,22 @@ namespace BaseProject.Data
                         new Order_Model
                     {
                         Customer = "일지원",
-                        Status = Data.Enums.StatusCategory.Deactivation,
+                        Status = Data.Enums.Order_StatusCategory.작업중,
                         RegisterDate = new DateTime(2020, 5, 5),
-                        EndDate = new DateTime(2020, 5, 10),
+                        Deadline = new DateTime(2020, 5, 10),
                     },new Order_Model
                     {
                         Customer = "이지원",
-                        Status = Data.Enums.StatusCategory.Working,
+                        Status = Data.Enums.Order_StatusCategory.작업완료,
                         RegisterDate = new DateTime(2020, 10, 20),
-                        EndDate = new DateTime(2020, 11, 30),
+                        Deadline = new DateTime(2020, 11, 30),
                     },
                         new Order_Model
                     {
                         Customer = "삼지원",
-                        Status = Data.Enums.StatusCategory.Activation,
+                        Status = Data.Enums.Order_StatusCategory.작업대기,
                         RegisterDate = new DateTime(2025, 4, 5),
-                        EndDate = new DateTime(2026, 1, 10),
+                        Deadline = new DateTime(2026, 1, 10),
                     },
 
                 });
@@ -265,10 +265,14 @@ namespace BaseProject.Data
 
                 if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-                if (!await roleManager.RoleExistsAsync(UserRoles.Manager))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Manager));
-                if (!await roleManager.RoleExistsAsync(UserRoles.Member))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Member));
+                if (!await roleManager.RoleExistsAsync(UserRoles.InventoryManager))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.InventoryManager));
+                if (!await roleManager.RoleExistsAsync(UserRoles.MateralManager))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.MateralManager));
+                if (!await roleManager.RoleExistsAsync(UserRoles.ProductManager))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.ProductManager));
+                if (!await roleManager.RoleExistsAsync(UserRoles.OrderManager))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.OrderManager));
                 if (!await roleManager.RoleExistsAsync(UserRoles.NoRole))
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.NoRole));
             }

@@ -12,6 +12,7 @@ using System.Data;
 
 namespace BaseProject.Controllers
 {
+    //[AllowAnonymous]
     [Route("user")]
     public class UserController : Controller
     {
@@ -48,7 +49,7 @@ namespace BaseProject.Controllers
             {
                 Id = model.Id,
                 UserName = model.Name,
-                Status = StatusCategory.Deactivation,
+                Status = Defult_StatusCategory.가능,
                 CreateTime = DateTime.Now
             };
 
@@ -154,24 +155,16 @@ namespace BaseProject.Controllers
 
             for (int i = 0; i < rollAccept_Model.UserId.Length; i++)
             {
+                if (rollAccept_Model.Role[i] == rollAccept_Model.BeforeRole[i]) continue;
                 // 권한 변경
                 // 권한 변경 전 권한 삭제
-                var result = await _userManager.RemoveFromRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), rollAccept_Model.BeforeRole[i]);
+                var user = await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]);
+                var result = await _userManager.RemoveFromRoleAsync(user, rollAccept_Model.BeforeRole[i]);
                 // 권한 삭제 후 권한 추가
                 if (result.Succeeded)
                 {
-                    if (rollAccept_Model.Role[i].Equals(UserRoles.Member))
-                    {
-                        await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), UserRoles.Member);
-                    }
-                    else if (rollAccept_Model.Role[i].Equals(UserRoles.Manager))
-                    {
-                        await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), UserRoles.Manager);
-                    }
-                    else
-                    {
-                        await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(rollAccept_Model.UserId[i]), UserRoles.NoRole);
-                    }
+                    // 권한 승인
+                    await _userManager.AddToRoleAsync(user, rollAccept_Model.Role[i]);
                 }
             }
             // 로그인 페이지 이동
@@ -180,6 +173,8 @@ namespace BaseProject.Controllers
         #endregion
 
         #region 마이페이지
+        // 로그인 된 사용자만 들어올 수 있음
+        [Authorize]
         [HttpGet("UpdateUser")]
         public async Task<IActionResult> UpdateUser()
         {
@@ -233,7 +228,7 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> Delete(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
-            user.Status = StatusCategory.Activation;
+            user.Status = Defult_StatusCategory.불가능;
             await _userManager.UpdateAsync(user);
             return Redirect("/user/login");
         }

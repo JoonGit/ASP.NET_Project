@@ -4,10 +4,9 @@
 @{
 }
 <form asp-controller="Inventory" asp-action="update" method="post">
-    <div>재고 이름 : <input type="text" name="Name"  value="@Model.Product.Name" /></div>
+    <div>재고 이름 : @Model.Product.Name</div>
     <div>생산 갯수 : <input type="text" name="Count"  value="@Model.Count" /></div>
-    <div>생산 날짜 : @Model.CreateTime 수정할 시간 : <input type="date" name="Time" value="@Model.CreateTime"></div>
-    <input type="file" name="ImgFile" />
-    <div><img src="@Model.Product.ImgUrl"></div>
+    <div>생산 날짜 : @Model.CreateTime 수정할 시간 : <input type="date" name="CreateTime" value="@Model.CreateTime"></div>
     <div><input type="hidden" name="Id"  value="@Model.Id" /></div>    
+    <button>재고 수정</button>
 </form>

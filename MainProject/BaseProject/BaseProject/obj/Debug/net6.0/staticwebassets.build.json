@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u7+UhR0vZUC98UQo/8Yltr+hzX92c9XZs5524m3kqP0=",
+  "Hash": "jdLjYLwCh+2SeltuwNwYQ8Jq8/pMuZAf65E9LNVIDU0=",
   "Source": "BaseProject",
   "BasePath": "_content/BaseProject",
   "Mode": "Default",
@@ -1105,12 +1105,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\1\\플라스틱.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Materal\\0\\3DModeling.jpg",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
       "BasePath": "_content/BaseProject",
-      "RelativePath": "Material/1/플라스틱.jpg",
+      "RelativePath": "Materal/0/3DModeling.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1119,7 +1119,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Material\\1\\플라스틱.jpg"
+      "OriginalItemSpec": "wwwroot\\Materal\\0\\3DModeling.jpg"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\1\\img.jpg",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "Material/1/img.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Material\\1\\img.jpg"
     },
     {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\2\\가죽.jpg",
@@ -1156,12 +1173,12 @@
       "OriginalItemSpec": "wwwroot\\Material\\3\\고무.jpg"
     },
     {
-      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\1\\Car.jpg",
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Material\\4\\Lego.jpg",
       "SourceId": "BaseProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
       "BasePath": "_content/BaseProject",
-      "RelativePath": "Product/1/Car.jpg",
+      "RelativePath": "Material/4/Lego.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1170,7 +1187,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Product\\1\\Car.jpg"
+      "OriginalItemSpec": "wwwroot\\Material\\4\\Lego.jpg"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\1\\can.jpg",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "Product/1/can.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Product\\1\\can.jpg"
     },
     {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\2\\Boomerang.png",
@@ -1205,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Product\\3\\NinjaStart.png"
+    },
+    {
+      "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\Product\\냉장고\\img.jpg",
+      "SourceId": "BaseProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\",
+      "BasePath": "_content/BaseProject",
+      "RelativePath": "Product/냉장고/img.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Product\\냉장고\\img.jpg"
     },
     {
       "Identity": "D:\\Study\\c#\\asp.net\\MyBlog\\ASP.NET_Project\\MainProject\\BaseProject\\BaseProject\\wwwroot\\user\\ tester\\회원가입.png",

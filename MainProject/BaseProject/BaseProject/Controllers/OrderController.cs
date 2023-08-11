@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using BaseProject.Data.Enums;
+using BaseProject.Data.Static;
 
 namespace BaseProject.Controllers
 {
+    [Authorize(Roles = UserRoles.OrderManager)]
+
     [Route("Order")]
     public class OrderController : Controller
     {
@@ -43,7 +46,7 @@ namespace BaseProject.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> CreateOrder(Order_Model model)
         {
-            model.Status = StatusCategory.Activation;
+            model.Status = Order_StatusCategory.작업대기;
             await _service.AddAsync(model);
 
             for (int i = 0; i < model.ProductId.Length; i++)
@@ -99,8 +102,9 @@ namespace BaseProject.Controllers
                 .FirstAsync();
 
             UpdateModel.Customer = model.Customer;
-
             UpdateModel.Status = model.Status;
+            UpdateModel.RegisterDate = model.RegisterDate;
+            UpdateModel.Deadline = model.Deadline;
             UpdateModel.OrderProducts.Clear();
 
             for (int i = 0; i < model.ProductId.Length; i++)
@@ -121,9 +125,6 @@ namespace BaseProject.Controllers
                 EditTime = DateTime.Now,
             };
             _dbContext.Order_Edit_Log_Models.Add(log);
-
-            _service.UpdateAsync(model.Id, UpdateModel);
-
             _dbContext.SaveChanges();
             return Redirect("/Order/read");
         }
@@ -158,20 +159,14 @@ namespace BaseProject.Controllers
         #region 상품삭제
         // 상품 삭제
         [HttpGet("delete")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteOrder(int id, Order_StatusCategory Status)
         {
             // 삭제할 정보 가져오기
             var Model = _dbContext
                            .Order_Models
                            .FirstOrDefault();
-            if (Model.Status == StatusCategory.Activation)
-            {
-                Model.Status = StatusCategory.Deactivation;
-            }
-            else if (Model.Status == StatusCategory.Deactivation)
-            {
-                Model.Status = StatusCategory.Activation;
-            }
+            Model.Status = Status;
+
             await _service.UpdateAsync(id, Model);
             return Redirect("/product/list");
         }

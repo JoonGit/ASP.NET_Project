@@ -1,6 +1,7 @@
 ﻿using BaseProject.Data;
 using BaseProject.Data.Enums;
 using BaseProject.Data.Service;
+using BaseProject.Data.Static;
 using BaseProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -9,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BaseProject.Controllers
 {
+    [Authorize(Roles = UserRoles.ProductManager)]
+
     [Route("Product")]
     public class ProductController : Controller
     {
@@ -63,7 +66,7 @@ namespace BaseProject.Controllers
             // 파일 업로드후 모델 저장
             
             await _dbContext.SaveChangesAsync();
-            return Redirect("/");
+            return Redirect("/product/read");
         }
         #endregion
 
@@ -90,7 +93,7 @@ namespace BaseProject.Controllers
             return View(result.Result);
         }
         [HttpPost("update")]
-        public async Task<IActionResult> UpdateProduct(Product_Model model, IFormFile file)
+        public async Task<IActionResult> UpdateProduct(Product_Model model, IFormFile ImgFile)
         {
             // 수정 할 모델 불러오기            
             var UpdateModel = await _dbContext.Product_Models
@@ -103,27 +106,15 @@ namespace BaseProject.Controllers
             UpdateModel.Price = model.Price;
             UpdateModel.Status = model.Status;
             int index = 0;
-            //UpdateModel.ProductUseMetrailModels.Clear();
-
             foreach (var metrail in UpdateModel.ProductUseMetrailModels)
             {
-                if(metrail.Quantity == model.count[index])
-                {
-                    index++;
-                    continue;
-                    
-                }
-                else
-                {
                     metrail.Quantity = model.count[index];
-                    index++;
-                }
-                
+                    index++;                
             }
             // DB에 저장되어 있는 경로 수정
-            if (file != null)
+            if (ImgFile != null)
             {
-                UpdateModel.ImgUrl = await _fileService.FileUpdate(UpdateModel.Name, file, "product");
+                UpdateModel.ImgUrl = await _fileService.FileUpdate(Convert.ToString(UpdateModel.Id), ImgFile, "product");
             }
             // 수정 시간 저장
             Product_Edit_LogModel log = new Product_Edit_LogModel()
@@ -150,21 +141,15 @@ namespace BaseProject.Controllers
         #region 상품삭제
         // 상품 삭제
         [HttpGet("delete")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProduct(int id, Defult_StatusCategory Stasut)
         {
-            // 삭제할 정보 가져오기
+            // 상태 변경 정보 가져오기
             var Model = _dbContext
                            .Product_Models
                            .Where(product => product.Id == id)
                            .FirstOrDefault();
-            if(Model.Status == StatusCategory.Activation)
-            {
-                Model.Status = StatusCategory.Deactivation;
-            }               
-            else if(Model.Status == StatusCategory.Deactivation)
-            {
-                Model.Status = StatusCategory.Activation;
-            }
+            // 상태 변경
+            Model.Status = Stasut;           
             
             await _service.UpdateAsync(id, Model);
             return Redirect("/product/read");

@@ -6,12 +6,14 @@
 @{
 }
 <form asp-controller="order" asp-action="update" method="post">
-    <div>주문자 : <input type="text" name="Name"  value="@Model.Customer" /></div>
+<input type="hidden" name="Id"  value="@Model.Id" />
+    <div>주문자 : <input type="text" name="Customer"  value="@Model.Customer" /></div>
     <div>상품등록 시간 : @Model.RegisterDate<input type="date" name="RegisterDate"  value="@Model.RegisterDate" /></div>
-    <div>상품종료 시간 : @Model.EndDate<input type="date" name="EndDate" value="@Model.EndDate"></div>
+    <div>상품종료 시간 : @Model.Deadline<input type="date" name="Deadline" value="@Model.Deadline"></div>
     
-    <select asp-for="Status" class="form-control" 
-    asp-items="Html.GetEnumSelectList<StatusCategory>()"
+    <select asp-for="Status" 
+    class="form-control"
+    asp-items="Html.GetEnumSelectList<Order_StatusCategory>()"
         onselect="@Model.Status">
     </select>
     <p></p>
@@ -19,8 +21,9 @@
     <p></p>
     @foreach(Order_Product_Model product in Model.OrderProducts)
     {
+<input type="hidden" name="ProductId"  value="@product.Product.Id" />
         <div>상품이름 : <input type="text" name="Name"  value="@product.Product.Name" /></div>
-        <div>주문갯수 : <input type="text" name="Count"  value="@product.Quantity" /></div>
+        <div>주문갯수 : <input type="text" name="Quantity"  value="@product.Quantity" /></div>
     }
     <button>주문수정</button>
 </form>
