@@ -1,4 +1,5 @@
-﻿@*
+﻿@using BaseProject.Data.Enums;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -6,7 +7,8 @@
 <form asp-controller="Inventory" asp-action="update" method="post">
     <div>재고 이름 : @Model.Product.Name</div>
     <div>생산 갯수 : <input type="text" name="Count"  value="@Model.Count" /></div>
-    <div>생산 날짜 : @Model.CreateTime 수정할 시간 : <input type="date" name="CreateTime" value="@Model.CreateTime"></div>
+    <div>생산 날짜 : @Model.CreateTime 수정할 시간 : <input type="date" name="CreateTime" value="@Model.CreateTime"></div>    
+    <div>수정 사유 : <select name="note" class="form-control" asp-items="Html.GetEnumSelectList<NotesCategory>()"> </select></div>
     <div><input type="hidden" name="Id"  value="@Model.Id" /></div>    
     <button>재고 수정</button>
 </form>

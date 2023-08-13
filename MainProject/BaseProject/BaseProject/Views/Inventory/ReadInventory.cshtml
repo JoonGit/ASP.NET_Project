@@ -4,11 +4,9 @@
 }
 
 <form action="/Inventory/Read" method="post">
-<select name="Name" class="form-control" asp-items="@ViewBag.productsName" > </select>
+    <select name="Name" class="form-control" asp-items="@ViewBag.productsName" > </select>
 <button>검색</button>
 </form>
-
-
 @if (Model != null)
 {
     @foreach (Inventory_Model inventory in Model)

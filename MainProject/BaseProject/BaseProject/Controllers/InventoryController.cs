@@ -42,7 +42,7 @@ namespace BaseProject.Controllers
                 .ToListAsync();
             return View(result);
         }
-        // 권한을 소비자 등록자 로 나워 등록자만 접근 가능하도록 변경
+
         [HttpPost("create")]
         public async Task<IActionResult> CreateInventory(Inventoy_Get_Info_Model model)
         {
@@ -80,7 +80,7 @@ namespace BaseProject.Controllers
             return View();
         }
         [HttpPost("Read")]
-        public async Task<IActionResult> ReadInventory(string name)
+        public async Task<IActionResult> ReadInventory(string name,string Value)
         {
             var result = new List<Inventory_Model>();
             if(name != "전체")
@@ -96,7 +96,7 @@ namespace BaseProject.Controllers
                         .Include(p => p.Product)
                         .ToListAsync();
             }
-            
+            ViewBag.Name = name;
             ViewBag.ProductsName = await Filter();
             return View(result);
         }
@@ -113,7 +113,8 @@ namespace BaseProject.Controllers
             return result;
         }
         #endregion
-        
+
+        #region 상품상세조회
         [HttpGet("detail")]
         public IActionResult DetailInventory(int id)
         {
@@ -124,7 +125,8 @@ namespace BaseProject.Controllers
                 .First();
             return View(result);
         }
-        
+        #endregion
+
         #region 상품수정
         [HttpGet("update")]
         public IActionResult UpdateInventory(int id)
@@ -134,7 +136,7 @@ namespace BaseProject.Controllers
             return View(result.Result);
         }
         [HttpPost("update")]
-        public async Task<IActionResult> UpdateInventory(Inventory_Model model, IFormFile file)
+        public async Task<IActionResult> UpdateInventory(Inventory_Model model, Inventory_Edit_Log_Model log, IFormFile file)
         {
             // 수정할 정보 불러오기
             var UpdateModel = await _dbContext.Inventory_Models
@@ -145,11 +147,11 @@ namespace BaseProject.Controllers
             UpdateModel.CreateTime = model.CreateTime;
 
             // 수정 시간 저장
-            Inventory_Edit_Log_Model log = new Inventory_Edit_Log_Model()
-            {
-                InventoryId = UpdateModel.Id,
-                EditTime = DateTime.Now,
-            };
+            log.InventoryId = UpdateModel.Id;
+            log.EditTime = DateTime.Today;
+
+            _dbContext.Inventory_Edit_Log_Model.Add(log);
+
             _dbContext.Inventory_Edit_Log_Model.Add(log);
             _dbContext.SaveChanges();
             return Redirect("/Inventory/Read");

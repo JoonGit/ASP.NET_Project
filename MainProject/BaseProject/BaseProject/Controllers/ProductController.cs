@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BaseProject.Controllers
 {
-    [Authorize(Roles = UserRoles.ProductManager)]
+    //[Authorize(Roles = UserRoles.ProductManager)]
 
     [Route("Product")]
     public class ProductController : Controller
@@ -49,7 +49,7 @@ namespace BaseProject.Controllers
             {
                 model.ImgUrl = await _fileService.FileCreat(model.Name, ImgFile, "product");
             }         
-            model.CreateTime = DateTime.Now;
+            model.CreateTime = DateTime.Today;
             await _service.AddAsync(model);
 
             for (int i = 0; i < model.MetrailId.Length; i++)
@@ -80,6 +80,44 @@ namespace BaseProject.Controllers
                 .Include(p => p.ProductUseMetrailModels)
                 .ThenInclude(p => p.Metrail)
                 .ToList();
+            return View(result);
+        }
+        #endregion
+        #region 상품입출고조회
+        [HttpGet("storedList")]
+        [AllowAnonymous]
+        public async Task<IActionResult> StoredListProduct()
+        {
+            // 각 상품별 전체 출고량과 상품이름을 조회
+           var result = await _dbContext.Order_Products
+                .Include(p => p.Product)
+                .Where(p => p.Order.Status == Order_StatusCategory.작업완료)
+                .GroupBy(p => p.ProductId)
+                .Select(p => new Product_Total_List_Model()
+                {
+                    ProductName = p.Select(p => p.Product.Name).FirstOrDefault(),
+                    StoredCount = p.Sum(p => p.Quantity)
+                })                
+                .ToListAsync(); 
+            var Stockedresult = await _dbContext.Inventory_Models
+                 .Include(p => p.Product)
+                 .GroupBy(p => p.ProductId)
+                 .Select(p => new Product_Total_List_Model()
+                 {
+                     ProductName = p.Select(p => p.Product.Name).FirstOrDefault(),
+                     StockedCount = p.Sum(p => p.Count)
+                 })
+                 .ToListAsync();
+            foreach (var item in result)
+            {
+                foreach (var item2 in Stockedresult)
+                {
+                    if (item.ProductName == item2.ProductName)
+                    {
+                        item.StockedCount = item2.StockedCount;
+                    }
+                }
+            }
             return View(result);
         }
         #endregion
@@ -120,7 +158,7 @@ namespace BaseProject.Controllers
             Product_Edit_LogModel log = new Product_Edit_LogModel()
             {
                 ProductId = UpdateModel.Id,
-                EditTime = DateTime.Now,
+                EditTime = DateTime.Today,
             };
             _dbContext.Product_Edit_Log_Models.Add(log);
             _dbContext.SaveChanges();

@@ -108,16 +108,20 @@ namespace BaseProject.Controllers
             UpdateModel.Deadline = model.Deadline;
             UpdateModel.OrderProducts.Clear();
 
-            for (int i = 0; i < model.ProductId.Length; i++)
+            if(model.Quantity != null)
             {
-                Order_Product_Model use_Metrail_Model = new Order_Product_Model()
+                for (int i = 0; i < model.ProductId.Length; i++)
                 {
-                    OrderId = model.Id,
-                    ProductId = model.ProductId[i],
-                    Quantity = model.Quantity[i]
-                };
-                _dbContext.Order_Products.Add(use_Metrail_Model);
+                    Order_Product_Model use_Metrail_Model = new Order_Product_Model()
+                    {
+                        OrderId = model.Id,
+                        ProductId = model.ProductId[i],
+                        Quantity = model.Quantity[i]
+                    };
+                    _dbContext.Order_Products.Add(use_Metrail_Model);
+                }
             }
+           
             if(model.Status == Order_StatusCategory.작업완료)
             {
                 for (int i = 0; i < model.ProductId.Length; i++)
@@ -140,7 +144,7 @@ namespace BaseProject.Controllers
             Order_Edit_Log_Model log = new Order_Edit_Log_Model()
             {
                 OrderId = UpdateModel.Id,
-                EditTime = DateTime.Now,
+                EditTime = DateTime.Today,
             };
             _dbContext.Order_Edit_Log_Models.Add(log);
             _dbContext.SaveChanges();
@@ -148,6 +152,7 @@ namespace BaseProject.Controllers
         }
         #endregion
 
+        #region 상품상세보기
         [HttpGet("detail")]
         public async Task<IActionResult> DetailOrder(int id)
         {
@@ -173,6 +178,7 @@ namespace BaseProject.Controllers
             return Redirect("/Order/read");
 
         }
+        #endregion
 
         #region 상품삭제
         // 상품 삭제

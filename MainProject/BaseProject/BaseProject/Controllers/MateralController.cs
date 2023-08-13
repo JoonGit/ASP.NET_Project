@@ -46,13 +46,17 @@ namespace BaseProject.Controllers
             {
             for (int i = 0; i < model.MetrailId.Length; i++)
             {
+                if (model.Quantity[i] == 0)
+                {
+                    continue;
+                }   
                 var result = await _dbContext.Material_Models.Where(m => m.Id == model.MetrailId[i]).FirstAsync();
                 result.Quantity += model.Quantity[i];
                 Materal_Stored_Log_Model materal_Stored_Log_Model = new Materal_Stored_Log_Model()
                 {
                     MetrailId = model.MetrailId[i],
                     Quantity = model.Quantity[i],
-                    StoredTime = DateTime.Now
+                    StoredTime = DateTime.Today
                 };
                 _dbContext.Materal_Stored_Log_Models.Add(materal_Stored_Log_Model);                
             }
@@ -74,7 +78,7 @@ namespace BaseProject.Controllers
                 // 파일 저장
                 model.ImgUrl = await _fileService.FileCreat(Convert.ToString(model.Id), ImgFile, "Materal");
                 model.Status = model.Status;
-                model.CreateTime = DateTime.Now;
+                model.CreateTime = DateTime.Today;
                 await _service.AddAsync(model);
 
                 await _dbContext.SaveChangesAsync();
@@ -123,7 +127,7 @@ namespace BaseProject.Controllers
             Material_Edit_Log_Model log = new Material_Edit_Log_Model()
             {
                 MetrailId = UpdateModel.Id,
-                EditTime = DateTime.Now,
+                EditTime = DateTime.Today,
             };
             _dbContext.Material_Edit_Log_Models.Add(log);
             _dbContext.SaveChanges();

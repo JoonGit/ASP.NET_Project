@@ -50,7 +50,7 @@ namespace BaseProject.Controllers
                 Id = model.Id,
                 UserName = model.Name,
                 Status = Defult_StatusCategory.가능,
-                CreateTime = DateTime.Now
+                CreateTime = DateTime.Today
             };
 
             // 유저 이미지 업로드
@@ -96,7 +96,7 @@ namespace BaseProject.Controllers
                 Login_Log_Model login_Log_Model = new Login_Log_Model()
                 {
                     UserId = model.Id,
-                    LoginTime = DateTime.Now
+                    LoginTime = DateTime.Today
                 };
                 _dbContext.Login_Log_Models.Add(login_Log_Model);
                 _dbContext.SaveChanges();
@@ -212,7 +212,7 @@ namespace BaseProject.Controllers
             User_Edit_Log_Model user_Edit_Log_Model = new User_Edit_Log_Model()
             {
                 UserIdentityId = updateUser.Id,
-                EditTime = DateTime.Now
+                EditTime = DateTime.Today
             };
 
             _dbContext.User_Edit_Log_Models.Add(user_Edit_Log_Model);            

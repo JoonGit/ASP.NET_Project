@@ -21,11 +21,11 @@ namespace BaseProject.Data
                         new Material_Model
                     {
                         Name = "플라스틱",
-                        Quantity = 30,
+                        Quantity = 0,
                         Price = 1000,
                         Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Material" + "/" + 1 + "/" + "플라스틱.jpg",
-                        CreateTime = DateTime.Now
+                        CreateTime = DateTime.Today
                     },
                     new Material_Model
                     {
@@ -34,16 +34,16 @@ namespace BaseProject.Data
                         Price = 2000,
                         Status = Data.Enums.Defult_StatusCategory.불가능,
                         ImgUrl = "/" + "Material" + "/" + 2 + "/" + "가죽.jpg",
-                   CreateTime = DateTime.Now
+                   CreateTime = DateTime.Today
                     },
                     new Material_Model
                     {
                         Name = "고무",
-                        Quantity = 900,
+                        Quantity = 0,
                         Price = 10,
                         Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Material" + "/" + 3 + "/" + "고무.jpg",
-                        CreateTime = DateTime.Now
+                        CreateTime = DateTime.Today
                     },
                 });
                     context.SaveChanges();                    
@@ -58,8 +58,8 @@ namespace BaseProject.Data
                         Price = 1000,
                         Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Product" + "/" + 1 + "/" + "Car.jpg",
-                        Quantity = 10,
-                        CreateTime = DateTime.Now
+                        Quantity = 200,
+                        CreateTime = DateTime.Today
                     },
                     new Product_Model
                     {
@@ -67,8 +67,8 @@ namespace BaseProject.Data
                         Price = 10000,
                         Status = Data.Enums.Defult_StatusCategory.불가능,
                         ImgUrl = "/" + "Product" + "/" + 2 + "/" + "Boomerang.png",
-                        Quantity = 100,
-                        CreateTime = DateTime.Now
+                        Quantity = 200,
+                        CreateTime = DateTime.Today
                     },
                     new Product_Model
                     {
@@ -76,8 +76,8 @@ namespace BaseProject.Data
                         Price = 20000,
                         Status = Data.Enums.Defult_StatusCategory.가능,
                         ImgUrl = "/" + "Product" + "/" + 3 + "/" + "NinjaStart.png",
-                        Quantity = 1000,
-                        CreateTime = DateTime.Now
+                        Quantity = 300,
+                        CreateTime = DateTime.Today
                     },
                 });
                     
@@ -196,7 +196,7 @@ namespace BaseProject.Data
                     },new Order_Model
                     {
                         Customer = "이지원",
-                        Status = Data.Enums.Order_StatusCategory.작업완료,
+                        Status = Data.Enums.Order_StatusCategory.작업대기,
                         RegisterDate = new DateTime(2020, 10, 20),
                         Deadline = new DateTime(2020, 11, 30),
                     },

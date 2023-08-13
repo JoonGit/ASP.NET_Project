@@ -7,23 +7,57 @@
 }
 <form asp-controller="order" asp-action="update" method="post">
 <input type="hidden" name="Id"  value="@Model.Id" />
-    <div>주문자 : <input type="text" name="Customer"  value="@Model.Customer" /></div>
-    <div>상품등록 시간 : @Model.RegisterDate<input type="date" name="RegisterDate"  value="@Model.RegisterDate" /></div>
-    <div>상품종료 시간 : @Model.Deadline<input type="date" name="Deadline" value="@Model.Deadline"></div>
+
+@if (Model.Status != Order_StatusCategory.작업완료)
+{
+    <div>주문자 : <input type="text" name="Customer" value="@Model.Customer" /></div>
+}
+else
+{
+    <div>주문자 : @Model.Customer</div>
+}
     
-    <select asp-for="Status" 
-    class="form-control"
-    asp-items="Html.GetEnumSelectList<Order_StatusCategory>()"
-        onselect="@Model.Status">
-    </select>
+    <div>상품등록 시간 : @Model.RegisterDate</div>
+    <div>상품등록 수정시간 : <input type="date" name="RegisterDate" value="@Model.RegisterDate" /></div>
+    <div>상품종료 시간 : @Model.Deadline</div>
+    <div>상품종료 수정시간 : <input type="date" name="Deadline" value="@Model.Deadline"></div>
+    
+    @if (Model.Status != Order_StatusCategory.작업완료)
+    {
+        <select asp-for="Status"
+                class="form-control"
+                asp-items="Html.GetEnumSelectList<Order_StatusCategory>()"
+                onselect="@Model.Status">
+        </select>
+    }
+    else
+   {
+        <div>상태 : @Model.Status</div>
+    }
+    
     <p></p>
     <div>주문한 상품 목록</div>
     <p></p>
     @foreach(Order_Product_Model product in Model.OrderProducts)
     {
-<input type="hidden" name="ProductId"  value="@product.Product.Id" />
-        <div>상품이름 : <input type="text" name="Name"  value="@product.Product.Name" /></div>
-        <div>주문갯수 : <input type="text" name="Quantity"  value="@product.Quantity" /></div>
+        <input type="hidden" name="ProductId"  value="@product.Product.Id" />
+        <div>상품이름 : @product.Product.Name</div>
+        @if (Model.Status != Order_StatusCategory.작업완료)
+        {
+            <div>주문갯수 : <input type="text" name="Quantity" value="@product.Quantity" /></div>
+        }        
+        else
+        {
+            <div>주문갯수 : @product.Quantity</div>
+        }      
     }
-    <button>주문수정</button>
+    @if (Model.Status != Order_StatusCategory.작업완료)
+    {
+        <button>주문수정</button>
+    }
+    else
+    {
+        <div></div>
+    }
+    
 </form>

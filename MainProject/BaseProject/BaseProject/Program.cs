@@ -41,14 +41,15 @@ builder.Services.AddIdentity<UserIdentity, IdentityRole>(
     .AddDefaultTokenProviders();
 
 // Cookie
-//builder.Services.AddAuthentication(
-//    CookieAuthenticationDefaults.AuthenticationScheme
-//    ).AddCookie(options => {
-//        //options.ExpireTimeSpan = TimeSpan.FromMinutes(60)
-//        options.SlidingExpiration = true;
-//        options.AccessDeniedPath = "/home/accessdenied";
-//        options.LoginPath = "/account/login";
-//    });
+builder.Services.AddAuthentication(
+    CookieAuthenticationDefaults.AuthenticationScheme
+    ).AddCookie(options =>
+    {
+        //options.expiretimespan = timespan.fromminutes(60)
+        options.SlidingExpiration = true;
+        options.AccessDeniedPath = "/user/accessdenied";
+        options.LoginPath = "/user/login";
+    });
 
 // Cache
 builder.Services.AddMemoryCache();
