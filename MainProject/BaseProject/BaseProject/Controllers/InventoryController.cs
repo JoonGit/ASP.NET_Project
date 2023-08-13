@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using BaseProject.Data.Static;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace BaseProject.Controllers
 {
@@ -67,35 +68,49 @@ namespace BaseProject.Controllers
         #endregion
 
         #region 상품목록조회
+        
         [HttpGet("Read")]
         [AllowAnonymous]
         public async Task<IActionResult> ReadInventory()
         {
-            var result = await _dbContext.Inventory_Models
-                    .Include(p => p.Product)
-                    .ToListAsync();      
+            //var result = await _dbContext.Inventory_Models
+            //        .Include(p => p.Product)
+            //        .ToListAsync();      
             ViewBag.ProductsName = await Filter();
-            return View(result);
+            return View();
         }
         [HttpPost("Read")]
         public async Task<IActionResult> ReadInventory(string name)
         {
-            var result = await _dbContext.Inventory_Models
+            var result = new List<Inventory_Model>();
+            if(name != "전체")
+            {
+                result = await _dbContext.Inventory_Models
                         .Include(p => p.Product)
                         .Where(p => p.Product.Name == name)
                         .ToListAsync();
+            }
+            else if( name == "전체")
+            {
+                  result = await _dbContext.Inventory_Models
+                        .Include(p => p.Product)
+                        .ToListAsync();
+            }
+            
             ViewBag.ProductsName = await Filter();
             return View(result);
         }
 
         public async Task<List<SelectListItem>> Filter()
         {
-           return await _dbContext.Product_Models.Select(p => new SelectListItem()
-                {
-                    Value = p.Name,
-                    Text = p.Name
-                })
+            var result = await _dbContext.Product_Models.Select(p => new SelectListItem()
+            {
+                Value = p.Name,
+                Text = p.Name
+            })
                 .ToListAsync();
+            result.Add(new SelectListItem() { Value = "전체", Text = "전체" });
+            return result;
         }
         #endregion
         

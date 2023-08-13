@@ -1209,3 +1209,7 @@ D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\b
 D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\System.Web.Http.dll
 D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Study\c#\asp.net\MyBlog\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\JH\C\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\JH\C\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\JH\C\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\JH\C\ASP.NET_Project\MainProject\BaseProject\BaseProject\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

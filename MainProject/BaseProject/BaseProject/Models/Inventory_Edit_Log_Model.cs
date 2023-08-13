@@ -6,6 +6,7 @@
         public int Id { get; set; }
         public int InventoryId { get; set; }
         public Inventory_Model Inventory { get; set; }
+        public string note { get; set; }
         public DateTime EditTime { get; set; }
     }
 }
