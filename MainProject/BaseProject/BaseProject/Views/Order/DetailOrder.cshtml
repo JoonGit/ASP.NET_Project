@@ -5,6 +5,10 @@
 *@
 @{
 }
+@if(ViewBag.Message != null)
+{
+    <div>@ViewBag.Message</div>
+}
 <form asp-controller="order" asp-action="update" method="post">
 <input type="hidden" name="Id"  value="@Model.Id" />
 

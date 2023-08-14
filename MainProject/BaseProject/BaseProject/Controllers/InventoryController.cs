@@ -68,7 +68,7 @@ namespace BaseProject.Controllers
         #endregion
 
         #region 상품목록조회
-        
+
         [HttpGet("Read")]
         [AllowAnonymous]
         public async Task<IActionResult> ReadInventory()
@@ -126,6 +126,8 @@ namespace BaseProject.Controllers
             return View(result);
         }
         #endregion
+
+        
 
         #region 상품수정
         [HttpGet("update")]

@@ -1,4 +1,5 @@
 ﻿
+<div>총입고</div>
 @foreach (var item in Model)
 {
     <div>상품명 : @item.ProductName</div>
@@ -6,3 +7,11 @@
     <div>출고 갯수 : @item.StoredCount</div>
     <p></p>
 }
+
+@*<div>총출고</div>
+@foreach (var item in ViewBag.Stockedresult)
+{
+    <div>상품명 : @item.ProductName</div>
+    <div>출고 갯수 : @item.StoredCount</div>
+    <p></p>
+}*@

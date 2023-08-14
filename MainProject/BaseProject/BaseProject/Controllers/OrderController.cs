@@ -64,7 +64,7 @@ namespace BaseProject.Controllers
             // 파일 업로드후 모델 저장
 
             await _dbContext.SaveChangesAsync();
-            return Redirect("/");
+            return Redirect("order/read");
         }
         #endregion
 
@@ -73,29 +73,37 @@ namespace BaseProject.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> ReadOrder()
         {
-            // 전체 주문 목록 조회
             var result = _dbContext.Order_Models
                 .ToList();
+            return View(result);
+
+            // 전체 주문 목록 조회
+
+        }
+
+        [HttpPost("Read")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ReadOrder(DateTime start, DateTime end)
+        {
+            // 수정할 상품 정보 불러오기
+            var result = await _dbContext.Order_Models
+                .Where(o => o.RegisterDate >= start && o.RegisterDate <= end)
+                .ToListAsync();
             return View(result);
         }
         #endregion
 
         #region 상품수정
-        [HttpGet("update")]
-        public IActionResult UpdateOrder(int id)
-        {
-            // 수정할 상품 정보 불러오기
-            var result = _service.GetByIdAsync(id);
-            return View(result.Result);
-        }
+        //[HttpGet("update")]
+        //public IActionResult UpdateOrder(int id)
+        //{
+        //    // 수정할 상품 정보 불러오기
+        //    var result = _service.GetByIdAsync(id);
+        //    return View(result.Result);
+        //}
         [HttpPost("update")]
         public async Task<IActionResult> UpdateOrder(Order_Model model)
         {
-            // 수정할 상품 정보 불러오기
-            //var UpdateModel = _dbContext
-            //                .Product_Models
-            //                .Where(product => product.Id == model.Id)
-            //                .FirstOrDefault();
 
             var UpdateModel = await _dbContext.Order_Models
                 .Where(product => product.Id == model.Id)
@@ -134,10 +142,17 @@ namespace BaseProject.Controllers
                     {
                         var metrail = await _dbContext.Material_Models
                             .Where(m => m.Id == item.MetrailId).FirstAsync();
+
+                        // 재료가 부족할 경우 추후 개발
+                        //if(metrail.Quantity <= item.Quantity * model.Quantity[i])
+                        //{
+                        //    ViewBag.Message = "재료가 부족합니다.";
+                        //    return Redirect("/Order/detail?id=" + model.Id);
+                            
+                        //}
                         metrail.Quantity -= item.Quantity * model.Quantity[i];
                     }
-                }
-                    
+                }                    
             }
 
             // 수정 시간 저장
@@ -165,10 +180,10 @@ namespace BaseProject.Controllers
                             .ThenInclude(p => p.Product)
                             .FirstAsync();
                 var result2 = await _dbContext.Order_Models
-            .Where(o => o.Id == id)
-            .Include(p => p.OrderProducts)
+                .Where(o => o.Id == id)
+                .Include(p => p.OrderProducts)
+                .FirstAsync();
 
-            .FirstAsync();
                 return View(result2);
             }
             catch (Exception e)
@@ -177,6 +192,17 @@ namespace BaseProject.Controllers
             }
             return Redirect("/Order/read");
 
+        }
+        #endregion
+        #region 상품기간조회
+        [HttpPost("period")]
+        public async Task<List<Order_Model>> PeriodOrder(DateTime start, DateTime end)
+        {
+            // 수정할 상품 정보 불러오기
+            var result = await _dbContext.Order_Models
+                .Where(o => o.RegisterDate >= start && o.RegisterDate <= end)
+                .ToListAsync();
+            return result;
         }
         #endregion
 

@@ -89,35 +89,30 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> StoredListProduct()
         {
             // 각 상품별 전체 출고량과 상품이름을 조회
-           var result = await _dbContext.Order_Products
-                .Include(p => p.Product)
-                .Where(p => p.Order.Status == Order_StatusCategory.작업완료)
-                .GroupBy(p => p.ProductId)
-                .Select(p => new Product_Total_List_Model()
-                {
-                    ProductName = p.Select(p => p.Product.Name).FirstOrDefault(),
-                    StoredCount = p.Sum(p => p.Quantity)
-                })                
-                .ToListAsync(); 
+            var result = await _dbContext.Order_Products
+                 .Include(p => p.Product)
+                 .Where(p => p.Order.Status == Order_StatusCategory.작업완료)
+                 .GroupBy(p => p.ProductId)
+                 .Select(p => new Product_Total_List_Model()
+                 {
+                     ProductName = p.Select(p => p.Product.Name).FirstOrDefault(),
+                     StoredCount = p.Sum(p => p.Quantity),
+                     StockedCount = 0
+                 })
+                 .ToListAsync();
             var Stockedresult = await _dbContext.Inventory_Models
                  .Include(p => p.Product)
                  .GroupBy(p => p.ProductId)
                  .Select(p => new Product_Total_List_Model()
                  {
-                     ProductName = p.Select(p => p.Product.Name).FirstOrDefault(),
                      StockedCount = p.Sum(p => p.Count)
                  })
                  .ToListAsync();
-            foreach (var item in result)
+            for (int i = 0; i < result.Count; i++)
             {
-                foreach (var item2 in Stockedresult)
-                {
-                    if (item.ProductName == item2.ProductName)
-                    {
-                        item.StockedCount = item2.StockedCount;
-                    }
-                }
+                result[i].StockedCount = Stockedresult[i].StockedCount;
             }
+
             return View(result);
         }
         #endregion

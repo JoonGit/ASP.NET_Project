@@ -3,6 +3,12 @@
     <a href="/order/create">주문등록</a>
 }
 
+<form action="/Order/Read" method="post">
+    <input type="date" name="start" />
+    <input type="date" name="end" />
+    <button>조회</button>
+</form >
+
 @foreach(Order_Model order in Model)
 {
     
