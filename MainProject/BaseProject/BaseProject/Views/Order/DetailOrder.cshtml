@@ -1,14 +1,6 @@
 ﻿@using BaseProject.Data.Enums;
 @model Order_Model
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@if(ViewBag.Message != null)
-{
-    <div>@ViewBag.Message</div>
-}
+
 <form asp-controller="order" asp-action="update" method="post">
 <input type="hidden" name="Id"  value="@Model.Id" />
 
@@ -31,7 +23,7 @@ else
         <select asp-for="Status"
                 class="form-control"
                 asp-items="Html.GetEnumSelectList<Order_StatusCategory>()"
-                onselect="@Model.Status">
+                >
         </select>
     }
     else

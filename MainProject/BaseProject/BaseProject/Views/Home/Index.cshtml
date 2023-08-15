@@ -1,32 +1,124 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<style>
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <input type="text" id="testinput1" value="100000" />
-    <input type="text" id="testinput2" value="100000" />
+        .modal.show {
+            display: block;
+        }
+
+    .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 600px;
+        padding: 40px;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+        transform: translateX(-50%) translateY(-50%);
+    }
+</style>
+
+<div class="modal" id="insert">
+    <div class="modal_body">
+        Modal_입니다_insert
+        
+        <form class="modal-body" action="ex/modal" method="post">
+            데이터 입력 <input class="modal-body" type="text" id="data2" value="123">
+            <button>전송</button>
+        </form>
+        <button onclick="ModalControll(modal_insert)">닫기</button>
+    </div>
 </div>
+<div class="modal" id="out">
+    <div class="modal_body">
+        Modal_입니다_out
+        <form class="modal-body" action="ex/modal" method="post">
+            데이터 입력 <input class="modal-body" type="text" id="data1" value="123">
+            <button>전송</button>
+            
+        </form>
+        <button onclick="ModalControll(modal_out)">닫기</button>
+    </div>
+</div>
+    
+<button onclick="ModalControll(modal_insert)" id="insert_btn">값 넣기</button>
+<button onclick="ModalControll(modal_out)" id="out_btn">값 뺴기</button>
+
 
 <script>
+    const body = document.querySelector('body');
+    const modal_insert = document.getElementById('insert');
+    const modal_out = document.getElementById('out');
+    var httpRequest = new XMLHttpRequest();
+    function sendRequest(id) {
+        httpRequest.open("GET", "/ex/getid?id=1", true);
+        httpRequest.send();
+        var data = document.getElementById("data1");
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+                var res = JSON.parse(httpRequest.responseText)
+                console.log(res)
+                data.value = String(res["id"])
+
+            };
+            
+        }
+    }
+
+    function ModalControll(modal)
+    {
+        modal.classList.toggle('show');
+        if (modal.classList.contains('show')) {
+            body.style.overflow = 'hidden';
+            body.style.overflow = 'auto';
+        }
+        sendRequest(1);
+    }
+
+    //btn.addEventListener('click', () => {
+    //    modal.classList.toggle('show');
+
+    //    if (modal.classList.contains('show')) {
+    //        body.style.overflow = 'hidden';
+    //    }
+    //});
+
+    //modal.addEventListener('click', (event) => {
+    //    if (event.target === modal) {
+    //        modal.classList.toggle('show');
+
+    //        if (!modal.classList.contains('show')) {
+    //            body.style.overflow = 'auto';
+    //        }
+    //    }
+    //});
+
+</script>
+
+@*<script>
     function sendRequest() {
+        var data = document.getElementById("data");
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
-                console.log(httpRequest.responseText);
                 var res = JSON.parse(httpRequest.responseText)
-                document.getElementById("testinput1").value = res[0]["name"]   
-                document.getElementById("testinput2").value = res[0]["price"]   
-                //document.getElementById("text").innerHTML = httpRequest.responseText;
-            }
-        };
-        // GET 방식으로 요청을 보내면서 데이터를 동시에 전달함.
-        httpRequest.open("GET", "/ex/test?id=1", true);
-        httpRequest.send();
+                data.value = res[0]["id"]
+
+            };
+            httpRequest.open("GET", "/ex/getid?id=" + id, true);
+            httpRequest.send();
+        }
     }
 
-    getData = setInterval(function () {
-        sendRequest();
-    }, 1000);
 </script>
+*@

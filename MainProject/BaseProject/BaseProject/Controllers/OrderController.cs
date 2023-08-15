@@ -64,7 +64,7 @@ namespace BaseProject.Controllers
             // 파일 업로드후 모델 저장
 
             await _dbContext.SaveChangesAsync();
-            return Redirect("order/read");
+            return Redirect("/order/read");
         }
         #endregion
 
@@ -194,6 +194,7 @@ namespace BaseProject.Controllers
 
         }
         #endregion
+
         #region 상품기간조회
         [HttpPost("period")]
         public async Task<List<Order_Model>> PeriodOrder(DateTime start, DateTime end)

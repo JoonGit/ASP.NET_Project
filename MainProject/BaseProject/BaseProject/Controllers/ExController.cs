@@ -2,7 +2,9 @@
 using BaseProject.Data.Service;
 using BaseProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
+using System.Xml.Linq;
 
 namespace BaseProject.Controllers
 {
@@ -17,6 +19,7 @@ namespace BaseProject.Controllers
         }
         public IActionResult Index()
         {
+
             //ExModel exModel = new ExModel()
             //{
             //    Name = "Ex"
@@ -29,15 +32,56 @@ namespace BaseProject.Controllers
             
             return View();
         }
-        [HttpGet("test")]
-        public string TestFun(int id)
+        [HttpPost("modal")]
+        public string Modal(string str)
         {
+            return "Modal";
+        }
+        [HttpGet("createEx")]
+        public async Task<string> CreateEx() 
+        { 
+            await _dbContext.ExModels.AddAsync(new ExModel() 
+            { 
+                ProductId = 1,
+                CreateTime = DateTime.Now
+
+            });
+            await _dbContext.SaveChangesAsync();
+
+            return "success";
+        }
+        [HttpGet("test")]
+        public string TestFun(string name)
+        {
+            // exmodel에 있는 name 의 데이터 10개만 가져온다
+            var result = _dbContext.ExModels
+                .Include(x => x.Product)
+                .Where(x => x.Product.Name == name)
+                .OrderByDescending(x => x.CreateTime)
+                .Take(10)
+                .ToList();
+
+            
+
             JArray jArray = new JArray();
-            JObject jObject = new JObject();
-            jObject.Add("name", "test");
-            jObject.Add("price", 1000);
-            jArray.Add(jObject);
+            foreach (var item in result)
+            {
+                JObject jObject = new JObject();
+                jObject.Add("name", item.Product.Name);
+                jObject.Add("CreateTime", item.CreateTime);
+                jArray.Add(jObject);
+            }
+
             return jArray.ToString();
+        }
+
+        [HttpGet("getid")]
+        public string GetId(string id)
+        {
+
+            JObject jObject = new JObject();
+            jObject.Add("id", id);
+            return jObject.ToString();
         }
     }
 }

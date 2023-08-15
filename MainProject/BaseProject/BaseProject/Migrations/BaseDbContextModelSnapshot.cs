@@ -19,6 +19,25 @@ namespace BaseProject.Migrations
                 .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("BaseProject.Models.ExModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ExModels");
+                });
+
             modelBuilder.Entity("BaseProject.Models.Inventory_Edit_Log_Model", b =>
                 {
                     b.Property<int>("Id")
@@ -29,6 +48,9 @@ namespace BaseProject.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("InventoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("note")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -571,6 +593,17 @@ namespace BaseProject.Migrations
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("UserIdentity");
+                });
+
+            modelBuilder.Entity("BaseProject.Models.ExModel", b =>
+                {
+                    b.HasOne("BaseProject.Models.Product_Model", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("BaseProject.Models.Inventory_Edit_Log_Model", b =>

@@ -11,6 +11,9 @@ namespace BaseProject.Data
         {
         }
 
+        // 테스트용
+        public DbSet<ExModel> ExModels { get; set; }
+
         public DbSet<UserIdentity> Users { get; set; }
         public DbSet<User_Edit_Log_Model> User_Edit_Log_Models { get; set; }
         public DbSet<Login_Log_Model> Login_Log_Models { get; set; }

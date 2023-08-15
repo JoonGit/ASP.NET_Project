@@ -6,7 +6,9 @@ using BaseProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 
 namespace BaseProject.Controllers
 {
@@ -38,6 +40,9 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> CreateProduct()
         {
             var result = await _dbContext.Material_Models.ToListAsync();
+            // 오늘의 생산량을 조회 해서 상산량을 적어준다
+            // 값은 초음파로 측정한 값으로 적어준다
+
             return View(result);
         }
 
@@ -116,7 +121,43 @@ namespace BaseProject.Controllers
             return View(result);
         }
         #endregion
+        #region 상품생산현황
+        [HttpGet("productionList")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ProductionList()
+        {
+            // 각 상품별 전체 출고량과 상품이름을 조회
+            var result = await _dbContext.Product_Models.Select(p => new SelectListItem()
+            {
+                Value = p.Name,
+                Text = p.Name
+            })
+            .ToListAsync();
+            return View(result);
+        }
 
+        [HttpGet("filter")]
+        [AllowAnonymous]
+        public async Task<string> filter(string name)
+        {
+            // exmodel에 있는 name 의 데이터 10개만 가져온다
+            var result = _dbContext.ExModels
+                .Include(x => x.Product)
+                .Where(x => x.Product.Name == name)
+                .OrderByDescending(x => x.CreateTime)
+                .Take(10)
+                .ToList();
+            JArray jArray = new JArray();
+            foreach (var item in result)
+            {
+                JObject jObject = new JObject();
+                jObject.Add("name", item.Product.Name);
+                jObject.Add("CreateTime", item.CreateTime);
+                jArray.Add(jObject);
+            }
+            return jArray.ToString();
+        }
+        #endregion
         #region 상품수정
         [HttpGet("update")]
         public IActionResult UpdateProduct(int id)
