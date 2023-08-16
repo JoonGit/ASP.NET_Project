@@ -50,12 +50,33 @@
         <button onclick="ModalControll(modal_out)">닫기</button>
     </div>
 </div>
-    
-<button onclick="ModalControll(modal_insert)" id="insert_btn">값 넣기</button>
-<button onclick="ModalControll(modal_out)" id="out_btn">값 뺴기</button>
+<select name="languages" id="lang">
+    <option id="1111" value="javascript">JavaScript</option>
+    <option value="php">PHP</option>
+    <option value="java">Java</option>
+    <option value="golang">Golang</option>
+    <option value="python">Python</option>
+    <option value="c#">C#</option>
+    <option value="C++">C++</option>
+    <option value="erlang">Erlang</option>
+  </select>
 
+<button onclick="ModalControll(modal_insert)" id="insert_btn">값 넣기</button>
+<button onclick="ModalControll(modal_out)" id="out_btn">값 빼기</button>
+<button onclick="Lang()">옵션</button>
 
 <script>
+
+        let test = document.getElementById('lang');
+        let test2 = test[test.selectedIndex].id;
+        console.log(test2);
+
+
+</script>
+
+<script>
+
+
     const body = document.querySelector('body');
     const modal_insert = document.getElementById('insert');
     const modal_out = document.getElementById('out');

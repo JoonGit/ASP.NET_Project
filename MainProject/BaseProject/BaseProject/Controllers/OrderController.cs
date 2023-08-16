@@ -74,6 +74,7 @@ namespace BaseProject.Controllers
         public async Task<IActionResult> ReadOrder()
         {
             var result = _dbContext.Order_Models
+                .OrderByDescending(o => o.Id)
                 .ToList();
             return View(result);
 

@@ -88,6 +88,7 @@ namespace BaseProject.Controllers
             return View(result);
         }
         #endregion
+
         #region 상품입출고조회
         [HttpGet("storedList")]
         [AllowAnonymous]
@@ -121,6 +122,7 @@ namespace BaseProject.Controllers
             return View(result);
         }
         #endregion
+
         #region 상품생산현황
         [HttpGet("productionList")]
         [AllowAnonymous]
@@ -158,6 +160,7 @@ namespace BaseProject.Controllers
             return jArray.ToString();
         }
         #endregion
+
         #region 상품수정
         [HttpGet("update")]
         public IActionResult UpdateProduct(int id)
@@ -176,15 +179,8 @@ namespace BaseProject.Controllers
                 .ThenInclude(p => p.Metrail)
                 .FirstAsync();
 
-            UpdateModel.Name = model.Name;
-            UpdateModel.Price = model.Price;
             UpdateModel.Status = model.Status;
-            int index = 0;
-            foreach (var metrail in UpdateModel.ProductUseMetrailModels)
-            {
-                    metrail.Quantity = model.count[index];
-                    index++;                
-            }
+
             // DB에 저장되어 있는 경로 수정
             if (ImgFile != null)
             {
@@ -201,6 +197,8 @@ namespace BaseProject.Controllers
             return Redirect("/product/read");
         }
         #endregion
+
+        #region 상품상세보기
         [HttpGet("detail")]
         public async Task<IActionResult> DetailProduct(int id)
         {
@@ -212,22 +210,8 @@ namespace BaseProject.Controllers
                 .FirstAsync();
             return View(result);
         }
-        #region 상품삭제
-        // 상품 삭제
-        [HttpGet("delete")]
-        public async Task<IActionResult> DeleteProduct(int id, Defult_StatusCategory Stasut)
-        {
-            // 상태 변경 정보 가져오기
-            var Model = _dbContext
-                           .Product_Models
-                           .Where(product => product.Id == id)
-                           .FirstOrDefault();
-            // 상태 변경
-            Model.Status = Stasut;           
-            
-            await _service.UpdateAsync(id, Model);
-            return Redirect("/product/read");
-        }
         #endregion
+
+
     }
 }

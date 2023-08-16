@@ -7,6 +7,7 @@ using BaseProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 
@@ -37,7 +38,7 @@ namespace BaseProject.Controllers
         [HttpGet("create")]
         public async Task<IActionResult> CreateUser(string role)
         {
-            ViewBag.role = role;
+            //ViewBag.role = role;
             return View();
         }
 
@@ -50,7 +51,7 @@ namespace BaseProject.Controllers
                 Id = model.Id,
                 UserName = model.Name,
                 Status = Defult_StatusCategory.가능,
-                CreateTime = DateTime.Today
+                CreateTime = DateTime.Now,
             };
 
             // 유저 이미지 업로드
@@ -75,6 +76,7 @@ namespace BaseProject.Controllers
             }
         }
         #endregion
+
         #region 로그인
         [HttpGet("login")]
         public async Task<IActionResult> Login(string ReturnUrl)
@@ -86,34 +88,38 @@ namespace BaseProject.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(Login_Model model, string? ReturnUrl)
         {
-            // 유저 정보 입력
-            var loginUser = await _userManager.FindByIdAsync(model.Id);
-            // 유저 로그인
-            var user = await _signInManager.PasswordSignInAsync(loginUser, model.Password, false, false);
-            if (user.Succeeded)
+            try
             {
-                // 로그인 로그 저장
-                Login_Log_Model login_Log_Model = new Login_Log_Model()
+                // 유저 정보 입력
+                var loginUser = await _userManager.FindByIdAsync(model.Id);
+                // 유저 로그인
+                var user = await _signInManager.PasswordSignInAsync(loginUser, model.Password, false, false);
+                if (user.Succeeded)
                 {
-                    UserId = model.Id,
-                    LoginTime = DateTime.Today
-                };
-                _dbContext.Login_Log_Models.Add(login_Log_Model);
-                _dbContext.SaveChanges();
-                if (ReturnUrl != null)
-                {
-                    return Redirect(ReturnUrl);
-                }
-                else
-                {
-                    return Redirect("/");
+                    // 로그인 로그 저장
+                    Login_Log_Model login_Log_Model = new Login_Log_Model()
+                    {
+                        UserId = model.Id,
+                        LoginTime = DateTime.Now,
+                    };
+                    _dbContext.Login_Log_Models.Add(login_Log_Model);
+                    _dbContext.SaveChanges();
+                    if (ReturnUrl != null)
+                    {
+                        return Redirect(ReturnUrl);
+                    }
+                    else
+                    {
+                        return Redirect("/");
+                    }
                 }
             }
-            else
+            catch (Exception e)
             {
-                TempData["Error"] = "Wrong credentials. Please, try again!";
-                return View(model);
+                Console.WriteLine(e);
+                ViewData["Error"] = "로그인에 실패하였습니다";
             }
+            return View();
         }
         #endregion
 
@@ -125,7 +131,6 @@ namespace BaseProject.Controllers
             return RedirectToAction("Index", "Home");
         }
         #endregion
-
 
         #region 유저리스트
         //[Authorize(Roles = UserRoles.Admin)]
@@ -143,6 +148,18 @@ namespace BaseProject.Controllers
                                   UserName = user.UserName,
                                   ImgUrl = user.ImgUrl
                               }).ToListAsync();
+            // List<SelectListItem> 타입에 유저 권한 정보들 저장
+            List<SelectListItem> roleList = new List<SelectListItem>();
+            roleList.Add(new SelectListItem { Text = "Admin", Value = UserRoles.Admin });
+            roleList.Add(new SelectListItem { Text = "Membaer", Value = UserRoles.Membaer });
+            roleList.Add(new SelectListItem { Text = "InventoryManager", Value = UserRoles.InventoryManager });
+            roleList.Add(new SelectListItem { Text = "MateralManager", Value = UserRoles.MateralManager });
+            roleList.Add(new SelectListItem { Text = "ProductManager", Value = UserRoles.ProductManager }); 
+            roleList.Add(new SelectListItem { Text = "OrderManager", Value = UserRoles.OrderManager });
+            roleList.Add(new SelectListItem { Text = "NoRole", Value = UserRoles.NoRole });
+            ViewBag.roleList = roleList;
+
+
 
             return View(userList);
         }
@@ -190,16 +207,23 @@ namespace BaseProject.Controllers
         [HttpPost("UpdateUser")]
         public async Task<IActionResult> UpdateUser(UserIdentity user, string Password, IFormFile file)
         {
-            // 유저 정보 수정
             var updateUser = await _userManager.FindByNameAsync(User.Identity.Name);
-            updateUser.UserName = user.UserName;
-
             // 비밀번호 변경
-            if(Password != null)
+            if (Password != null)
             {
                 var token = await _userManager.GeneratePasswordResetTokenAsync(updateUser);
                 var result = await _userManager.ResetPasswordAsync(updateUser, token, Password);
+                if (!result.Succeeded)
+                {
+                    ViewData["Error"] = "비밀번호 변경에 실패하였습니다.";
+                    return View(updateUser);
+                }
             }
+            // 유저 정보 수정
+            
+            updateUser.UserName = user.UserName;
+
+
 
             // 이미지 변경
             if(file != null)
@@ -216,22 +240,32 @@ namespace BaseProject.Controllers
             };
 
             _dbContext.User_Edit_Log_Models.Add(user_Edit_Log_Model);            
+            await _userManager.FindByNameAsync(User.Identity.Name);
             _dbContext.SaveChanges();
 
-            return View(user);
+            return View(updateUser);
         }
-        #endregion
-
-        
+        #endregion        
 
         #region 회원탈퇴
-        [HttpPost("delete")]
+        [HttpGet("delete")]
         public async Task<IActionResult> Delete(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
-            user.Status = Defult_StatusCategory.불가능;
-            await _userManager.UpdateAsync(user);
-            return Redirect("/user/login");
+            try
+            {
+                
+                user.Status = Defult_StatusCategory.불가능;
+                await _userManager.UpdateAsync(user);
+                return Redirect("/user/login");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                ViewData["Error"] = "회원탈퇴에 실패하셨습니다";
+                return View(user);
+            }
+            
         }
         #endregion
 

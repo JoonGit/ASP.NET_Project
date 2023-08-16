@@ -1,8 +1,16 @@
-﻿
-   <form asp-controller="User" asp-action="UpdateUser" method="post" enctype="multipart/form-data">
-        <div >Name<input type="text" value="@Model.UserName" /></div>
-        <div >PassWord<input type="text" placeholder="Password" /></div>
+﻿@if(ViewData["Error"] != null)
+{
+    <div>@ViewData["Error"]</div>
+}
+<form asp-controller="User" asp-action="UpdateUser" method="post" enctype="multipart/form-data">
+
+        <div >내 이름 : <input name=UserName  type="text" value="@Model.UserName" /></div>
+        <div >PassWord <input name=Password  type="text" placeholder="Password" /></div>
         <input type="file" name="file" />      
         <img src="@Model.ImgUrl">
         <input type="submit" value="전송">        
     </form> 
+    <a class="nav-link text-dark"  asp-route-id="@Model.Id" asp-controller="user" asp-action="Delete">회원탈퇴</a>
+        
+                            
+                            
