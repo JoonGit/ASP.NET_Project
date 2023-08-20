@@ -13,7 +13,7 @@
      <p></p>
         <input type="hidden" name="Id"  value="@material_Model.Id" />
         <div>자재이름 :<input name="Name" value="@material_Model.Name" /> </div>
-        <div>갯수 : <input name="Quantity" value="@material_Model.Quantity"/> </div>
+        <div>갯수 : @material_Model.Quantity </div>
         <div>가격 : <input name="Price" value="@material_Model.Price"/> </div>
         <select asp-for="@material_Model.Status" class="form-control" asp-items="Html.GetEnumSelectList<Defult_StatusCategory>()"
         onselect="@material_Model.Status">

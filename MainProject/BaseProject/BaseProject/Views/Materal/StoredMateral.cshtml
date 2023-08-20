@@ -4,7 +4,8 @@
 {         
         <input type="hidden" name="MetrailId"  value="@material_Model.Id" />
         <div>자재이름 : @material_Model.Name</div>
-        <div>갯수 : <input name="Quantity" value="@material_Model.Quantity"/> </div>
+
+        <div>갯수 : <input type="number" name="Quantity"/> </div>
         <div><img src="@material_Model.ImgUrl"/>  </div>   
         <p></p>
 }

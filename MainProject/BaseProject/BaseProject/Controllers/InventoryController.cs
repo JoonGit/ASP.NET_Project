@@ -88,12 +88,14 @@ namespace BaseProject.Controllers
                 result = await _dbContext.Inventory_Models
                         .Include(p => p.Product)
                         .Where(p => p.Product.Name == name)
+                        .OrderByDescending(p => p.Id)
                         .ToListAsync();
             }
             else if( name == "전체")
             {
                   result = await _dbContext.Inventory_Models
                         .Include(p => p.Product)
+                        .OrderByDescending(p => p.Id)
                         .ToListAsync();
             }
             ViewBag.Name = name;
@@ -125,18 +127,9 @@ namespace BaseProject.Controllers
                 .First();
             return View(result);
         }
-        #endregion
-
-        
+        #endregion        
 
         #region 상품수정
-        [HttpGet("update")]
-        public IActionResult UpdateInventory(int id)
-        {
-            // 수정할 상품 정보 불러오기
-            var result = _service.GetByIdAsync(id);
-            return View(result.Result);
-        }
         [HttpPost("update")]
         public async Task<IActionResult> UpdateInventory(Inventory_Model model, Inventory_Edit_Log_Model log, IFormFile file)
         {
@@ -150,11 +143,10 @@ namespace BaseProject.Controllers
 
             // 수정 시간 저장
             log.InventoryId = UpdateModel.Id;
-            log.EditTime = DateTime.Today;
+            log.EditTime = DateTime.Now;
 
             _dbContext.Inventory_Edit_Log_Model.Add(log);
 
-            _dbContext.Inventory_Edit_Log_Model.Add(log);
             _dbContext.SaveChanges();
             return Redirect("/Inventory/Read");
         }

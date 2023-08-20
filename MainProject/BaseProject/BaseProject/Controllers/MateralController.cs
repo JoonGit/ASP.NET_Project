@@ -31,40 +31,9 @@ namespace BaseProject.Controllers
                 _userManager = userManager;
                 _dbContext = dbContext;
                 _fileService = fileService;
-            }
+            }            
 
-        // 재고 등록
-            [HttpGet("stored")]
-            public async Task<IActionResult> StoredMateral()
-            {
-                var result = await _dbContext.Material_Models.ToListAsync();
-                return View(result);
-            }
-        // stored procedure
-            [HttpPost("stored")]
-            public async Task<IActionResult> StoredMateral(Materal_Stored_Model model)
-            {
-            for (int i = 0; i < model.MetrailId.Length; i++)
-            {
-                if (model.Quantity[i] == 0)
-                {
-                    continue;
-                }   
-                var result = await _dbContext.Material_Models.Where(m => m.Id == model.MetrailId[i]).FirstAsync();
-                result.Quantity += model.Quantity[i];
-                Materal_Stored_Log_Model materal_Stored_Log_Model = new Materal_Stored_Log_Model()
-                {
-                    MetrailId = model.MetrailId[i],
-                    Quantity = model.Quantity[i],
-                    StoredTime = DateTime.Today
-                };
-                _dbContext.Materal_Stored_Log_Models.Add(materal_Stored_Log_Model);                
-            }
-            _dbContext.SaveChanges();
-            return Redirect("/Materal/read");
-            }
-
-            #region 상품등록
+        #region 상품등록
             [HttpGet("create")]
             public async Task<IActionResult> CreateMateral()
             {
@@ -78,16 +47,47 @@ namespace BaseProject.Controllers
                 // 파일 저장
                 model.ImgUrl = await _fileService.FileCreat(Convert.ToString(model.Id), ImgFile, "Materal");
                 model.Status = model.Status;
-                model.CreateTime = DateTime.Today;
+                model.CreateTime = DateTime.Now;
                 await _service.AddAsync(model);
 
                 await _dbContext.SaveChangesAsync();
                 return Redirect("/Materal/read");
             }
-            #endregion
+        #endregion
 
-            #region 상품목록조회
-            [HttpGet("Read")]
+        #region 자재추가
+        [HttpGet("stored")]
+        public async Task<IActionResult> StoredMateral()
+        {
+            var result = await _dbContext.Material_Models.ToListAsync();
+            return View(result);
+        }
+        [HttpPost("stored")]
+        public async Task<IActionResult> StoredMateral(Materal_Stored_Model model)
+        {
+            for (int i = 0; i < model.Quantity.Length; i++)
+            {
+                if (model.Quantity[i] == 0)
+                {
+                    continue;
+                }
+                var result = await _dbContext.Material_Models.Where(m => m.Id == model.MetrailId[i]).FirstAsync();
+                result.Quantity += model.Quantity[i];
+                Materal_Stored_Log_Model materal_Stored_Log_Model = new Materal_Stored_Log_Model()
+                {
+                    MetrailId = model.MetrailId[i],
+                    Quantity = model.Quantity[i],
+                    StoredTime = DateTime.Now
+                };
+                _dbContext.Materal_Stored_Log_Models.Add(materal_Stored_Log_Model);
+            }
+            _dbContext.SaveChanges();
+            return Redirect("/Materal/read");
+        }
+        #endregion
+
+        #region 상품목록조회
+        [HttpGet("Read")]
             [AllowAnonymous]
             public async Task<IActionResult> ReadMateral()
             {
@@ -97,14 +97,7 @@ namespace BaseProject.Controllers
             }
             #endregion
 
-            #region 상품수정
-            [HttpGet("update")]
-            public IActionResult UpdateMateral(int id)
-            {
-                // 수정할 상품 정보 불러오기
-                var result = _service.GetByIdAsync(id);
-                return View(result.Result);
-            }
+        #region 상품수정
             [HttpPost("update")]
             public async Task<IActionResult> UpdateMateral(Material_Model model, IFormFile ImgFile)
             {
@@ -131,23 +124,6 @@ namespace BaseProject.Controllers
             };
             _dbContext.Material_Edit_Log_Models.Add(log);
             _dbContext.SaveChanges();
-                return Redirect("/Materal/read");
-            }
-            #endregion
-
-            #region 상품삭제
-            // 상품 삭제
-            [HttpGet("delete")]
-            public async Task<IActionResult> DeleteMateral(int id, Defult_StatusCategory Status)
-            {
-                // 삭제할 정보 가져오기
-                var Model = _dbContext
-                               .Material_Models
-                               .Where(m => m.Id == id)
-                               .FirstOrDefault();
-            Model.Status = Status;
-
-            await _service.UpdateAsync(id, Model);
                 return Redirect("/Materal/read");
             }
             #endregion

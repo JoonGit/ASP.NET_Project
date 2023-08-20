@@ -1,4 +1,5 @@
-﻿@*
+﻿@using BaseProject.Data.Static;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -6,9 +7,11 @@
 @foreach(var user in Model)
 {
    <form asp-controller="User" asp-action="RollAccept" method="post">
+
         <input name="UserId" type="hidden" value="@user.Id">
-        <div name="Name">Name @user.UserName</div>
-        <input name="Role" type="text" value="@user.Role">
+        <div name="Name">이름 :  @user.UserName</div>
+        <div>권한 수준 : @user.Role</div>
+        <select name="Role" class="form-control" asp-items="@ViewBag.roleList"> </select>
         <input name="BeforeRole" type="hidden" value="@user.Role">
         @*<input type="text" value="@user."*@
         <input type="submit" value="전송">
