@@ -180,11 +180,11 @@ namespace BaseProject.Controllers
             UpdateModel.Price = model.Price;
             UpdateModel.Status = model.Status;
             int index = 0;
-            foreach (var metrail in UpdateModel.ProductUseMetrailModels)
-            {
-                    metrail.Quantity = model.count[index];
-                    index++;                
-            }
+            //foreach (var metrail in UpdateModel.ProductUseMetrailModels)
+            //{
+            //        metrail.Quantity = model.count[index];
+            //        index++;                
+            //}
             // DB에 저장되어 있는 경로 수정
             if (ImgFile != null)
             {

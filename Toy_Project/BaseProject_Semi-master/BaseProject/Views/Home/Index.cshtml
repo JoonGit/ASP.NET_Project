@@ -1,0 +1,291 @@
+﻿<main class="page-content">
+    <h1 class="mt-4">실시간 카메라 인식 현황</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"></li>
+    </ol>
+    <div class="container-fluid px-4">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-6">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        <h3>카메라 화면</h3>
+                    </div>
+                    <div class="card-body"><img src="" id="cameraImage"></div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-6">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar me-1"></i>
+                        <h3>AI 인식 화면</h3>
+                    </div>
+                    <div class="card-body"><img src="" id="aiImage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@*
+    <h1 class="mt-4">실시간 생산 현황</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"></li>
+    </ol>*@
+   @* <div class="container-fluid px-4">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-6">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        <h3>Boomerang</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table align-items-center">
+                                <thead class="table-light">
+                                    <tr>*@
+@*                                        <th>생산 일자</th>*@
+                                       @* <th>생산 수량</th>
+                                </thead>
+
+                                 <tbody>
+                                <tr>
+                                <td>수량증가</td>
+                                <td></td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-6">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        <h3>NinjaStar</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table align-items-center">
+                                <thead class="table-light">
+                                    <tr>*@
+@*                                        <th>생산 일자</th>*@
+                                        @*<th>생산 수량</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>수량증가</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+    <!--end row-->
+
+</main>
+<!--end page main-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+
+<script>
+    var currentStatus = "0";
+    var connection1 = new signalR.HubConnectionBuilder().withUrl("/ImageHub").build();
+    connection1.on("ReceiveMessage", function (message) {
+        console.log(message);
+        document.getElementById("cameraImage").src = "data:image/jpeg;base64," + message;
+    });
+
+    var connection2 = new signalR.HubConnectionBuilder().withUrl("/AiHub").build();
+    connection2.on("ReceiveAiMessage", function (message) {
+        console.log(message);
+        document.getElementById("aiImage").src = "data:image/jpeg;base64," + message;
+    });
+    console.log("ReceiveMessage");
+
+    connection1.start().then(function () {
+        console.log("연결 성공");
+    }).catch(function (err) {
+        console.log("연결 실패 : " + err.toString());
+    });
+    connection2.start().then(function () {
+        console.log("연결 성공");
+    }).catch(function (err) {
+        console.log("연결 실패 : " + err.toString());
+    });
+
+</script>
+
+
+
+@*<script>
+    function sendRequest() {
+        var data = document.getElementById("data");
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+                var res = JSON.parse(httpRequest.responseText)
+                data.value = res[0]["id"]
+
+            };
+            httpRequest.open("GET", "/ex/getid?id=" + id, true);
+            httpRequest.send();
+        }
+    }
+
+</script>
+
+
+
+@*<style>
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+        .modal.show {
+            display: block;
+        }
+
+    .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 600px;
+        padding: 40px;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+        transform: translateX(-50%) translateY(-50%);
+    }
+</style>
+
+<div class="modal" id="insert">
+    <div class="modal_body">
+        Modal_입니다_insert
+        
+        <form class="modal-body" action="ex/modal" method="post">
+            데이터 입력 <input class="modal-body" type="text" id="data2" value="123">
+            <button>전송</button>
+        </form>
+        <button onclick="ModalControll(modal_insert)">닫기</button>
+    </div>
+</div>
+<div class="modal" id="out">
+    <div class="modal_body">
+        Modal_입니다_out
+        <form class="modal-body" action="ex/modal" method="post">
+            데이터 입력 <input class="modal-body" type="text" id="data1" value="123">
+            <button>전송</button>
+            
+        </form>
+        <button onclick="ModalControll(modal_out)">닫기</button>
+    </div>
+</div>
+<select name="languages" id="lang">
+    <option id="1111" value="javascript">JavaScript</option>
+    <option value="php">PHP</option>
+    <option value="java">Java</option>
+    <option value="golang">Golang</option>
+    <option value="python">Python</option>
+    <option value="c#">C#</option>
+    <option value="C++">C++</option>
+    <option value="erlang">Erlang</option>
+  </select>
+
+<button onclick="ModalControll(modal_insert)" id="insert_btn">값 넣기</button>
+<button onclick="ModalControll(modal_out)" id="out_btn">값 빼기</button>
+<button onclick="Lang()">옵션</button>
+
+<script>
+
+        let test = document.getElementById('lang');
+        let test2 = test[test.selectedIndex].id;
+        console.log(test2);
+
+
+</script>
+
+<script>
+
+
+    const body = document.querySelector('body');
+    const modal_insert = document.getElementById('insert');
+    const modal_out = document.getElementById('out');
+    var httpRequest = new XMLHttpRequest();
+    function sendRequest(id) {
+        httpRequest.open("GET", "/ex/getid?id=1", true);
+        httpRequest.send();
+        var data = document.getElementById("data1");
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+                var res = JSON.parse(httpRequest.responseText)
+                console.log(res)
+                data.value = String(res["id"])
+
+            };
+            
+        }
+    }
+
+    function ModalControll(modal)
+    {
+        modal.classList.toggle('show');
+        if (modal.classList.contains('show')) {
+            body.style.overflow = 'hidden';
+            body.style.overflow = 'auto';
+        }
+        sendRequest(1);
+    }
+
+    //btn.addEventListener('click', () => {
+    //    modal.classList.toggle('show');
+
+    //    if (modal.classList.contains('show')) {
+    //        body.style.overflow = 'hidden';
+    //    }
+    //});
+
+    //modal.addEventListener('click', (event) => {
+    //    if (event.target === modal) {
+    //        modal.classList.toggle('show');
+
+    //        if (!modal.classList.contains('show')) {
+    //            body.style.overflow = 'auto';
+    //        }
+    //    }
+    //});
+
+</script>
+
+@*<script>
+    function sendRequest() {
+        var data = document.getElementById("data");
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+                var res = JSON.parse(httpRequest.responseText)
+                data.value = res[0]["id"]
+
+            };
+            httpRequest.open("GET", "/ex/getid?id=" + id, true);
+            httpRequest.send();
+        }
+    }
+
+</script>
+*@
