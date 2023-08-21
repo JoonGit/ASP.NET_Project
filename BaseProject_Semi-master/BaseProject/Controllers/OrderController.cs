@@ -139,20 +139,7 @@ namespace BaseProject.Controllers
                         .Where(p => p.Id == model.ProductId[i])
                         .Include(p => p.ProductUseMetrailModels).FirstAsync();
                     product.Quantity -= model.Quantity[i];
-                    foreach (var item in product.ProductUseMetrailModels)
-                    {
-                        var metrail = await _dbContext.Material_Models
-                            .Where(m => m.Id == item.MetrailId).FirstAsync();
-
-                        // 재료가 부족할 경우 추후 개발
-                        //if(metrail.Quantity <= item.Quantity * model.Quantity[i])
-                        //{
-                        //    ViewBag.Message = "재료가 부족합니다.";
-                        //    return Redirect("/Order/detail?id=" + model.Id);
-                            
-                        //}
-                        metrail.Quantity -= item.Quantity * model.Quantity[i];
-                    }
+                    
                 }                    
             }
 

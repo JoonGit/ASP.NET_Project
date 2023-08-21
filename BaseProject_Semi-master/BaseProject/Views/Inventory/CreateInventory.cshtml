@@ -20,16 +20,16 @@
                 <div class="card-body">
                     <div class="border p-3 rounded">
                         <form asp-controller="Inventory" asp-action="create" enctype="multipart/form-data" method="post" class="row g-3">
-                            @foreach (Product_Model product in Model)
+                            @foreach (var product in Model)
                             {
-                                <input type="hidden" name="ProductId" value="@product.Id" />
+                                <input type="hidden" name="ProductId" value="@product.ProductId" />
                                 <div class="col-12">
                                     <label class="form-label" color="blue">상품 이름</label>
                                     <div class="form-control">@product.Name</div>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label">생산 수량</label>
-                                    <input type="text" class="form-control" name="Count" value="0">
+                                    <input type="text" class="form-control" name="Count" value="@product.Count">
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label">생산 일자</label>

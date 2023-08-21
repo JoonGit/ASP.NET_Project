@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BaseProject.Data.Static;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
+using BaseProject.Data.Enums;
 
 namespace BaseProject.Controllers
 {
@@ -37,9 +38,19 @@ namespace BaseProject.Controllers
         [HttpGet("create")]
         public async Task<IActionResult> CreateInventory()
         {
-            var result = await _dbContext
-                .Product_Models
-                .ToListAsync();
+
+            // Product_Models 와 Product_Create_Models를 조인하여 상품등록 페이지에 전달
+            var result = _dbContext.Product_Models
+                .Join(_dbContext.product_Create_Models,p => p.Id, c => c.ProductId,(p, c) => 
+                new Inventoy_Post_Info_Model(){
+                    ProductId = p.Id,
+                    Name = p.Name,
+                    Count = c.Count,
+                })
+                .ToList();
+
+
+
             return View(result);
         }
 
@@ -51,8 +62,17 @@ namespace BaseProject.Controllers
             {
                 if (model.Count[i] != 0)
                 {
-                    var product = await _dbContext.Product_Models.FindAsync(model.ProductId[i]);
+                    var product = await _dbContext
+                        .Product_Models
+                        .Where(p => p.Id == model.ProductId[i])
+                        .Include(p => p.ProductUseMetrailModels)
+                        .FirstAsync();
+                    var createProduct = await _dbContext
+                        .product_Create_Models
+                        .Where(p => p.ProductId == model.ProductId[i])
+                        .FirstAsync();
                     product.Quantity += model.Count[i];
+                    createProduct.Count -= model.Count[i];
                     Inventory_Model inventory_model = new Inventory_Model()
                     {
                         ProductId = model.ProductId[i],
@@ -60,8 +80,22 @@ namespace BaseProject.Controllers
                         CreateTime = model.CreateTime[i],
                     };
                     _dbContext.Inventory_Models.Add(inventory_model);
-                }                
-            }
+                    foreach (var item in product.ProductUseMetrailModels)
+                    {
+                        var metrail = await _dbContext.Material_Models
+                            .Where(m => m.Id == item.MetrailId).FirstAsync();
+
+                        // 재료가 부족할 경우 추후 개발
+                        //if(metrail.Quantity <= item.Quantity * model.Quantity[i])
+                        //{
+                        //    ViewBag.Message = "재료가 부족합니다.";
+                        //    return Redirect("/Order/detail?id=" + model.Id);
+
+                        //}
+                        metrail.Quantity -= item.Quantity * model.Count[i];
+                    }
+                }
+            }            
             await _dbContext.SaveChangesAsync();
             return Redirect("/Inventory/Read");
         }
